@@ -1016,6 +1016,32 @@ else
 			</div>
 		</div>	
 	</div>
+
+	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
+    <div class="container-fluid">
+
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarsExample02" aria-controls="navbarsExample02" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExample02">
+        <ul class="navbar-nav me-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="#">Link</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administr su cuenta</a>
+            <ul class="dropdown-menu">
+			  <li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios </a></li>
+              <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+              <li><a class="dropdown-item" href="#">Historial de usuario</a></li>
+            </ul>
+          </li>
+        </ul>
+     
+      </div>
+    </div>
+  </nav>
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
@@ -1033,7 +1059,11 @@ else
 			
 	        <div class="enlaces">
 		        <a target="_blank" data-i18n="[html]sistema.manual;[href]sistema.hrefManual">Manual de usuario</a>  |  <a id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.cerrarSesion">Cerrar sesi&oacute;n</a>
-	        </div>
+	      
+		  
+		    </div>
+
+			
 			<!-- Inicia Cambio de Password -->
 			<%
 			' Inicia - Se muestra la notificacion al usuario, cuando solo le quedan 10 para que expira su contraseña.
@@ -1562,6 +1592,7 @@ else
 				<!-- Termina - Si la cantidad de paginas es igual a cero y fue por una busqueda de informacion que no trajo resultados -->
 		<% else %>
 		<!-- Termina - Sin Info -->
+		
 
 		<%
 		
