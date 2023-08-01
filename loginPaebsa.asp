@@ -1002,20 +1002,27 @@ else
 
 </head>
 <body> 
-	<div class="texto recibo">
-		<div class="encabezado">   			
-			<div class="serviciosTitulo2"><h2 data-i18n="sistema.titulo"><strong>Servicio de Bur&oacute Electr&oacutenico "Proveedores"</strong></h2></div>
-     
-			<div class="contenido-encabezado">
-				<div class="imagen"><img src="imagenes2/servicioConsulta.png" alt="PAEBSA"/></div>				
-				<div class="serviciosTexto" style="color:#FAFAFA;"><strong data-i18n="sistema.user">Bienvenido: </strong><label id="nombreUser"><%=Nombre%></label>
+
+
+<div style="background-color: #557e8f;">
+	<div>
+		<div>   		
+			 <div class="rounded float-end" ><img src="imagenes2/logotipoChico.png" alt="PAEBSA"/></div>	
+			 <!--servicioConsulta.png-->
+			<div class="text-center"><h2 data-i18n="sistema.titulo"><strong>Servicio de Buró Electrónico "Proveedores"</strong></h2></div>  
+			<div>
+				<div style="color:#FAFAFA;"><strong data-i18n="sistema.user">Bienvenido: </strong><label id="nombreUser"><%=Nombre%></label>
 					<br/><strong data-i18n="sistema.buzon">Usuario/Buz&oacute;n: </strong><label id="buzon"><%=user%></label>
 					<br /><strong data-i18n="sistema.encabezado">Informaci&oacuten recibida </strong>
-					<br /><strong><label data-i18n="sistema.fecha"></label><label id="today"/><script type="text/javascript">fechaactualPantalla();</script> </strong>
+					<br /><strong><label data-i18n="sistema.fecha"></label><label id="today"><script type="text/javascript">fechaactualPantalla();</script> </strong>
 				</div>
 			</div>
 		</div>	
 	</div>
+</div>
+
+
+
 
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
