@@ -1033,10 +1033,15 @@ else
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administr su cuenta</a>
             <ul class="dropdown-menu">
 			  <li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios </a></li>
-              <li><a class="dropdown-item" href="#">Cambiar contraseña</a></li>
+              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">Cambiar contraseña</a></li>
               <li><a class="dropdown-item" href="#">Historial de usuario</a></li>
             </ul>
-          </li>
+          </li>      
+		<li>
+		<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
+		</li>
+
+
         </ul>
      
       </div>
