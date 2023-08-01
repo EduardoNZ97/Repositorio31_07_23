@@ -1130,7 +1130,7 @@ else
 	<div id="templatemo_outer_wrapper_sp" style="margin-top:1px;">
 		<div id="templatemo_wrapper_sp"><!-- end of templatemo header -->
 			<div class="filtros-busqueda">
-				<h2><strong data-i18n="filtros.tituloFiltros"> Filtros de b&uacute;squeda</strong></h2><br/>
+				<h4><strong data-i18n="filtros.tituloFiltros"> Filtros de b&uacute;squeda</strong></h4><br/>
 				<form name="formulario" action="loginPaebsa.asp" id="formInscripcion" method="get">
 						 <select  name="seleccione" id="seleccione" class="select-text select-opt" >
 						   <option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
@@ -1704,9 +1704,9 @@ else
 <div id="templatemo_outer_wrapper_sp" style="margin-top:1px;">
   <div id="templatemo_wrapper_sp"><!-- end of templatemo header -->
 		<div class="filtros-busqueda">
-			<h2><strong data-i18n="filtros.tituloFiltros"> Filtros de b&uacute;squeda</strong></h2>
+			<strong data-i18n="filtros.tituloFiltros" class="fs-6 text-primary"> Filtros de b&uacute;squeda</strong>
 			<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
-					         <select  name="seleccione" id="seleccione" class="select-text select-opt" >
+					         <select  name="seleccione" id="seleccione">
 					           <option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 					           <option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 					           <option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1719,7 +1719,7 @@ else
 				             <a class="tooltip" title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					        <!-- Campo de busqueda alternativo -->
 					        <br/><br/>
-					         <select  name="seleccione2" id="seleccione2" class="select-text select-opt"  >
+					         <select  name="seleccione2" id="seleccione2">
 					           <option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
 					           <option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 					           <option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1732,7 +1732,7 @@ else
 				          <a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					        <!-- Fin del campo de busqueda alternativo -->
 					        <br/><br/> 
-					        <select name="orden"  id="orden" class="select-text select-opt" >
+					        <select name="orden"  id="orden">
 						        <option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
 						        <option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
                                 <option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1748,7 +1748,7 @@ else
 						        <option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
 					         </select>
 					         <br/><br/>
-					         <select name="tipofecha"  id="tipofecha" class="select-text select-opt" >
+					         <select name="tipofecha"  id="tipofecha">
 					            <option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
 					            <option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
 					            <option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
@@ -1758,7 +1758,7 @@ else
 					         <a class="tooltip" title="[!]Rango de Fechas[/!]Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha." data-i18n="[title]filtros.fecha.info"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					        <br/><br/> 
 					        <!-- inicia nuevo campo de registros por pagina -->
-					        <select  name="tamanopagina" id="tamanopagina" class="select-text select-opt" >
+					        <select  name="tamanopagina" id="tamanopagina">
 					            <option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
 					            <option value="25">25</option>
 					            <option value="50">50</option>
@@ -1775,7 +1775,7 @@ else
 		</div>
 		
 		<div class="bitacora-datos">
-			<th><h2><strong data-i18n="filtros.tituloBitacoras">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
+			<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 			<ul class="lista">
 				<li class="go"><img src="imagenes2/negro.png" alt="PAEBSA"  class="imagenNegro"/><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
 				<li class="go"><img src="imagenes2/azul.png" alt="PAEBSA" class="imagenAzul"/><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
