@@ -321,13 +321,17 @@ else
 		<!-- Traductor de la pagina Espaniol Ingles -->
 
     <!--Boostrap 5.2.3-->
-	
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	
+	-->
+	     <link href="bootstrap-5.2.3-dist\css\bootstrap.min.css" rel="stylesheet">
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- Said Rama -->
 		
 	<title>PAEBSA</title>
+
 	<script type="text/javascript">
 		if (window.history) {
 				function noBack(){window.history.forward()}
@@ -1700,12 +1704,15 @@ else
 <%
 	
 %>
- 
-<div id="templatemo_outer_wrapper_sp" >
-  <div id="templatemo_wrapper_sp"><!-- end of templatemo header -->
-		<div  class="row">
-		    <div class="g-col-md-4">
-				<strong data-i18n="filtros.tituloFiltros" class="fs-6 text-primary"> Filtros de b&uacute;squeda</strong>
+
+   
+	<div >
+  <div ><!-- end of templatemo header -->		
+
+<div  class="p-2">
+  <div class="row">
+    <div class="col-4">
+   <strong data-i18n="filtros.tituloFiltros" class="fs-6 text-primary"> Filtros de b&uacute;squeda</strong>
 				<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
 								<select  name="seleccione" id="seleccione">
 								<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
@@ -1715,10 +1722,10 @@ else
 								<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
 								<option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
 								<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-								</select><a class="tooltip" title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>	 
+								</select><a title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>	 
 								<input    name="texto" type="text"  id="texto" size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
-								<a class="tooltip" title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>
-								<!-- Campo de busqueda alternativo -->
+								<a 	 title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>
+					
 					
 								<select  name="seleccione2" id="seleccione2">
 								<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
@@ -1728,10 +1735,10 @@ else
 								<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
 								<option value="Status"  data-i18n="filtros.seleccione.estado">Estado</option>
 								<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-								</select><a class="tooltip" title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"></a>	 
+								</select><a  title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"></a>	 
 								<input  class="captura busqueda"  name="texto2" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"/>
 							<a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"></a>
-								<!-- Fin del campo de busqueda alternativo -->
+							
 
 								<select name="orden"  id="orden">
 									<option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
@@ -1742,8 +1749,8 @@ else
 									<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
 									<option value="Fecha_Envio_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
 									<option value="Fecha_Canc_Documento_Edi"  data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacute;n documento </option>
-								<!--<option value="Consecutivo_Int_Pebsa">Consecutivo int PAEBSA</option>-->
-								</select><a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripción de Nombre" /></a>
+						
+								</select><a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"></a>
 								<select name="alf"  id="alf" class="select-text select-opt" >
 									<option value="desc" data-i18n="filtros.ordenar.descendente">Orden descendente</option>
 									<option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
@@ -1754,11 +1761,10 @@ else
 									<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
 									<option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
 								</select>
-								<input  class="captura fecha" placeholder="Fecha inicial"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial"/>
-								<input  class="captura fecha" placeholder="Fecha final"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"/>
-								<a class="tooltip" title="[!]Rango de Fechas[/!]Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha." data-i18n="[title]filtros.fecha.info"></a>
+								<input   placeholder="Fecha inicial"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial"/>
+								<input   placeholder="Fecha final"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"/>
+								<a  title="[!]Rango de Fechas[/!]Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha." data-i18n="[title]filtros.fecha.info"></a>
 				
-								<!-- inicia nuevo campo de registros por pagina -->
 								<select  name="tamanopagina" id="tamanopagina">
 									<option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
 									<option value="25">25</option>
@@ -1766,18 +1772,16 @@ else
 									<option value="75">75</option>
 									<option value="100">100</option>
 									<option value="200">200</option>
-								</select><a class="tooltip" title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 
-								<!-- termina el nuevo campo de paginas por busqueda-->
+								</select><a  title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 
+		
 						
 								<input type="hidden" name="ln" value="<%=lg%>"/>
-								<div class="input"><input class="button_opt prtText" name="Submit"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
-								<div class="input"><input class="button_opt prtText" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
+								<div><input class="button_opt prtText" name="Submit"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
+								<div ><input class="button_opt prtText" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
 							</form>
-			</div>
-
-		
-		<div class="g-col-md-4">
-			<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
+    </div>
+    <div class="col-4">
+  	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 			<ul>
 				<li class="go"><img src="imagenes2/negro.png" alt="PAEBSA"  /><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
 				<li class="go"><img src="imagenes2/azul.png" alt="PAEBSA" /><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
@@ -1789,9 +1793,13 @@ else
 				<li class="go"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
 				<li class="go"><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
 			</ul>
-		</div>
-	</div>
-			
+    </div>
+    <div class="col-4">
+      Una de tres columnas
+    </div>
+  </div>
+</div>
+
 
 	<!-- Mensajes a clientes -->
 	<div class="post_box">
