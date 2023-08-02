@@ -1535,24 +1535,26 @@ else
 		<!-- termina script de acordeon -->
 		</div>
 	</div>
+
+
+
+
+
 		<div class="container_12 divider">
 			<div class="info_options">
 				<form action="ficheroExcel.php" method="post"  id="FormularioExportacion">
-					<div style="">
 					 
 					<div class="input"><input type="button"  value="Reprocesar archivos"  class="button_opt prtText" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					<div class="input"><input type="button"  value="Reprocesar PDF" class="button_opt prtText" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF"/></div>
-					<a class="tooltip" title=""  data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>									  
-					</div>
-					<div style="">
+					<a class="tooltip" title=""  data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a></div>
+					
 					<div class="input"><input  class="button_opt prtText create-user btn_download" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 					<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					<div class="input"><input type="button" value="Enviar informaci&oacute;n por e-mail" class="button_opt prtText" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					<div class="input"><input type="button"  value="Exportar datos a un excel"  class="button_opt prtText" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
-					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					</div>
+					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a></div>
 				</form>
 			</div>
 
@@ -2128,25 +2130,25 @@ else
 		<h2 class="titulo-grid" data-i18n="funcionalidad.titulo"> Informaci&oacute;n  Recibida </h2>
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion">
-			<div class="izq" style="padding-left:30px">
-				<div class="input"><input type="button"  class="button_opt prtText" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+			
+				<div class="input"><input type="button"  class="btn btn-outline-secondary" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
 				<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-				<div class="input"><input type="button" class="button_opt prtText" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<div class="input"><input type="button" class="btn btn-outline-secondary" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			</div>
-			<div class="der" style="padding-right: 30px;">
-			<div class="input"><input  class="button_opt prtText create-user btn_download" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+			
+			
+			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 			<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
+			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="button_opt prtText" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
+			<div class="input"><input  class="btn btn-outline-secondary" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> 
-			</div>
+			
 		</form>
 	</div>
 	
