@@ -1012,7 +1012,7 @@ else
 	<div> 
 	<!--boostrap-->
 		<div>   		
-			 <div class="rounded float-end" ><img src="imagenes2/logotipoChico.png" alt="PAEBSA"/></div>	
+			 <div class="rounded float-end" ><img src="imagenes2/servicioconsulta.png" alt="PAEBSA"/></div>	
 			 <!--servicioConsulta.png-->
 			<div class="text-center"><h2 data-i18n="sistema.titulo"><strong>Servicio de Buró Electrónico "Proveedores"</strong></h2></div>  
 			<div>
