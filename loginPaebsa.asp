@@ -1009,7 +1009,8 @@ else
 
 
 <div style="background-color: #557e8f;">
-	<div>
+	<div> 
+	<!--boostrap-->
 		<div>   		
 			 <div class="rounded float-end" ><img src="imagenes2/logotipoChico.png" alt="PAEBSA"/></div>	
 			 <!--servicioConsulta.png-->
