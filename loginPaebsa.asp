@@ -1727,10 +1727,10 @@ else
 				   <div class="col-4">
 						<strong data-i18n="filtros.tituloFiltros" class="fs-6 text-primary"> Filtros de b&uacute;squeda</strong>
 						<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
-					       <div class="container">
+					       <div class="container d-grid gap-3">
 								<div class="row">
 									<div class="col-6">
-										<select  name="seleccione" class="form-select" aria-label="Default select example" id="seleccione">
+										<select  name="seleccione" class="form-select  p-1" aria-label="Default select example" id="seleccione">
 											<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1739,16 +1739,17 @@ else
 											<option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
 											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
 										</select>
+								
 									</div>
 									<div class="col-6">
 										<a title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>	 
-										<input    name="texto" type="text"  id="texto" class="form-control"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
+										<input    name="texto" type="text"  id="texto" class="form-control  p-1"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
 										<a 	 title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>		
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-6">			
-										<select  name="seleccione2" class="form-select" aria-label="Default select example"  id="seleccione2">
+										<select  name="seleccione2" class="form-select  p-1" aria-label="Default select example"  id="seleccione2">
 										<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
 										<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 										<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1767,7 +1768,7 @@ else
 
 								<div class="row">
 									<div class="col-6">
-										<select name="orden" class="form-select" aria-label="Default select example"  id="orden">
+										<select name="orden" class="form-select  p-1" aria-label="Default select example"  id="orden">
 											<option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1779,7 +1780,7 @@ else
 										</select><a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"></a>				
 									</div>
 									<div class="col-6">
-										<select name="alf" class="form-select" aria-label="Default select example" id="alf">
+										<select name="alf" class="form-select  p-1" aria-label="Default select example" id="alf">
 											<option value="desc" data-i18n="filtros.ordenar.descendente">Orden descendente</option>
 											<option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
 										</select>
@@ -1789,14 +1790,14 @@ else
 
 								<div class="row">
 									<div class="col-6">
-										<select name="tipofecha" class="form-select" aria-label="Default select example"  id="tipofecha">
+										<select name="tipofecha" class="form-select  p-1" aria-label="Default select example"  id="tipofecha">
 											<option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
 											<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
 											<option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
 										</select>				
 									</div>
 									<div class="col-6">
-										<select  name="tamanopagina" class="form-select" aria-label="Default select example" id="tamanopagina">
+										<select  name="tamanopagina" class="form-select  p-1" aria-label="Default select example" id="tamanopagina">
 											<option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
 											<option value="25">25</option>
 											<option value="50">50</option>
