@@ -1730,7 +1730,7 @@ else
 					       <div class="container">
 								<div class="row">
 									<div class="col-6">
-										<select  name="seleccione"" id="seleccione">
+										<select  name="seleccione" class="form-select" aria-label="Default select example" id="seleccione">
 											<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1742,13 +1742,13 @@ else
 									</div>
 									<div class="col-6">
 										<a title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>	 
-										<input    name="texto" type="text"  id="texto" size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
+										<input    name="texto" type="text"  id="texto" class="form-control"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
 										<a 	 title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>		
 									</div>
 								</div>
 								<div class="row">
 									<div class="col-6">			
-										<select  name="seleccione2"  id="seleccione2">
+										<select  name="seleccione2" class="form-select" aria-label="Default select example"  id="seleccione2">
 										<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
 										<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 										<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1759,7 +1759,7 @@ else
 										</select><a  title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"></a>	
 									</div>
 									<div class="col-6">
-										<input  class="captura busqueda"  name="texto2" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"/>
+										<input  class="captura busqueda"  name="texto2" class="form-control" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"/>
 										<a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"></a>
 									</div>
 								</div>
@@ -1767,7 +1767,7 @@ else
 
 								<div class="row">
 									<div class="col-6">
-										<select name="orden"  id="orden">
+										<select name="orden" class="form-select" aria-label="Default select example"  id="orden">
 											<option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1779,7 +1779,7 @@ else
 										</select><a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"></a>				
 									</div>
 									<div class="col-6">
-										<select name="alf"  id="alf">
+										<select name="alf" class="form-select" aria-label="Default select example" id="alf">
 											<option value="desc" data-i18n="filtros.ordenar.descendente">Orden descendente</option>
 											<option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
 										</select>
@@ -1789,14 +1789,14 @@ else
 
 								<div class="row">
 									<div class="col-6">
-										<select name="tipofecha"   id="tipofecha">
+										<select name="tipofecha" class="form-select" aria-label="Default select example"  id="tipofecha">
 											<option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
 											<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
 											<option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
 										</select>				
 									</div>
 									<div class="col-6">
-										<select  name="tamanopagina"id="tamanopagina">
+										<select  name="tamanopagina" class="form-select" aria-label="Default select example" id="tamanopagina">
 											<option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
 											<option value="25">25</option>
 											<option value="50">50</option>
@@ -1810,21 +1810,21 @@ else
 
 								<div class="row">
 									<div class="col-6">
-										<input   placeholder="Fecha inicial"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial"/>			
+										<input   placeholder="Fecha inicial" class="form-control"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial"/>			
 									</div>
 									<div class="col-6">
-										<input   placeholder="Fecha final"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"/>
+										<input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"/>
 										<a  title="[!]Rango de Fechas[/!]Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha." data-i18n="[title]filtros.fecha.info"></a>
 									</div>
 								</div>
 
 								<div class="row">
 									<div class="col-6">
-										<input type="hidden" name="ln" value="<%=lg%>"/>
-														<div><input class="button_opt prtText" name="Submit"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
+										<input type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
+									    <div><input class="button_opt prtText" name="Submit" class="form-control"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
 									</div>
 									<div class="col-6">
-											<div ><input class="button_opt prtText" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
+										<div ><input class="button_opt prtText" class="form-control" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
 									</div>
 								</div>
 							</div>	
