@@ -1834,15 +1834,15 @@ else
 					<div class="col-4">
 					   <th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 						<ul>
-							<li class="go"><img src="imagenes2/negro.png" alt="PAEBSA"  /><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
-							<li class="go"><img src="imagenes2/azul.png" alt="PAEBSA" /><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
-							<li class="go"><img src="imagenes2/rojo.png" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
-							<li class="go"><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
-							<li class="go"><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
-							<li class="go"><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
-							<li class="go"><label data-i18n="bitacora.conInformacion.totales">Registros totales:</label> <%= rs.RecordCount %></li>
-							<li class="go"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
-							<li class="go"><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
+							<li><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
+							<li><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
+							<li><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
+							<li><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
+							<li><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
+							<li><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
+							<li><label data-i18n="bitacora.conInformacion.totales">Registros totales:</label> <%= rs.RecordCount %></li>
+							<li><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
+							<li><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
 						</ul>
 					</div>
 				    <div class="col-4">
