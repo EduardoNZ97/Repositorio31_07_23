@@ -2164,11 +2164,6 @@ else
  
 	<div class="container_12 divider">
 		<div class="">
-<<<<<<< HEAD
-		<h2 class="titulo-grid" data-i18n="funcionalidad.titulo"> Informaci&oacute;n  Recibida </h2>
-=======
-		<h2 class="text-center" data-i18n="funcionalidad.titulo"> Informaci&oacute;n  Recibida </h2>
->>>>>>> SaidGrid2
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion"><br/>
 			
