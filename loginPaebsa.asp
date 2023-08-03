@@ -2185,13 +2185,8 @@ else
 			<div class="input"><input  class="btn btn-outline-dark" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> 
 			
-<<<<<<< HEAD
 		</form>
 	</div> <br/>
-=======
-		</form><br/>
-	</div>
->>>>>>> SaidGrid2
 	
 		<div class="" id="gridData">
 			<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="tinytable">
