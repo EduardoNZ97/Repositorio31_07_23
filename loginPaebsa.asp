@@ -321,13 +321,17 @@ else
 		<!-- Traductor de la pagina Espaniol Ingles -->
 
     <!--Boostrap 5.2.3-->
-	
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+
+	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	
+	-->
+	     <link href="bootstrap-5.2.3-dist\css\bootstrap.min.css" rel="stylesheet">
+		 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+	  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 <!-- Said Rama -->
 		
 	<title>PAEBSA</title>
+
 	<script type="text/javascript">
 		if (window.history) {
 				function noBack(){window.history.forward()}
@@ -1005,7 +1009,8 @@ else
 
 
 <div style="background-color: #557e8f;">
-	<div>
+	<div> 
+	<!--boostrap-->
 		<div>   		
 			 <div class="rounded float-end" ><img src="imagenes2/logotipoChico.png" alt="PAEBSA"/></div>	
 			 <!--servicioConsulta.png-->
@@ -1134,7 +1139,7 @@ else
 	' no tiene informacion registrada.
 	%>
 	<!-- Inicia - Sin informacion -->
-	<div id="templatemo_outer_wrapper_sp" style="margin-top:1px;">
+	<div id="templatemo_outer_wrapper_sp">
 		<div id="templatemo_wrapper_sp"><!-- end of templatemo header -->
 			<div class="filtros-busqueda">
 				<h4><strong data-i18n="filtros.tituloFiltros"> Filtros de b&uacute;squeda</strong></h4><br/>
@@ -1530,26 +1535,32 @@ else
 		<!-- termina script de acordeon -->
 		</div>
 	</div>
+
+
+
+
+
 		<div class="container_12 divider">
 			<div class="info_options">
 				<form action="ficheroExcel.php" method="post"  id="FormularioExportacion">
-					<div style="">
 					 
 					<div class="input"><input type="button"  value="Reprocesar archivos"  class="button_opt prtText" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					<div class="input"><input type="button"  value="Reprocesar PDF" class="button_opt prtText" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF"/></div>
-					<a class="tooltip" title=""  data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>									  
-					</div>
-					<div style="">
+					<a class="tooltip" title=""  data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a></div>
+					
 					<div class="input"><input  class="button_opt prtText create-user btn_download" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 					<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					<div class="input"><input type="button" value="Enviar informaci&oacute;n por e-mail" class="button_opt prtText" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 					<div class="input"><input type="button"  value="Exportar datos a un excel"  class="button_opt prtText" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
-					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					</div>
+					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a></div>
 				</form>
 			</div>
+
+
+
+			
 			<div class="grid_8 height250">
 				<!-- Principia la tabla vacia-->
 				<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="tinytable">
@@ -1707,86 +1718,88 @@ else
 <%
 	
 %>
- 
-<div id="templatemo_outer_wrapper_sp" style="margin-top:1px;">
-  <div id="templatemo_wrapper_sp"><!-- end of templatemo header -->
-		<div class="filtros-busqueda">
-			<strong data-i18n="filtros.tituloFiltros" class="fs-6 text-primary"> Filtros de b&uacute;squeda</strong>
-			<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
-					         <select  name="seleccione" id="seleccione">
-					           <option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
-					           <option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
-					           <option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
-					           <option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
-					           <option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
-					           <option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
-                               <option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-					         </select><a class="tooltip" title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>	 
-					         <input  class="captura busqueda"  name="texto" type="text"  id="texto" size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
-				             <a class="tooltip" title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					        <!-- Campo de busqueda alternativo -->
-					        <br/><br/>
-					         <select  name="seleccione2" id="seleccione2">
-					           <option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
-					           <option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
-					           <option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
-					           <option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
-					           <option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
-					           <option value="Status"  data-i18n="filtros.seleccione.estado">Estado</option>
-                               <option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-					         </select><a class="tooltip" title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>	 
-					         <input  class="captura busqueda"  name="texto2" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"/>
-				          <a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					        <!-- Fin del campo de busqueda alternativo -->
-					        <br/><br/> 
-					        <select name="orden"  id="orden">
-						        <option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
-						        <option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
-                                <option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
-                                <option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
-						        <option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
-                                <option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-						        <option value="Fecha_Envio_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
-						        <option value="Fecha_Canc_Documento_Edi"  data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacute;n documento </option>
-					           <!--<option value="Consecutivo_Int_Pebsa">Consecutivo int PAEBSA</option>-->
-					         </select><a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripción de Nombre" /></a>
-					         <select name="alf"  id="alf" class="select-text select-opt" >
-						        <option value="desc" data-i18n="filtros.ordenar.descendente">Orden descendente</option>
-						        <option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
-					         </select>
-					         <br/><br/>
-					         <select name="tipofecha"  id="tipofecha">
-					            <option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
-					            <option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
-					            <option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
-					         </select>
-					         <input  class="captura fecha" placeholder="Fecha inicial"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial"/>
-					         <input  class="captura fecha" placeholder="Fecha final"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"/>
-					         <a class="tooltip" title="[!]Rango de Fechas[/!]Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha." data-i18n="[title]filtros.fecha.info"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					        <br/><br/> 
-					        <!-- inicia nuevo campo de registros por pagina -->
-					        <select  name="tamanopagina" id="tamanopagina">
-					            <option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
-					            <option value="25">25</option>
-					            <option value="50">50</option>
-					            <option value="75">75</option>
-					            <option value="100">100</option>
-					            <option value="200">200</option>
-					         </select><a class="tooltip" title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>	 
-					        <!-- termina el nuevo campo de paginas por busqueda-->
-					        <br/><br/>
-                            <input type="hidden" name="ln" value="<%=lg%>"/>
-					        <div class="input"><input class="button_opt prtText" name="Submit"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
-					        <div class="input"><input class="button_opt prtText" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
-				        </form>
-		</div>
+
+   
+	<div >
+  <div ><!-- end of templatemo header -->		
+
+<div  class="p-2">
+  <div class="row">
+    <div class="col-4">
+   <strong data-i18n="filtros.tituloFiltros" class="fs-6 text-primary"> Filtros de b&uacute;squeda</strong>
+				<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
+								<select  name="seleccione" id="seleccione">
+								<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
+								<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
+								<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
+								<option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
+								<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
+								<option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
+								<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
+								</select><a title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>	 
+								<input    name="texto" type="text"  id="texto" size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
+								<a 	 title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>
+					
+					
+								<select  name="seleccione2" id="seleccione2">
+								<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
+								<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
+								<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
+								<option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
+								<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
+								<option value="Status"  data-i18n="filtros.seleccione.estado">Estado</option>
+								<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
+								</select><a  title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"></a>	 
+								<input  class="captura busqueda"  name="texto2" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"/>
+							<a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"></a>
+							
+
+								<select name="orden"  id="orden">
+									<option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
+									<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
+									<option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
+									<option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
+									<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
+									<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
+									<option value="Fecha_Envio_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
+									<option value="Fecha_Canc_Documento_Edi"  data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacute;n documento </option>
+						
+								</select><a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"></a>
+								<select name="alf"  id="alf" class="select-text select-opt" >
+									<option value="desc" data-i18n="filtros.ordenar.descendente">Orden descendente</option>
+									<option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
+								</select>
+					
+								<select name="tipofecha"  id="tipofecha">
+									<option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
+									<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
+									<option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
+								</select>
+								<input   placeholder="Fecha inicial"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial"/>
+								<input   placeholder="Fecha final"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"/>
+								<a  title="[!]Rango de Fechas[/!]Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha." data-i18n="[title]filtros.fecha.info"></a>
+				
+								<select  name="tamanopagina" id="tamanopagina">
+									<option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
+									<option value="25">25</option>
+									<option value="50">50</option>
+									<option value="75">75</option>
+									<option value="100">100</option>
+									<option value="200">200</option>
+								</select><a  title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 
 		
-		<div class="bitacora-datos">
-			<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
-			<ul class="lista">
-				<li class="go"><img src="imagenes2/negro.png" alt="PAEBSA"  class="imagenNegro"/><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
-				<li class="go"><img src="imagenes2/azul.png" alt="PAEBSA" class="imagenAzul"/><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
-				<li class="go"><img src="imagenes2/rojo.png" alt="PAEBSA" class="imagenRojo"/><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
+						
+								<input type="hidden" name="ln" value="<%=lg%>"/>
+								<div><input class="button_opt prtText" name="Submit"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
+								<div ><input class="button_opt prtText" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
+							</form>
+    </div>
+    <div class="col-4">
+  	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
+			<ul>
+				<li class="go"><img src="imagenes2/negro.png" alt="PAEBSA"  /><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
+				<li class="go"><img src="imagenes2/azul.png" alt="PAEBSA" /><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
+				<li class="go"><img src="imagenes2/rojo.png" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
 				<li class="go"><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
 				<li class="go"><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
 				<li class="go"><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
@@ -1794,8 +1807,13 @@ else
 				<li class="go"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
 				<li class="go"><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
 			</ul>
-		</div>
-			
+    </div>
+    <div class="col-4">
+      Una de tres columnas
+    </div>
+  </div>
+</div>
+
 
 	<!-- Mensajes a clientes -->
 	<div class="post_box">
@@ -2112,25 +2130,25 @@ else
 		<h2 class="text-center" data-i18n="funcionalidad.titulo"> Informaci&oacute;n  Recibida </h2>
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion">
-			<div class="izq" style="padding-left:30px">
-				<div class="input"><input type="button"  class="button_opt prtText" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+			
+				<div class="input"><input type="button"  class="btn btn-outline-secondary" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
 				<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-				<div class="input"><input type="button" class="button_opt prtText" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<div class="input"><input type="button" class="btn btn-outline-secondary" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			</div>
-			<div class="der" style="padding-right: 30px;">
-			<div class="input"><input  class="button_opt prtText create-user btn_download" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+			
+			
+			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 			<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
+			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="button_opt prtText" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
+			<div class="input"><input  class="btn btn-outline-secondary" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> 
-			</div>
+			
 		</form>
 	</div>
 	
