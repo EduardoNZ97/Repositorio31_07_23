@@ -1216,9 +1216,9 @@ else
 			<div class="bitacora-datos">
 				<h2><strong data-i18n="filtros.tituloBitacoras">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/>
 				<ul class="lista">
-					<li class="go"><img src="imagenes2/negro.png" alt="PAEBSA"  class="imagenNegro"/><label data-i18n="bitacora.noConsultado">Archivo no consultado</label></li>
-					<li class="go"><img src="imagenes2/azul.png" alt="PAEBSA" class="imagenAzul"/><label data-i18n="bitacora.consultado">Archivo consultado</label></li>
-					<li class="go"><img src="imagenes2/rojo.png" alt="PAEBSA" class="imagenRojo"/><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n</label></li>   
+					<li class="go"><label data-i18n="bitacora.noConsultado">Archivo no consultado</label></li>
+					<li class="go"><label data-i18n="bitacora.consultado">Archivo consultado</label></li>
+					<li class="go"><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n</label></li>   
 					<li class="go"><label data-i18n="bitacora.sinInformacion.pagina">P&aacute;gina actual: 0</label></li>
 					<li class="go"><label data-i18n="bitacora.sinInformacion.registros">Registros por página: 0</label></li>
 					<li class="go"><label data-i18n="bitacora.sinInformacion.cantidad">Cantidad de páginas: 0</label></li>
@@ -1797,9 +1797,9 @@ else
     <div class="col-4">
   	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 			<ul>
-				<li class="go"><img src="imagenes2/negro.png" alt="PAEBSA"  /><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
-				<li class="go"><img src="imagenes2/azul.png" alt="PAEBSA" /><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
-				<li class="go"><img src="imagenes2/rojo.png" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
+				<li class="go"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
+				<li class="go"><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
+				<li class="go"><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
 				<li class="go"><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
 				<li class="go"><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
 				<li class="go"><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
