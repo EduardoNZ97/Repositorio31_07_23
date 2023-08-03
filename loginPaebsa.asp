@@ -2126,38 +2126,38 @@ else
 </div>
  
 	<div class="container_12 divider">
-		<div class="info_options">
+		<div class="">
 		<h2 class="text-center" data-i18n="funcionalidad.titulo"> Informaci&oacute;n  Recibida </h2>
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
-		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion">
+		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion"><br/>
 			
-				<div class="input"><input type="button"  class="btn btn-outline-secondary" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+				<div class="input"><input type="button"  class="btn btn-outline-dark" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
 				<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-				<div class="input"><input type="button" class="btn btn-outline-secondary" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<div class="input"><input type="button" class="btn btn-outline-dark" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 			
 			
-			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+			<div class="input"><input  class="btn btn-outline-dark" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 			<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
+			<div class="input"><input  class="btn btn-outline-dark" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="btn btn-outline-secondary" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
+			<div class="input"><input  class="btn btn-outline-dark" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> 
 			
-		</form>
+		</form><br/>
 	</div>
 	
-		<div class="grid_8 height250" id="gridData">
+		<div class="" id="gridData">
 			<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="tinytable">
 				<thead>
 					<tr>
-						<th class="nosort"></th>
-						<th class="sizeTittle"><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
+						<th class=""></th>
+						<th class=""><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
 						Response.Write matriz(i) 
 						next%>)"/></th>
 						<th><h3 data-i18n="grid.nombre">Nombre cadena</h3></th>
@@ -2172,7 +2172,7 @@ else
 						<th><h3 data-i18n="grid.estado">Estado</h3></th>
                         <th><h3 data-i18n="grid.codigoTienda">C&oacute;digo tienda </h3></th>
                         <th><h3 data-i18n="grid.descripcion">Descripci&oacute;n del proceso </h3></th>
-                        <th><h3 data-i18n="grid.descargar" class="sizeTittle40">Descargar</h3></th>
+                        <th><h3 data-i18n="grid.descargar">Descargar</h3></th>
 					</tr>
 				</thead>
 				<% 
@@ -2236,11 +2236,11 @@ else
 				<tbody>
 					<tr class="<%=color%>" id="<%=fila%>" >
 					<td><%= contador%></td>
-					<td class="columnas-caja"><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></td>
-					<td><%= rs("Nombre_Hub")%></td>
-					<td><%= rs("Numero_Proveedor_Hub")%></td>
-					<td><%= rs("Codigo_Transaccion")%></td>
-					<td class="size100 wrap"><%= rs("Num_control_dato_docto")%></td>
+					<td><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></td>
+					<td><small><small><%= rs("Nombre_Hub")%></small></small></td>
+					<td><small><small><%= rs("Numero_Proveedor_Hub")%></small></small></td>
+					<td><small><small><%= rs("Codigo_Transaccion")%></small></small></td>
+					<td><small><small><%= rs("Num_control_dato_docto")%></small></small></td>
 					<td><% 
 						if  (Trim(rs("Fecha_Consulta_Cliente")) = "" or isNull (rs("Fecha_Consulta_Cliente"))) AND (Trim(rs("Hora_Consulta_Cliente")) = "" or isNull (rs("Hora_Consulta_Cliente"))) then
 							response.Write("-")
@@ -2278,10 +2278,10 @@ else
 						end if
 						%>
 					</td>
-					<td class="size80 wrap">
-                        <%= rs("Codigo_Tienda")%>
+					<td><h6>
+                        <%= rs("Codigo_Tienda")%></h6>
 					</td>
-                    <td class="size overflow">
+                    <td class="">
                         <%=Trim(rs("Descripcion_Error")) %>
                     </td>
 					<td>
