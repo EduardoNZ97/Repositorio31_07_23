@@ -2131,22 +2131,22 @@ else
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion">
 			
-				<div class="input"><input type="button"  class="btn btn-outline-secondary" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+				<div class="input"><input type="button"  class="btn btn-outline btn-lg" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
 				<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-				<div class="input"><input type="button" class="btn btn-outline-secondary" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<div class="input"><input type="button" class="btn btn-outline btn-lg" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 			
 			
-			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+			<div class="input"><input  class="btn btn-outline btn-lg" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 			<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="btn btn-outline-secondary" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
+			<div class="input"><input  class="btn btn-outline btn-lg" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="btn btn-outline-secondary" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
+			<div class="input"><input  class="btn btn-outline btn-lg" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> 
 			
 		</form>
@@ -2233,11 +2233,11 @@ else
 							end if
 						end if
 				%>
-				<tbody>
-					<tr class="<%=color%>" id="<%=fila%>" >
-					<td><%= contador%></td>
-					<td class="columnas-caja"><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></td>
-					<td><%= rs("Nombre_Hub")%></td>
+				<tbody class="fs-6">
+					<tr>
+					<td class="fs-6"><small><%= contador%></small></td>
+					<td><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></td>
+					<td class="fs-6"><small><%= rs("Nombre_Hub")%></small></td>
 					<td><%= rs("Numero_Proveedor_Hub")%></td>
 					<td><%= rs("Codigo_Transaccion")%></td>
 					<td class="size100 wrap"><%= rs("Num_control_dato_docto")%></td>
