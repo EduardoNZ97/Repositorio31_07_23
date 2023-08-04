@@ -1036,14 +1036,14 @@ else
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administr su cuenta</a>
             <ul class="dropdown-menu">
 			  <li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios </a></li>
-              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">Cambiar contraseña</a></li>
-              <li><a class="dropdown-item" href="#">Historial de usuario</a></li>
+              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">&raquo;Cambiar contraseña</a></li>
+              <li><a class="dropdown-item" id="modal" onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial" href="#">&raquo;Historial de usuario</a></li>
             </ul>
           </li>      
 		<li>
