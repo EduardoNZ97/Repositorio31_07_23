@@ -1010,22 +1010,18 @@ else
 
 
 <div style="background-color: #557e8f;">
-	<div> 
 	<!--boostrap-->
-		<div>   		
-			 <div class="rounded float-end" ><img src="imagenes/servicioConsulta_1.png" alt="PAEBSA"/></div>	
-			 <!--servicioConsulta.png-->
-			<div class="text-center"><h2 data-i18n="sistema.titulo"><strong>Servicio de Buró Electrónico "Proveedores"</strong></h2></div>  
-			<div>
-				<div style="color:#FAFAFA;"><strong data-i18n="sistema.user">Bienvenido: </strong><label id="nombreUser"><%=Nombre%></label>
-					<br/><strong data-i18n="sistema.buzon">Usuario/Buz&oacute;n: </strong><label id="buzon"><%=user%></label>
-					<br /><strong data-i18n="sistema.encabezado">Informaci&oacuten recibida </strong>
-					<br /><strong><label data-i18n="sistema.fecha"></label><label id="today"><script type="text/javascript">fechaactualPantalla();</script> </strong>
-				</div>
-			</div>
-		</div>	
-	</div>
-</div>
+	 <div class="float-end" ><img src="imagenes/servicioConsulta_1.png" alt="PAEBSA"/></div>	
+		  		<div class="text-center"><h1 style="color:#000080" data-i18n="sistema.titulo"><strong>Servicio de Buró Electrónico "Proveedores"</strong></h1></div>  
+			
+    <li class="nav-item" style="color:#000080">
+        <a class="nav-link dropdown-toggle" style="background-color: #557e8f;" data-bs-toggle="dropdown" role="button" aria-expanded="false"><%=Nombre%></a>
+        <ul class="dropdown-menu">
+		<img src="../imagenes/proveedor.png" class="rounded mx-auto d-block" alt="PAEBSA - Usuario"/>
+        <li><i class="text-center"><%=Nombre%></i></li>
+        <li><p class="text-center"><%=user%></p></li>
+    </ul>
+  </li>
 
 
 
@@ -1053,12 +1049,12 @@ else
 		<li>
 		<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
 		</li>
-
-
         </ul>
-     
       </div>
     </div>
+
+	</div><!--fin del contenido menu superior-->	
+
   </nav>
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
