@@ -1025,7 +1025,7 @@ else
 
 
 
-
+<!--Menú Superior-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1046,9 +1046,22 @@ else
               <li><a class="dropdown-item" id="modal" onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial" href="#">&raquo;Historial de usuario</a></li>
             </ul>
           </li>      
-		<li>
-		<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
-		</li>
+		  <li>
+			<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
+		  </li>
+
+
+		  <li class="nav-item dropdown" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" title="" href="#">Usuarios Colgate</a>
+            <ul class="dropdown-menu">
+				<!-- Inicia Link SemiEdi-->	
+				<%
+								
+					Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+				%>
+				<!-- Termina Link SemiEdi-->	
+
+            </ul>
+           </li>   
         </ul>
       </div>
     </div>
