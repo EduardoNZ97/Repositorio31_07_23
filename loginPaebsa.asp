@@ -1370,7 +1370,7 @@ else
 	 
 						<!-- Menu Colgate -->
 						<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
-							<ul>
+							<ul style="color:black">
 								<!-- Inicia Link SemiEdi-->	
 								<%
 									Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
