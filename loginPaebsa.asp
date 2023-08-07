@@ -1370,7 +1370,7 @@ else
 	 
 						<!-- Menu Colgate -->
 						<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
-							<ul style="color:black">
+							<ul>
 								<!-- Inicia Link SemiEdi-->	
 								<%
 									Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
@@ -1846,9 +1846,10 @@ else
 				    <div class="col-4">
 			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 						<ul>
-							<li style="color: cornflowerblue;"><img  src="bootstrap-5.2.3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="32" height="32"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
-							<li style="2rem; color: cornflowerblue;"><i class="bi bi-exclamation-triangle-fill"></i><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
+							<li style="color: cornflowerblue;"><img  src="bootstrap-5.2.3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
+				
+                            <li class="bi bi-exclamation-triangle-fill"><img src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
+							<li style="2rem; color: cornflowerblue;"><img src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
 							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
 							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
 							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
