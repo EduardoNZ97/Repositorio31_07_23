@@ -1555,7 +1555,7 @@ else
 
 
 			
-			<div class="grid_8 height250">
+			<div class="">
 				<!-- Principia la tabla vacia-->
 				<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="">
 					<thead>
@@ -2160,33 +2160,33 @@ else
 	<div>
 		<div>
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
-		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion"><br/>
+		<form action="ficheroExcel.php" method="post" class="d-grid gap-2 d-md-flex justify-content-md-end"><br/>
 			
-				<div class=""><input type="button"  class="btn btn-outline text-wrap" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+				<div><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
-				<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-				<div class=""><input type="button" class="btn btn-outline text-wrap" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<!--<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
+				<div class=""><input type="button" class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
-				<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
+				<!--<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
 			
 			
-			<div class=""><input  class="btn btn-outline text-wrap" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
-			<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info"/></a>
-			<div class=""><input  class="btn btn-outline text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
-			<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class=""><input  class="btn btn-outline text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
-			<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> 
+			<div class=""><input  class="btn btn-light border-primary btn-sm text-wrap" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+			<!--<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info"/></a>-->
+			<div class=""><input  class="btn btn-light border-primary text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
+			<!--<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
+			<div class=""><input  class="btn btn-light border-primary text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
+			<!--<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> -->
 			
 		</form>
 	</div> <br/>
 	
 		<div id="gridData">
-			<table id="myTable02" class="">
-				<thead>	
-				        <th backgroundColor=""></th>										
+			<table id="" class="table table-bordered text-center " >
+				<thead style="background-color: #3c8dbc;">	
+				        <th></th>										
 						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
 						Response.Write matriz(i) 
 						next%>)"/></th>
@@ -2263,7 +2263,7 @@ else
 							end if
 						end if
 				%>
-				<tbody  class="">
+				<tbody  class=" table-success">
 					<tr>
 					<td><small><small><%= contador%></small></small></td>
 					<td><small><small><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></small></small></td>
