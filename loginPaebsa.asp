@@ -1084,7 +1084,22 @@ else
 				<!-- Modulo_Nestle_Casa_Ley -->
             </ul>
         </li>  
+		
+				
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga de productos Excel</a>
+            <ul class="dropdown-menu">
+			    
+				<!--Carga de productos Excel-->
+				<li>
+					<%
+						Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
+					%>
+				</li>
 
+				<!-- Modulo_Nestle_Casa_Ley -->
+            </ul>
+        </li> 
 
 
 
@@ -2047,11 +2062,11 @@ else
                     <!-- Link de facturas express -->	
 							
 					<!-- Modulo_Nestle_Casa_Ley -->
-					<li>
+					<!--<li>-->
 					<%
-						Call Modulo_Nestle_Casa_Ley(user, pass, Nombre, lg)
+						'Call Modulo_Nestle_Casa_Ley(user, pass, Nombre, lg)
 					%>	
-					</li>	
+					<!--</li>	-->
 					<!-- Modulo_Nestle_Casa_Ley -->
 	
 					<!-- Modulo_ARS_Nestle -->
