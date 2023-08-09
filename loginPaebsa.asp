@@ -1022,7 +1022,7 @@ else
   </li>
 </div>
 
-
+    <!--Inicia Ménu-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1056,7 +1056,27 @@ else
 				<!-- Termina Link SemiEdi-->	
 
             </ul>
-           </li>   
+         </li> 
+
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Pedido Sugerido al cliente</a>
+            <ul class="dropdown-menu">
+				<!-- Modulo_ARS_Nestle -->
+				<li>
+				<%
+					Call Modulo_ARS_Nestle(user, pass, Nombre, lg,"SPOKE")
+				%>	
+				</li>	
+				<!-- Modulo_ARS_Nestle --> 
+            </ul>
+          </li>   
+
+
+
+
+
+
+
         </ul>
       </div>
     </div>
@@ -1342,16 +1362,17 @@ else
 						<!--<li><a href="#" onClick="openNoSpots('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaNoSpots">&raquo;Carga de NO SPOTS</a></li>-->
 						
 						<li class="has-sub">
-						<a href="#" data-i18n="menu.administrarCuenta.titulo">&raquo;Administre su cuenta</a>
+						
+						<!--<a href="#" data-i18n="menu.administrarCuenta.titulo">&raquo;Administre su cuenta</a>
 							<ul>
 								<li><a href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios</a></li>
-								<!--Sistema viejo de contraseñas-->
+								<!--Sistema viejo de contraseñas
 								<li><a href="CambioPassword.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
-								<!--Sistema nuevo de contraseñas>>>Quitar comentario y comentar línea de arriba-->
-								<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>-->
+								<!--Sistema nuevo de contraseñas>>>Quitar comentario y comentar línea de arriba
+								<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
 								<li><a href="#" id="modal"  onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial">&raquo;Historial de usuarios</a></li>
 							</ul>
-						</li>
+						</li>-->
 						
 						
 						
@@ -1364,15 +1385,15 @@ else
 						<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 	 
 						<!-- Menu Colgate -->
-						<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
-							<ul>
+						<!--<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
+							<ul>-->
 								<!-- Inicia Link SemiEdi-->	
 								<%
 									Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
 								%>
 								<!-- Termina Link SemiEdi-->						 
-							 </ul>
-						</li>
+							 <!--</ul>
+						</li>-->
 						<!-- Menu Colgate -->
 						<!-- Link de SemiEdiColgate-->
 						<!-- Link de Facturas express -->		
@@ -1394,12 +1415,13 @@ else
 						%>	
 						</li>	
 						<!-- Modulo_Nestle_Casa_Ley -->
+						
 						<!-- Modulo_ARS_Nestle -->
-						<li>
+						<!--<li>-->
 						<%
-							Call Modulo_ARS_Nestle(user, pass, Nombre, lg, "SPOKE")
+							'Call Modulo_ARS_Nestle(user, pass, Nombre, lg, "SPOKE")
 						%>	
-						</li>	
+						<!--</li>-->	
 						<!-- Modulo_ARS_Nestle -->
 						
 					
@@ -1970,17 +1992,17 @@ else
 					
 					<!--<li><a href="#" onClick="openNoSpots('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaNoSpots">&raquo;Carga de NO SPOTS</a></li>-->
 					
-					<li class="has-sub"><a href="#" data-i18n="[html]menu.administrarCuenta.titulo"> &raquo;Administre su cuenta</a>
+					<!--<li class="has-sub"><a href="#" data-i18n="[html]menu.administrarCuenta.titulo"> &raquo;Administre su cuenta</a>
 						<ul>
 							<li><a href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios"> &raquo;Administre sus usuarios </a><br /></li>
-							<!-- Sistema contraseñas viejo -->	
+							<!-- Sistema contraseñas viejo	
 							<li><a href="CambioPassword.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
-							<!-- Sistema nuevo de contraseñas>>> Quitar comentario y comentar línea de arriba -->	
-							<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.contrasena">  &raquo;Cambiar contraseña</a><br /></li>-->
+							<!-- Sistema nuevo de contraseñas>>> Quitar comentario y comentar línea de arriba
+							<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.contrasena">  &raquo;Cambiar contraseña</a><br /></li>
 							<li><a href="#" id="modal"  onclick="ventanaHistorial();" data-i18n="[html]menu.administrarCuenta.historial">  &raquo;Historial de usuarios</a></li>
-							<!-- Historial de usuarios -->	
+							<!-- Historial de usuarios 
 						</ul>
-					</li>
+					</li>-->
 					<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.general"> &raquo;Consulta general </a><br /></li>
 					<li><a onclick="most()" href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]menu.enviada"> &raquo;Informaci&oacuten enviada a clientes</a></li>
 					
@@ -1991,16 +2013,16 @@ else
 					 	<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
                     <!-- Menu Colgate -->
-					<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
-						<ul>
+					<!--<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
+						<ul>-->
 							<!-- Inicia Link SemiEdi-->	
 							<%
 											
-                                Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+                               ' Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
 							%>
 							<!-- Termina Link SemiEdi-->						 
-						 </ul>
-					</li>
+						 <!--</ul>
+					</li>-->
 		            <!-- Menu Colgate -->
                     <!-- Link de SemiEdiColgate-->
 					<!-- Link de Facturas express -->		
@@ -2020,11 +2042,12 @@ else
 					<!-- Modulo_Nestle_Casa_Ley -->
 	
 					<!-- Modulo_ARS_Nestle -->
-					<li>
+					
+					<!--<li>
 					<%
-						Call Modulo_ARS_Nestle(user, pass, Nombre, lg,"SPOKE")
+						'Call Modulo_ARS_Nestle(user, pass, Nombre, lg,"SPOKE")
 					%>	
-					</li>	
+					</li>--	
 					<!-- Modulo_ARS_Nestle -->
 	
 	
