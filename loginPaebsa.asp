@@ -1047,6 +1047,7 @@ else
 		<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
 		</li>	  <li class="nav-item dropdown" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" title="" href="#">Usuarios Colgate</a>
             <ul class="dropdown-menu">
+			
 				<!-- Inicia Link SemiEdi-->	
 				<%
 								
