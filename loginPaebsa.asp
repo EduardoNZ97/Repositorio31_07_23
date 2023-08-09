@@ -2195,7 +2195,7 @@ else
 			<!--<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> -->
 			
 		</form>
-	</div> <br/>
+	</div class=""> <br/>
 	
 		<div id="gridData">
 			<table id="" class="table table-bordered text-center " >
@@ -2392,41 +2392,41 @@ else
 
 
  
-        <div id="">
-				<div id="">
-						<div class="">
+        <div class="">
+				<div class="align-items-center">
+						<div class="btn-group">
                             
 							<%
                             texto= value(texto)
                             texto2= value(texto2)
                             j=0
 							if cint(paginaabsoluta) <> 1 then
-								response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/first.png width=16 height=16 style=border:0 alt=First Page /></a></td>"
+								response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/first.png width=18 height=18 style=border:0 alt=First Page /></a></td>"
 							    j=j+1
 							end if
 							%>
 							<%j=0
 							if cint(paginaabsoluta) <> 1 then
 								atras=cint(paginaabsoluta)-1	
-								response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/previous.png width=16 height=16 style=border:0 alt=Previous Page  /></a></td>"
+								response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/previous.png width=18 height=18 style=border:0 alt=Previous Page  /></a></td>"
 							    j=j+1
 							end if
 							%>  
 							<%if cint(paginaabsoluta) <> rs.pagecount then
 								atras=cint(paginaabsoluta)+1
-                                response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/next.png width=16 height=16 style=border:0 alt=Next Page  /></a></td>"
+                                response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/next.png width=18 height=18 style=border:0 alt=Next Page  /></a></td>"
 							end if%>
 							<%j=0
 							if cint(paginaabsoluta) <> rs.pagecount then
 								atras=rs.pagecount
-								response.write"<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/last.png width=16 height=16 style=border:0 alt=Last Page /></a></td>"
+								response.write"<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/last.png width=18 height=18 style=border:0 alt=Last Page /></a></td>"
 							    j=j+1
 							end if
 							%>       
-							<label><span class="" data-i18n="grid.pagina">P&aacute;gina -</span></label>
+							<label><span class="">P&aacute;gina - </span></label>
 							<%
 							response.write "<form name=frmDireccionesASP1 id=frmDireccionesASP1 action=loginPaebsa.asp>"
-							response.write "<select style='width: 100%' size=1 name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >"	
+							response.write "<select class='btn btn-primary' style='width: 100%; height:90%' name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >"	
 							for i = 1 to rs.pagecount
 								j=j+1
 								if cint(i) = cint(paginaabsoluta) then
@@ -2438,29 +2438,31 @@ else
 								end if
 							next
 							end if
-							response.write "</select>"
-							response.write "</form>"
 							%>
+							</select>
+							</form>
+							
 						</div>
 				</div>
-			<div id="tablelocation">
-            	<div>
-					<%
-						response.write "<form name=frmDireccionesASP id=frmDireccionesASP action=loginPaebsa.asp>"
-						response.write "<select class='select-text select-opt' style='width: 100%;' size=1 name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >"
-						response.write "<option  selected=selected data-i18n='grid.seleccionar'> Seleccione</option>"
-						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=25&paginaabsoluta=1  >25</option>"
-						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=50&paginaabsoluta=1    >50</option>"
-						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=75&paginaabsoluta=1    >75</option>"
-						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=100&paginaabsoluta=1    >100</option>"
-						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=200&paginaabsoluta=1   >200</option>"		 
-						response.write "</select>"
-						response.write "</form>"
-					%>   
+			<div class="nav col-md-12 ">
+            	<div class="">
+					
+						<form name=frmDireccionesASP id=frmDireccionesASP action=loginPaebsa.asp>
+						<select class="btn btn-primary  text-wrap" style='width: 100%; height:20%;'  name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >
+						<option  selected=selected data-i18n='grid.seleccionar'> Seleccione</option>
+						<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=25&paginaabsoluta=1  >25</option>
+						<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=50&paginaabsoluta=1    >50</option>
+						<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=75&paginaabsoluta=1    >75</option>
+						<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=100&paginaabsoluta=1    >100</option>
+						<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=200&paginaabsoluta=1   >200</option>
+						</select>
+						</form>
+					 
                 </div>
                 <div class=""> <span class="" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
             </div>
         </div>
+
 		<div class=""></div>
 	</div>
 	<%
