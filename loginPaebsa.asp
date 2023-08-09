@@ -1022,7 +1022,7 @@ else
   </li>
 </div>
 
-
+    <!--Inicia Ménu-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1039,8 +1039,8 @@ else
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administr su cuenta</a>
             <ul class="dropdown-menu">
 			  <li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios </a></li>
-              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">Cambiar contraseña</a></li>
-              <li><a class="dropdown-item" href="#">Historial de usuario</a></li>
+              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">&raquo; Cambiar contraseña</a></li>
+              <li><a class="dropdown-item" href="#">&raquo; Historial de usuario</a></li>
             </ul>
           </li>      
 		<li>
@@ -1056,7 +1056,55 @@ else
 				<!-- Termina Link SemiEdi-->	
 
             </ul>
-           </li>   
+         </li> 
+
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Pedido Sugerido al cliente</a>
+            <ul class="dropdown-menu">
+				<!-- Modulo_ARS_Nestle -->
+				<li>
+				<%
+					Call Modulo_ARS_Nestle(user, pass, Nombre, lg,"SPOKE")
+				%>	
+				</li>	
+				<!-- Modulo_ARS_Nestle --> 
+            </ul>
+        </li>   
+		
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga Reporte de FoliosCasaLey</a>
+            <ul class="dropdown-menu">
+			    
+				<!-- Modulo_Nestle_Casa_Ley -->
+				<li>
+				<%
+					Call Modulo_Nestle_Casa_Ley(user, pass, Nombre, lg)
+				%>	
+				</li>	
+				<!-- Modulo_Nestle_Casa_Ley -->
+            </ul>
+        </li>  
+		
+				
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga de productos Excel</a>
+            <ul class="dropdown-menu">
+			    
+				<!--Carga de productos Excel-->
+				<li>
+					<%
+						Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
+					%>
+				</li>
+
+				<!-- Modulo_Nestle_Casa_Ley -->
+            </ul>
+        </li> 
+
+
+
+
+
         </ul>
       </div>
     </div>
@@ -1339,19 +1387,20 @@ else
 						<!-- Modulo_Envio_EDI_Clientes -->
 						
 						<li id="link_cargaInfo"><a href="#" onClick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaInformacion">&raquo;Carga de informaci&oacute;n</a></li>
-						<li><a href="#" onClick="openNoSpots('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaNoSpots">&raquo;Carga de NO SPOTS</a></li>
+						<!--<li><a href="#" onClick="openNoSpots('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaNoSpots">&raquo;Carga de NO SPOTS</a></li>-->
 						
 						<li class="has-sub">
-						<a href="#" data-i18n="menu.administrarCuenta.titulo">&raquo;Administre su cuenta</a>
+						
+						<!--<a href="#" data-i18n="menu.administrarCuenta.titulo">&raquo;Administre su cuenta</a>
 							<ul>
 								<li><a href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios</a></li>
-								<!--Sistema viejo de contraseñas-->
+								<!--Sistema viejo de contraseñas
 								<li><a href="CambioPassword.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
-								<!--Sistema nuevo de contraseñas>>>Quitar comentario y comentar línea de arriba-->
-								<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>-->
+								<!--Sistema nuevo de contraseñas>>>Quitar comentario y comentar línea de arriba
+								<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
 								<li><a href="#" id="modal"  onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial">&raquo;Historial de usuarios</a></li>
 							</ul>
-						</li>
+						</li>-->
 						
 						
 						
@@ -1364,15 +1413,15 @@ else
 						<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 	 
 						<!-- Menu Colgate -->
-						<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
-							<ul>
+						<!--<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
+							<ul>-->
 								<!-- Inicia Link SemiEdi-->	
 								<%
 									Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
 								%>
 								<!-- Termina Link SemiEdi-->						 
-							 </ul>
-						</li>
+							 <!--</ul>
+						</li>-->
 						<!-- Menu Colgate -->
 						<!-- Link de SemiEdiColgate-->
 						<!-- Link de Facturas express -->		
@@ -1388,18 +1437,19 @@ else
 						<!-- Link de facturas express -->
 
 						<!-- Modulo_Nestle_Casa_Ley -->
-						<li>
+						<!--<li>-->
 						<%
-							Call Modulo_Nestle_Casa_Ley(user,pass,Nombre, lg)
+							'Call Modulo_Nestle_Casa_Ley(user,pass,Nombre, lg)
 						%>	
-						</li>	
+						<!--</li>	-->
 						<!-- Modulo_Nestle_Casa_Ley -->
+						
 						<!-- Modulo_ARS_Nestle -->
-						<li>
+						<!--<li>-->
 						<%
-							Call Modulo_ARS_Nestle(user, pass, Nombre, lg, "SPOKE")
+							'Call Modulo_ARS_Nestle(user, pass, Nombre, lg, "SPOKE")
 						%>	
-						</li>	
+						<!--</li>-->	
 						<!-- Modulo_ARS_Nestle -->
 						
 					
@@ -1736,7 +1786,7 @@ else
 								<div class="row">
 
 									<div class="col-3">
-										<select  name="seleccione" class="form-control form-control-sm" tyle="width: 100px;" aria-label="Default select example" id="seleccione">
+										<select  name="seleccione" class="form-control form-control-sm" tyle="width: 100px;" aria-label="Default select example" id="seleccione" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione una opción.">
 											<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1744,17 +1794,16 @@ else
 											<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
 											<option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
 											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-										</select>
+										</select><!--<a title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>-->	 
 									</div>
 
 									<div class="col-3">
-										<a title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>	 
-										<input    name="texto" type="text"  id="texto" class="form-control  p-1"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura"/>
-										<a 	 title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>		
+										<input    name="texto" type="text"  id="texto" class="form-control  p-1"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura" data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
+										<!--<a 	 title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>		-->
 									</div>
 							
 									<div class="col-3">			
-										<select  name="seleccione2" class="form-control form-control-sm" aria-label="Default select example"  id="seleccione2">
+										<select  name="seleccione2" class="form-control form-control-sm" aria-label="Default select example"  id="seleccione2" data-bs-toggle="tooltip" data-bs-placement="top" title="Este es un campo opcional para agregar otro valor de búsqueda.">
 										<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
 										<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 										<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1762,12 +1811,12 @@ else
 										<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
 										<option value="Status"  data-i18n="filtros.seleccione.estado">Estado</option>
 										<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-										</select><a  title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"></a>	
+										</select><!--<a  title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"></a>	-->
 									</div>
 
 									<div class="col-3">
-										<input   name="texto2" class="form-control form-control-sm" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"/>
-										<a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"></a>
+										<input   name="texto2" class="form-control form-control-sm" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
+										<!--<a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"></a>-->
 									</div>
 
 							
@@ -1777,7 +1826,7 @@ else
 								<div class="row">
 
 									<div class="col-3">
-										<select name="orden" class="form-control form-control-sm" aria-label="Default select example"  id="orden">
+										<select name="orden" class="form-control form-control-sm" aria-label="Default select example"  id="orden" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione el orden.">
 											<option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1786,42 +1835,41 @@ else
 											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
 											<option value="Fecha_Envio_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
 											<option value="Fecha_Canc_Documento_Edi"  data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacute;ndocumento</option>
-										</select><a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"></a>				
+										</select><!--<a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"></a>-->
 									</div>
 
 									<div class="col-3">
-										<select name="alf" class="form-control form-control-sm" aria-label="Default select example" id="alf">
+										<select name="alf" class="form-control form-control-sm" aria-label="Default select example" id="alf" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione orden.">
 											<option value="desc" data-i18n="filtros.ordenar.descendente">Orden descendente</option>
 											<option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
 										</select>
 									</div>
 									<div class="col-3">
-										<select name="tipofecha" class="form-control form-control-sm" aria-label="Default select example"  id="tipofecha">
+										<select name="tipofecha" class="form-control form-control-sm" aria-label="Default select example"  id="tipofecha" data-bs-toggle="tooltip" data-bs-placement="top" title="Fecha documento.">
 											<option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
 											<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
 											<option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
 										</select>				
 									</div>
 									<div class="col-3">
-										<select  name="tamanopagina" class="form-control form-control-sm" aria-label="Default select example" id="tamanopagina">
+										<select  name="tamanopagina" class="form-control form-control-sm" aria-label="Default select example" id="tamanopagina" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es el númemero de registros a visualizar por página (25 por default).">
 											<option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
 											<option value="25">25</option>
 											<option value="50">50</option>
 											<option value="75">75</option>
 											<option value="100">100</option>
 											<option value="200">200</option>
-										</select><a  title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 
+										</select><!--<a  title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 -->
 									</div>
 								</div>
                              
 
 								<div class="row">
 									<div class="col-2">
-										<input   placeholder="Fecha inicial" class="form-control"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial"/>			
+										<input   placeholder="Fecha inicial" class="form-control"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial" data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>			
 									</div>
 									<div class="col-2">
-										<input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"/>
-										<a  title="[!]Rango de Fechas[/!]Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha." data-i18n="[title]filtros.fecha.info"></a>
+										<input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"  data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>
 									</div>
 								
 									<div class="col-2">
@@ -1970,19 +2018,19 @@ else
 					
 					<li id="link_cargaInfo"><a href="#" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a></li>
 					
-					<li><a href="#" onClick="openNoSpots('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaNoSpots">&raquo;Carga de NO SPOTS</a></li>
+					<!--<li><a href="#" onClick="openNoSpots('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaNoSpots">&raquo;Carga de NO SPOTS</a></li>-->
 					
-					<li class="has-sub"><a href="#" data-i18n="[html]menu.administrarCuenta.titulo"> &raquo;Administre su cuenta</a>
+					<!--<li class="has-sub"><a href="#" data-i18n="[html]menu.administrarCuenta.titulo"> &raquo;Administre su cuenta</a>
 						<ul>
 							<li><a href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios"> &raquo;Administre sus usuarios </a><br /></li>
-							<!-- Sistema contraseñas viejo -->	
+							<!-- Sistema contraseñas viejo	
 							<li><a href="CambioPassword.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
-							<!-- Sistema nuevo de contraseñas>>> Quitar comentario y comentar línea de arriba -->	
-							<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.contrasena">  &raquo;Cambiar contraseña</a><br /></li>-->
+							<!-- Sistema nuevo de contraseñas>>> Quitar comentario y comentar línea de arriba
+							<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.contrasena">  &raquo;Cambiar contraseña</a><br /></li>
 							<li><a href="#" id="modal"  onclick="ventanaHistorial();" data-i18n="[html]menu.administrarCuenta.historial">  &raquo;Historial de usuarios</a></li>
-							<!-- Historial de usuarios -->	
+							<!-- Historial de usuarios 
 						</ul>
-					</li>
+					</li>-->
 					<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.general"> &raquo;Consulta general </a><br /></li>
 					<li><a onclick="most()" href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]menu.enviada"> &raquo;Informaci&oacuten enviada a clientes</a></li>
 					
@@ -1993,16 +2041,16 @@ else
 					 	<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
                     <!-- Menu Colgate -->
-					<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
-						<ul>
+					<!--<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
+						<ul>-->
 							<!-- Inicia Link SemiEdi-->	
 							<%
 											
-                                Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+                               ' Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
 							%>
 							<!-- Termina Link SemiEdi-->						 
-						 </ul>
-					</li>
+						 <!--</ul>
+					</li>-->
 		            <!-- Menu Colgate -->
                     <!-- Link de SemiEdiColgate-->
 					<!-- Link de Facturas express -->		
@@ -2014,19 +2062,20 @@ else
                     <!-- Link de facturas express -->	
 							
 					<!-- Modulo_Nestle_Casa_Ley -->
-					<li>
+					<!--<li>-->
 					<%
-						Call Modulo_Nestle_Casa_Ley(user, pass, Nombre, lg)
+						'Call Modulo_Nestle_Casa_Ley(user, pass, Nombre, lg)
 					%>	
-					</li>	
+					<!--</li>	-->
 					<!-- Modulo_Nestle_Casa_Ley -->
 	
 					<!-- Modulo_ARS_Nestle -->
-					<li>
+					
+					<!--<li>
 					<%
-						Call Modulo_ARS_Nestle(user, pass, Nombre, lg,"SPOKE")
+						'Call Modulo_ARS_Nestle(user, pass, Nombre, lg,"SPOKE")
 					%>	
-					</li>	
+					</li>--	
 					<!-- Modulo_ARS_Nestle -->
 	
 	
