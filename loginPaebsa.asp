@@ -1013,15 +1013,30 @@ else
 	<!--boostrap-->		
     <li style="color:#000080">
 	<i  class="h2 text-start" style="color:white; margin-left:10px" >Servicio de Buró Electrónico Proveedores</i>
-	  <a class="nav-link dropdown-toggle float-end text-white" style="background-color: #3c8dbc; margin-right:10px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" width="35px" height="35px" alt="PAEBSA"/><%=Nombre%></a>
+	
+	  <span class="dropdown-toggle float-end text-white" style="background-color: #3c8dbc; margin-right:10px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png"  width="35px" height="35px" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;</span>
+	  
+	  <span class="float-end" style="color: white; margin-top:8px;margin-right:10px" id="TimeLeft"></span>
+			        <script  type="text/javascript" language="javascript"> 
+				        showTimer();
+			        </script>
+	  <label class="float-end" style="color: white; margin-top:8px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
+	  <svg xmlns="http://www.w3.org/2000/svg" class="float-end"  style="color: white; margin-top:12px;margin-right:5px " width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+  <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
+</svg>
         <ul class="dropdown-menu">
-		 <img src="../imagenes/proveedor.png" class="rounded-circle mx-auto d-block" width="100px" height="100px" alt="PAEBSA - Usuario"/><br/>
-         <li><i class="text-center"><%=Nombre%></i></li>
-         <li><p class="text-center"><%=user%></p></li>
+		 <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto d-block" width="100px" height="100px" alt="PAEBSA - Usuario"/><br/></li>
+         <li style="background-color:#e3f2fd;"><i class="text-center"><%=Nombre%></i></li>
+         <li style="background-color: #e3f2fd;"><p class="text-center"><%=user%></p></li>
 		 <li class=" d-grid d-md-flex justify-content-md-end"><button id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary">Cerrar sesion</button>&nbsp;&nbsp;</li>
        </ul>
   </li>
 </div>
+
+ 
+		        
+	        
+			
 
     <!--Inicia Ménu-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
@@ -1120,8 +1135,8 @@ else
         <div class="links">
 		
             <div class="session">
-		        <div id="msgSesion" style="color:#B40431;">
-			        <label data-i18n="sistema.sesion"> Su sesi&oacute;n expira en: </label><span id="TimeLeft"></span>
+		        <div id="msgSesion">
+			       
 			        <script type="text/javascript" language="javascript"> 
 				        showTimer();
 			        </script>
