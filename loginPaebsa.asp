@@ -1033,7 +1033,7 @@ else
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
+         
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administr su cuenta</a>
@@ -1045,7 +1045,18 @@ else
           </li>      
 		<li>
 		<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
-		</li>
+		</li>	  <li class="nav-item dropdown" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" title="" href="#">Usuarios Colgate</a>
+            <ul class="dropdown-menu">
+			
+				<!-- Inicia Link SemiEdi-->	
+				<%
+								
+					Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+				%>
+				<!-- Termina Link SemiEdi-->	
+
+            </ul>
+           </li>   
         </ul>
       </div>
     </div>
@@ -1814,15 +1825,15 @@ else
 									</div>
 								
 									<div class="col-2">
-										<input type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
-									    <div><input class="button_opt prtText" name="Submit" class="form-control"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
+										<input  type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
+										<div><button type="submit" name="Submit" class="btn btn-primary prtText" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button></div>
+									    <!--<div><input    id="btnBuscar"/></div>-->
 									</div>
 									<div class="col-2">
-										<div ><input class="button_opt prtText" class="form-control" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
+										<!--<div ><input class="button_opt prtText" class="form-control" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>-->
+										<div><button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-primary prtText"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
 									</div>
-
 	                             </div>
-
 							</div>	
 					   </form>
 				    </div>
@@ -1830,15 +1841,18 @@ else
 				    <div class="col-4">
 			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 						<ul>
-							<li><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
-							<li><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
-							<li><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
-							<li><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
-							<li><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
-							<li><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
-							<li><label data-i18n="bitacora.conInformacion.totales">Registros totales:</label> <%= rs.RecordCount %></li>
-							<li><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
-							<li><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
+
+							<li style="color: cornflowerblue;"><img  src="bootstrap-5.2.3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
+				
+                            <li class="bi bi-exclamation-triangle-fill"><img src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
+							<li style="2rem; color: cornflowerblue;"><img src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
+							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
+							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
+							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
+							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.totales">Registros totales:</label> <%= rs.RecordCount %></li>
+							<li style="2rem; color: cornflowerblue;"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
+							<li style="2rem; color: cornflowerblue;"><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
+
 						</ul>
 					</div>
 
