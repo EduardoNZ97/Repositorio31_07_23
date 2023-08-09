@@ -1069,8 +1069,21 @@ else
 				</li>	
 				<!-- Modulo_ARS_Nestle --> 
             </ul>
-          </li>   
-
+        </li>   
+		
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga Reporte de FoliosCasaLey</a>
+            <ul class="dropdown-menu">
+			    
+				<!-- Modulo_Nestle_Casa_Ley -->
+				<li>
+				<%
+					Call Modulo_Nestle_Casa_Ley(user, pass, Nombre, lg)
+				%>	
+				</li>	
+				<!-- Modulo_Nestle_Casa_Ley -->
+            </ul>
+        </li>  
 
 
 
