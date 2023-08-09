@@ -295,8 +295,8 @@ else
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
 	
-    <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />
-    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
+     <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->
 	
     <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
     <script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
@@ -1009,23 +1009,20 @@ else
 <body> 
 
 
-<div style="background-color: #557e8f;">
-	<!--boostrap-->
-	 <div class="float-end" ><img src="imagenes/servicioConsulta_1.png" alt="PAEBSA"/></div>	
-		  		<div class="text-center"><h1 style="color:#000080" data-i18n="sistema.titulo"><strong>Servicio de Buró Electrónico "Proveedores"</strong></h1></div>  
-			
-    <li class="nav-item" style="color:#000080">
-        <a class="nav-link dropdown-toggle" style="background-color: #557e8f;" data-bs-toggle="dropdown" role="button" aria-expanded="false"><%=Nombre%></a>
+<div class="col-md-12" style="background-color: #3c8dbc;">
+	<!--boostrap-->		
+    <li style="color:#000080">
+	<i  class="h2 text-start" style="color:white; margin-left:10px" >Servicio de Buró Electrónico Proveedores</i>
+	  <a class="nav-link dropdown-toggle float-end text-white" style="background-color: #3c8dbc; margin-right:10px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" width="35px" height="35px" alt="PAEBSA"/><%=Nombre%></a>
         <ul class="dropdown-menu">
-		<img src="../imagenes/proveedor.png" class="rounded mx-auto d-block" alt="PAEBSA - Usuario"/>
-        <li><i class="text-center"><%=Nombre%></i></li>
-        <li><p class="text-center"><%=user%></p></li>
-    </ul>
+		 <img src="../imagenes/proveedor.png" class="rounded-circle mx-auto d-block" width="100px" height="100px" alt="PAEBSA - Usuario"/><br/>
+         <li><i class="text-center"><%=Nombre%></i></li>
+         <li><p class="text-center"><%=user%></p></li>
+       </ul>
   </li>
+</div>
 
 
-
-<!--Menú Superior-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1036,32 +1033,19 @@ else
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav me-auto">
           <li class="nav-item">
-
+            <a class="nav-link" href="#">Link</a>
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administr su cuenta</a>
             <ul class="dropdown-menu">
 			  <li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios </a></li>
-              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">&raquo;Cambiar contraseña</a></li>
-              <li><a class="dropdown-item" id="modal" onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial" href="#">&raquo;Historial de usuario</a></li>
+              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">Cambiar contraseña</a></li>
+              <li><a class="dropdown-item" href="#">Historial de usuario</a></li>
             </ul>
           </li>      
-		  <li>
-			<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
-		  </li>
-
-
-		  <li class="nav-item dropdown" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" title="" href="#">Usuarios Colgate</a>
-            <ul class="dropdown-menu">
-				<!-- Inicia Link SemiEdi-->	
-				<%
-								
-					Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
-				%>
-				<!-- Termina Link SemiEdi-->	
-
-            </ul>
-           </li>   
+		<li>
+		<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
+		</li>
         </ul>
       </div>
     </div>
@@ -1573,7 +1557,7 @@ else
 			
 			<div class="grid_8 height250">
 				<!-- Principia la tabla vacia-->
-				<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="tinytable">
+				<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="">
 					<thead>
 						<tr>
 							<th class="nosort"></th>
@@ -1846,6 +1830,7 @@ else
 				    <div class="col-4">
 			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 						<ul>
+<<<<<<< HEAD
 							<li style="color: cornflowerblue;"><img  src="bootstrap-5.2.3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
 				
                             <li class="bi bi-exclamation-triangle-fill"><img src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
@@ -1856,6 +1841,17 @@ else
 							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.totales">Registros totales:</label> <%= rs.RecordCount %></li>
 							<li style="2rem; color: cornflowerblue;"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
 							<li style="2rem; color: cornflowerblue;"><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
+=======
+							<li><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
+							<li><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
+							<li><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
+							<li><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
+							<li><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
+							<li><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
+							<li><label data-i18n="bitacora.conInformacion.totales">Registros totales:</label> <%= rs.RecordCount %></li>
+							<li><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
+							<li><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
+>>>>>>> 36ab615223e829be56734aa9ad025f47add8df81
 						</ul>
 					</div>
 
@@ -2174,54 +2170,53 @@ else
 	</div>
 </div>
  
-	<div class="container_12 divider">
-		<div class="">
+	<div>
+		<div>
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		<form action="ficheroExcel.php" method="post"  id="FormularioExportacion"><br/>
 			
-				<div class="input"><input type="button"  class="btn btn-outline-dark" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+				<div class=""><input type="button"  class="btn btn-outline text-wrap" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
 				<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-				<div class="input"><input type="button" class="btn btn-outline-dark" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<div class=""><input type="button" class="btn btn-outline text-wrap" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
 			
 			
-			<div class="input"><input  class="btn btn-outline-dark" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
-			<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="btn btn-outline-dark" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
+			<div class=""><input  class="btn btn-outline text-wrap" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+			<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info"/></a>
+			<div class=""><input  class="btn btn-outline text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-			<div class="input"><input  class="btn btn-outline-dark" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
+			<div class=""><input  class="btn btn-outline text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
 			<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> 
 			
 		</form>
 	</div> <br/>
 	
-		<div class="" id="gridData">
-			<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="tinytable">
-				<thead>
-					<tr>
-						<th class=""></th>
-						<th class=""><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
+		<div id="gridData">
+			<table id="myTable02" class="">
+				<thead>	
+				        <th backgroundColor=""></th>										
+						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
 						Response.Write matriz(i) 
 						next%>)"/></th>
-						<th><h3 data-i18n="grid.nombre">Nombre cadena</h3></th>
-						<th><h3 data-i18n="grid.noProveedor">No. de proveedor cadena</h3></th>
-						<th><h3 data-i18n="grid.transaccion">C&oacute;digo de transacci&oacute;n </h3></th>
-						<th><h3 data-i18n="grid.noDocumento">No. de documento</h3></th>
-						<th><h3 data-i18n="grid.fechaHora">Fecha y hora de consulta </h3></th>
-                        <th><h3 data-i18n="grid.fechaCancelacion">Fecha cancelaci&oacute;n documento </h3></th>
-						<th><h3 data-i18n="grid.fechaDocumento">Fecha documento </h3></th>
-						<th><h3 data-i18n="grid.claveCliente">Clave cliente </h3></th>
-						<th><h3 data-i18n="grid.noControl">No. de control</h3></th>
-						<th><h3 data-i18n="grid.estado">Estado</h3></th>
-                        <th><h3 data-i18n="grid.codigoTienda">C&oacute;digo tienda </h3></th>
-                        <th><h3 data-i18n="grid.descripcion">Descripci&oacute;n del proceso </h3></th>
-                        <th><h3 data-i18n="grid.descargar">Descargar</h3></th>
-					</tr>
+						<th><small><small>Nombre cadena</small></small></th>
+						<th><small><small>No. de proveedor cadena</small></small></th>
+						<th><small><small>C&oacute;digo de transacci&oacute;n</small></small></th>
+						<th><small><small>No. de documento</small></small></th>
+						<th><small><small>Fecha y hora de consulta</small></small></th>
+                        <th><small><small>Fecha cancelaci&oacute;n documento</small></small></th>
+						<th><small><small>Fecha documento</small></small></th>
+						<th><small><small>Clave cliente</small></small></th>
+						<th><small><small>No. de control</small></small></th>
+						<th><small><small>Estado</small></small></th>
+                        <th><small><small>C&oacute;digo tienda</small></small></th>
+                        <th><small><small>Descripci&oacute;n del proceso</small></small></th>
+                        <th><small><small>Descargar</small></small></th>
+					
 				</thead>
 				<% 
 					PeriodoDepMeses=Info_Dias
@@ -2281,15 +2276,15 @@ else
 							end if
 						end if
 				%>
-				<tbody>
-					<tr class="<%=color%>" id="<%=fila%>" >
-					<td><%= contador%></td>
-					<td><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></td>
+				<tbody  class="">
+					<tr>
+					<td><small><small><%= contador%></small></small></td>
+					<td><small><small><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></small></small></td>
 					<td><small><small><%= rs("Nombre_Hub")%></small></small></td>
 					<td><small><small><%= rs("Numero_Proveedor_Hub")%></small></small></td>
 					<td><small><small><%= rs("Codigo_Transaccion")%></small></small></td>
 					<td><small><small><%= rs("Num_control_dato_docto")%></small></small></td>
-					<td><% 
+					<td><small><small><% 
 						if  (Trim(rs("Fecha_Consulta_Cliente")) = "" or isNull (rs("Fecha_Consulta_Cliente"))) AND (Trim(rs("Hora_Consulta_Cliente")) = "" or isNull (rs("Hora_Consulta_Cliente"))) then
 							response.Write("-")
 						else
@@ -2300,12 +2295,12 @@ else
 							response.Write(""&consultaClienteFinal&"-"&horaFinalConsultaCliente)
 						end if
 					
-					%></td>
-					<td><%response.write formatoFechas(trim(rs("Fecha_Canc_Documento_Edi")))%></td>
-                    <td><%response.write formatoFechas(trim(rs("Fecha_Recepcion_Sistema")))%></td>
-		            <td><%= rs("Id_Hub")%></td>
-					<td class="size100 wrap"><%= rs("Num_Intercambio_Recibido")%></td>
-					<td><%
+					%></small></small></td>
+					<td><small><small><%response.write formatoFechas(trim(rs("Fecha_Canc_Documento_Edi")))%></small></small></td>
+                    <td><small><small><%response.write formatoFechas(trim(rs("Fecha_Recepcion_Sistema")))%></small></small></td>
+		            <td><small><small><%= rs("Id_Hub")%></small></small></td>
+					<td><small><small><%= rs("Num_Intercambio_Recibido")%></small></small></td>
+					<td><small><small><%
 							estadoArchivo=Trim(rs("Status"))
 								if estadoArchivo="ERROR07" then 
 									response.Write("No es proveedor") 
@@ -2324,15 +2319,15 @@ else
 							end if
 						end if
 						end if
-						%>
+						%></small></small>
 					</td>
-					<td><h6>
-                        <%= rs("Codigo_Tienda")%></h6>
+					<td><small><small>
+                        <%= rs("Codigo_Tienda")%></small></small>
 					</td>
-                    <td class="">
-                        <%=Trim(rs("Descripcion_Error")) %>
+                    <td><small><small>
+                        <%=Trim(rs("Descripcion_Error")) %></small></small>
                     </td>
-					<td>
+					<td><small><small>
 					<%
 					' Creacion de la lista de archivos para su descarga 
                     transaccion=trim(rs("Codigo_Transaccion"))
@@ -2381,7 +2376,7 @@ else
 						End If
 					End If 
 					' Creacion de la lista de archivos para su descarga 
-					%>
+					%></small></small>
 					</td>
 					</tr>
 					<%
@@ -2392,10 +2387,13 @@ else
 				</tbody>
 			</table>	
 		</div>
+
+
+
  
-        <div id="tablefooter">
-				<div id="tablenav">
-						<div>
+        <div id="">
+				<div id="">
+						<div class="">
                             
 							<%
                             texto= value(texto)
@@ -2424,10 +2422,10 @@ else
 							    j=j+1
 							end if
 							%>       
-							<label><span class="page" data-i18n="grid.pagina">P&aacute;gina -</span></label>
+							<label><span class="" data-i18n="grid.pagina">P&aacute;gina -</span></label>
 							<%
 							response.write "<form name=frmDireccionesASP1 id=frmDireccionesASP1 action=loginPaebsa.asp>"
-							response.write "<select class='select-text select-opt' style='width: 100%' size=1 name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >"	
+							response.write "<select style='width: 100%' size=1 name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >"	
 							for i = 1 to rs.pagecount
 								j=j+1
 								if cint(i) = cint(paginaabsoluta) then
@@ -2459,10 +2457,10 @@ else
 						response.write "</form>"
 					%>   
                 </div>
-                <div class="page"> <span class="page" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
+                <div class=""> <span class="" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
             </div>
         </div>
-		<div class="clear"></div>
+		<div class=""></div>
 	</div>
 	<%
 		Response.write("<div id=dialog-form title=Seleccione su archivo data-i18n='[title]dialogo.archivo'>")
