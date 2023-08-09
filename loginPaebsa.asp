@@ -1830,15 +1830,15 @@ else
 									</div>
 								
 									<div class="col-2">
-										<input type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
-									    <div><input class="button_opt prtText" name="Submit" class="form-control"  type="submit" value="Buscar" id="btnBuscar" data-i18n="[value]filtros.botones.buscar"/></div>
+										<input  type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
+										<div><button type="submit" name="Submit" class="btn btn-primary prtText" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button></div>
+									    <!--<div><input    id="btnBuscar"/></div>-->
 									</div>
 									<div class="col-2">
-										<div ><input class="button_opt prtText" class="form-control" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>
+										<!--<div ><input class="button_opt prtText" class="form-control" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>-->
+										<div><button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-primary prtText"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
 									</div>
-
 	                             </div>
-
 							</div>	
 					   </form>
 				    </div>
