@@ -1129,7 +1129,7 @@ else
 	        </div>
 			
 	        <div class="enlaces">
-		        <a target="_blank" data-i18n="[html]sistema.manual;[href]sistema.hrefManual">Manual de usuario</a>  |  <a id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.cerrarSesion">Cerrar sesi&oacute;n</a>
+		        <a target="_blank" data-i18n="[html]sistema.manual;[href]sistema.hrefManual">Manual de usuario</a>
 	      
 		  
 		    </div>
