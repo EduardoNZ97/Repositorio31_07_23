@@ -1422,11 +1422,11 @@ else
 						<!-- Link de facturas express -->
 
 						<!-- Modulo_Nestle_Casa_Ley -->
-						<li>
+						<!--<li>-->
 						<%
-							Call Modulo_Nestle_Casa_Ley(user,pass,Nombre, lg)
+							'Call Modulo_Nestle_Casa_Ley(user,pass,Nombre, lg)
 						%>	
-						</li>	
+						<!--</li>	-->
 						<!-- Modulo_Nestle_Casa_Ley -->
 						
 						<!-- Modulo_ARS_Nestle -->
