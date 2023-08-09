@@ -1018,6 +1018,7 @@ else
 		 <img src="../imagenes/proveedor.png" class="rounded-circle mx-auto d-block" width="100px" height="100px" alt="PAEBSA - Usuario"/><br/>
          <li><i class="text-center"><%=Nombre%></i></li>
          <li><p class="text-center"><%=user%></p></li>
+		 <li class=" d-grid d-md-flex justify-content-md-end"><button id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary">Cerrar sesion</button>&nbsp;&nbsp;</li>
        </ul>
   </li>
 </div>
@@ -2442,7 +2443,7 @@ else
 
  
         <div class="">
-				<div class="align-items-center">
+				<div class="">
 						<div class="btn-group">
                             
 							<%
@@ -2450,20 +2451,20 @@ else
                             texto2= value(texto2)
                             j=0
 							if cint(paginaabsoluta) <> 1 then
-								response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/first.png width=18 height=18 style=border:0 alt=First Page /></a></td>"
+								response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/first.png width=18 height=18 style=border:0 alt=First Page /></a></td>"
 							    j=j+1
 							end if
 							%>
 							<%j=0
 							if cint(paginaabsoluta) <> 1 then
 								atras=cint(paginaabsoluta)-1	
-								response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/previous.png width=18 height=18 style=border:0 alt=Previous Page  /></a></td>"
+								response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/previous.png width=18 height=18 style=border:0 alt=Previous Page  /></a></td>"
 							    j=j+1
 							end if
 							%>  
 							<%if cint(paginaabsoluta) <> rs.pagecount then
 								atras=cint(paginaabsoluta)+1
-                                response.write "<td align=center><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/next.png width=18 height=18 style=border:0 alt=Next Page  /></a></td>"
+                                response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/next.png width=18 height=18 style=border:0 alt=Next Page  /></a></td>"
 							end if%>
 							<%j=0
 							if cint(paginaabsoluta) <> rs.pagecount then
@@ -2472,7 +2473,7 @@ else
 							    j=j+1
 							end if
 							%>       
-							<label><span class="">P&aacute;gina - </span></label>
+							<label><span class="">Página - </span></label>
 							<%
 							response.write "<form name=frmDireccionesASP1 id=frmDireccionesASP1 action=loginPaebsa.asp>"
 							response.write "<select class='btn btn-primary' style='width: 100%; height:90%' name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >"	
