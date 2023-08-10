@@ -1439,7 +1439,7 @@ else
 						<!-- Link de Facturas express -->		
 						
 						<!-- Fin link -->
-						<li><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="menu.enviada">&raquo;Informaci&oacuten enviada a clientes </a></li>
+						<!--<li><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="menu.enviada">&raquo;Informaci&oacuten enviada a clientes </a></li>-->
 						<!-- Link de Facturas express -->
 						<li>
 						<%
@@ -2044,8 +2044,7 @@ else
 						</ul>
 					</li>-->
 					<!--<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.general"> &raquo;Consulta general </a><br /></li>-->
-					<li><a onclick="most()" href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]menu.enviada"> &raquo;Informaci&oacuten enviada a clientes</a></li>
-					
+					<!--<li><a onclick="most()" href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]menu.enviada"> &raquo;Informaci&oacuten enviada a clientes</a></li>-->
 					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 					<li id="link_desadv">
 						<a href="#" onclick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="[html]menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
@@ -2098,7 +2097,7 @@ else
 						Call reporteBitacoras(pass,user,Nombre)
 					%>	
 					</li>
-							<!-- Link de Reportes log -->
+						<!-- Link de Reportes log -->
 						<!-- Link de Reportes Excel -->
 						<li>
 						<%
