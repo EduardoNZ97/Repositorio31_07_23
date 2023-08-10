@@ -290,12 +290,12 @@ else
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />
 	
-    <link href="imagenes2/paebsa.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />
+    <!--<link href="imagenes2/paebsa.ico" rel="shortcut icon" type="image/vnd.microsoft.icon" />-->
 	
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
 	
-     <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />-->
     <!-- <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->
 	
     <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
@@ -304,12 +304,17 @@ else
 	<script type="text/javascript" src="jquery/jquery.cycle.all.2.74.js"></script>
 	<script type="text/javascript" src="js/Functions.js"></script>
 	
-	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
-	<link href="css/960.css" rel="stylesheet" media="screen" />
-	<link href="css/defaultTheme.css" rel="stylesheet" media="screen" />
-	<link href="css/myTheme.css" rel="stylesheet" media="screen" />
+	
+	<!--<link href="css/960.css" rel="stylesheet" media="screen" />-->
+	<!--<link href="css/defaultTheme.css" rel="stylesheet" media="screen" />-->
+	<!--<link href="css/myTheme.css" rel="stylesheet" media="screen" />-->
+     <!--Para Ventana de selección de archivo a descargar-->
+    <link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
+	<!--Para elaviso Mensaje en texto-->
 	<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>
-    <script src="demo.js" type="text/javascript"></script>
+    
+	
+	<!--<script src="demo.js" type="text/javascript"></script>-->
 	
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
@@ -322,14 +327,9 @@ else
 
     <!--Boostrap 5.2.3-->
 
-	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
-	-->
 	    <link href="bootstrap-5.2.3-dist\css\bootstrap.min.css" rel="stylesheet">
 		<script  src="bootstrap-5.2.3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
-		
-
-<!-- Said Rama -->
+	
 		
 	<title>PAEBSA</title>
 
@@ -1149,8 +1149,10 @@ else
       </div>
     </div>
  </div><!--fin del contenido menu superior-->	
+    
 
   </nav>
+   <!--Termina Ménu-->
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
@@ -1335,8 +1337,9 @@ else
 			</div>
 		</div>
 		<!-- Mensajes a clientes -->
-			
-		</div>
+
+
+
 		<div class="content_menu">
 		<div id="menu">
 			<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>				 
@@ -1959,11 +1962,76 @@ else
 	</div>	
 	<!-- Mensajes a clientes -->
   </div>
-  
-  <div class="content_menu">
-	<div id="menu">
+
+
+<div class="col-2">
+	<div class="accordion" id="accordionExample">
+	<div class="accordion-item">
+		<h2 class="accordion-header" id="headingTwo">
+		<button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			<small><strong>Nuevas funciones del portal</strong></small>
+		</button>
+		</h2>
+		<div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+		<div class="accordion-body">
+			<ul>
+		
+		
+					<!-- Cuadro de dialogo. subir facturas -->
+					<li id="composebtn">
+						<a href="#"  class="compose" id="composeicon" data-i18n="menu.factura.titulo"> &raquo;Env&iacuteo de facturas a clientes</a>
+							<div class="mainCompose">
+								<div class="calloutUp">
+									<div class="calloutUp2"></div>
+								</div>	
+								<div id="msgform" class="msgEnvio" width="700px">
+									<form id="sendprivatemsg" class="UsuariosCss" action="EnvioXML/ValidaXML.aspx" method="post" enctype="multipart/form-data">
+										<label data-i18n="menu.factura.xml">Factura XML/EDI</label>
+										<input type="file" name="archivo[]" accept="text/xml,.edi" size="70" multiple value="Examine"/>
+										<br /><br />
+										<label style="color:#B40404;" data-i18n="menu.factura.archivos">N&uacutemero m&aacuteximo de archivos por carga: 50</label>
+										<br /><br/>
+										<label style="color:#0B4C5F;" data-i18n="menu.factura.aviso">IMPORTANTE: Para enviar facturas con addenda resguardo de Walmart vaya a "Captura de Addendas-> Addendas de Wal-Mart-> Addenda Resguardo"</label>
+										<br /><br />
+										<%
+											sqlProveedorMerza = "select rtrim(id_cliente)id_Cliente, Codigo_Cliente,Codigo_Transaccion_Produccion,RFCSpoke,RFCHub from CATSPOKESHUBS where Codigo_Cliente='"&trim(pass)&"' and Id_Cliente='"&trim(user)&"' and Codigo_Transaccion_Produccion='INVOIC' and RFCHub='ADU800131T10'"
+											'response.write sqlProveedorMerza
+											set rsProveedor=server.createobject("ADODB.Recordset") 						
+											rsProveedor.Open sqlProveedorMerza,cnn,3,1	
+											if rsProveedor.EOF then
+											else
+											response.write "<label  style='color:#B40404;' data-i18n='menu.factura.avisoMerza'> SI ERES PROVEEDOR DE MERZA, FAVOR DE SUBIR FACTURAS CON LA ADDENDA SOLICITADA</label></a><br/><br/>"
+											end if
+										%>
+										<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
+										<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
+										<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
+										<input type="hidden" id="SpokeOhub" name="SpokeOhub" value="spoke"/>
+										<div style="padding-bottom: 25px;">
+											<div class="input" style="float:right;">
+												<input class="button_opt prtText" onclick="return validarMaximoArchivos()" type="submit" id="Submit1" value="Enviar facturas"  data-i18n="[value]menu.factura.boton" />
+											</div>
+										</div>
+										<br /><br />
+									</form>
+								  </div>
+							</div>
+					<!-- Cuadro de dialogo. subir facturas -->
+					</li>
+					
+					</ul>
+		</div>
+		</div>
+	</div>
+	</div>
+</div>
+
+  <!--Nuevas funciones del portal con informacion-->
+ 
+		<div class="content_menu">
+		<div id="menu">
 		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
-		<ul id="ListaMenu" class="lista">
+		<ul id="ListaMenu">
 		
 		
 					<!-- Cuadro de dialogo. subir facturas -->
