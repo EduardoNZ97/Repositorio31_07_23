@@ -1497,11 +1497,11 @@ else
 								%>
 							</li>
 							
-							<li>
+							<!--<li>-->
 								<%
-									Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
+									'Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
 								%>
-							</li>
+							<!--</li>-->
 
 							<li>
 								<%
@@ -2123,11 +2123,11 @@ else
 								Call CargaFragua(pass,user,Nombre)		
 							%>
 						</li>
-						<li>
+						<!--<li>-->
 							<%
-								Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
+								'Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
 							%>
-						</li>
+						<!--</li>-->
 
 						<li>
 							<%
