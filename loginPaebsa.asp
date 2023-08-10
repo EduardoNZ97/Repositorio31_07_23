@@ -1127,6 +1127,24 @@ else
 	        	<!--Carga de IMSS  Excel-->
             </ul>
         </li> 
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga de catálogo tiendass</a>
+            <ul class="dropdown-menu">
+				<!--Inicia carga de catálogo de tiendas-->
+				<li>
+				<%
+					Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
+				%>
+			   </li>
+              	<!--Termina carga de catálogo de tiendas-->
+            </ul>
+        </li> 
+
+
+
+
+
+				
         </ul>
       </div>
     </div>
@@ -1513,11 +1531,11 @@ else
 									'Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
 								%>
 							<!--</li>-->
-							<li>
+							<!--<li>-->
 								<%
-									Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
+									'Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
 								%>
-							</li>
+							<!--</li>-->
 
 						<!-- Termina Link de administrar brokers  ALMGARCIA -->
 						<li class="has-sub"><a href="#" data-i18n="menu.addendas">&raquo; Captura de Adendas</a>
@@ -2139,11 +2157,11 @@ else
 								'Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
 							%>
 						<!--</li>-->
-						<li>
+						<!--<li>-->
 							<%
-								Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
+								'Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
 							%>
-						</li>
+						<!--</li>-->
 
 							<!-- Termina Link de administrar brokers  ALMGARCIA -->	
 						<li class="has-sub">
