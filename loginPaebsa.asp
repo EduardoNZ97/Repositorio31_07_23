@@ -295,7 +295,7 @@ else
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
 	
-     <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />
+    <!-- <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />-->
     <!-- <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->
 	
     <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
@@ -325,8 +325,8 @@ else
 	<!--<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4" crossorigin="anonymous"></script>
 	-->
-	    <link href="bootstrap-5.2.3-dist\css\bootstrap.min.css" rel="stylesheet">
-		<script  src="bootstrap-5.2.3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
+	    <link href="bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
+		<script  src="bootstrap-5_2_3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
 		
 
 <!-- Said Rama -->
@@ -1008,20 +1008,20 @@ else
 </head>
 <body> 
 
-
+<!--ENcabezado-->
 <div class="col-md-12" style="background-color: #3c8dbc;">
 	<!--boostrap-->		
     <li style="color:#000080">
-	<i  class="h2 text-start" style="color:white; margin-left:10px" >Servicio de Buró Electrónico Proveedores</i>
+	<i  class="h3 text-start" style="color:white; margin-left:10px" >Servicio de Buró Electrónico Proveedores</i>
 	
-	  <span class="dropdown-toggle float-end text-white" style="background-color: #3c8dbc; margin-right:10px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png"  width="35px" height="35px" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;</span>
+	  <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:10px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png"  width="30px" height="30px" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;</span>
 	  
 	  <span class="float-end" style="color: white; margin-top:8px;margin-right:10px" id="TimeLeft"></span>
 			        <script  type="text/javascript" language="javascript"> 
 				        showTimer();
 			        </script>
-	  <label class="float-end" style="color: white; margin-top:8px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
-	  <svg xmlns="http://www.w3.org/2000/svg" class="float-end"  style="color: white; margin-top:12px;margin-right:5px " width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
+	  <label class="float-end" style="color: white; margin-top:6px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
+	  <svg xmlns="http://www.w3.org/2000/svg" class="float-end"  style="color: white; margin-top:10px;margin-right:5px " width="16" height="16" fill="currentColor" class="bi bi-clock" viewBox="0 0 16 16">
   <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM8 3.5a.5.5 0 0 0-1 0V9a.5.5 0 0 0 .252.434l3.5 2a.5.5 0 0 0 .496-.868L8 8.71V3.5z"/>
 </svg>
         <ul class="dropdown-menu">
@@ -1032,6 +1032,7 @@ else
        </ul>
   </li>
 </div>
+<!--Fin del Encabezado-->
 
  
 		        
@@ -2241,18 +2242,18 @@ else
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		<form action="ficheroExcel.php" method="post" class="d-grid gap-2 d-md-flex justify-content-md-end"><br/>
 			
-				<div><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+				<div><img src='../imagenes/reprocess.jpg'/><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
 				<!--<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
-				<div class=""><input type="button" class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<div><img src='../imagenes/imgPdf.png'/><input type="button" class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				<!--<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
 			
 			
-			<div class=""><input  class="btn btn-light border-primary btn-sm text-wrap" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+			<div class=""><img src='../imagenes/guardarDatos.png'/><input  class="btn btn-light border-primary btn-sm text-wrap" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 			<!--<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info"/></a>-->
 			<div class=""><input  class="btn btn-light border-primary text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 			<!--<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
