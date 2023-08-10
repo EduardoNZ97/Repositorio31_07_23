@@ -441,17 +441,20 @@ else
 	<script type="text/javascript">
 	/* Cuadro de dialogo que se muestra al usuario para descarga de archivos del Portal*/
 	/* Tabla de Informacion/ Columna 'Descargar'/ Cuadro de dialogo */
-	$(document).ready(function () 
+	$(function () 
 	{
 		$("#dialog-form").dialog({
 			autoOpen: false,
+			height: 150,
 			width: 350,
-			modal: true,
-			close: function() {}
+			modal: true,	
+			close: function() {
+			}
 		});
 
 		$('.create-user').on('click',function(eEvento){
-			$( "#dialog-form" ).dialog( "open" );
+			$("#dialog-form").dialog("option","position",[event.offsetX="center", event.offsetY=250]); // esta linea cada vez que abre el dialog lo centra
+			$("#dialog-form" ).dialog( "open" );
 		});
 	});
 	</script>
@@ -2259,30 +2262,29 @@ else
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		<form action="ficheroExcel.php" method="post" class="d-grid gap-2 d-md-flex justify-content-md-end"><br/>
 			
-				<div><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+				<div><input type="button" class="btn btn-primary" style="Color:black; background-color:#adb5bd;" value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
 				<!--<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
-				<div class=""><input type="button" class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				<div class=""><input type="button" class="btn btn-primary" style="Color:black; background-color:#adb5bd;" value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				<!--<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
-			
-			
-			<div class=""><input  class="btn btn-light border-primary btn-sm text-wrap" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
+						
+			<div class=""><input  class="btn btn-primary text-wrap" style="Color:black; background-color:#adb5bd;" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
 			<!--<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info"/></a>-->
-			<div class=""><input  class="btn btn-light border-primary text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
+			<div class=""><input  class="btn btn-primary text-wrap" style="Color:black; background-color:#adb5bd;" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
 			<!--<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
-			<div class=""><input  class="btn btn-light border-primary text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
+			<div class=""><input  class="btn btn-primary text-wrap" style="Color:black; background-color:#adb5bd;" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
 			<!--<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> -->
 			
 		</form>
 	</div class=""> <br/>
 	
 		<div id="gridData">
-			<table id="" class="table table-bordered text-center " >
-				<thead style="background-color: #3c8dbc;">	
+			<table id="" class="table table-bordered text-center table-responsive-sm" >
+				<thead class="" style="background-color: #3c8dbc;">	
 				        <th></th>										
 						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
 						Response.Write matriz(i) 
@@ -2527,11 +2529,11 @@ else
 							
 						</div>
 				</div>
-			<div class="nav col-md-12 ">
+			<div class="btn-group">
             	<div class="">
 					
 						<form name=frmDireccionesASP id=frmDireccionesASP action=loginPaebsa.asp>
-						<select class="btn btn-primary  text-wrap" style='width: 100%; height:20%;'  name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >
+						<select class="btn btn-primary  text-wrap" style="width: 100%; height:20%;"  name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >
 						<option  selected=selected data-i18n='grid.seleccionar'> Seleccione</option>
 						<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=25&paginaabsoluta=1  >25</option>
 						<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=50&paginaabsoluta=1    >50</option>
@@ -2542,7 +2544,7 @@ else
 						</form>
 					 
                 </div>
-                <div class=""> <span class="" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
+                <div class=""><span data-i18n ="grid.entradas">Entradas por p&aacute;gina </span> <span data-i18n="grid.pag"> P&aacute;gina </span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de </span><span id="totalpages"><%= rs.PageCount %></span></div>
             </div>
         </div>
 
