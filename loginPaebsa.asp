@@ -1417,11 +1417,7 @@ else
 								<li><a href="#" id="modal"  onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial">&raquo;Historial de usuarios</a></li>
 							</ul>
 						</li>-->
-						
-						
-						
-						<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.general">&raquo;Consulta general</a></li>
-	 
+						<!--<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.general">&raquo;Consulta general</a></li>-->
 						<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						<li id="link_desadv">
 							<a href="#" onClick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
@@ -2047,7 +2043,7 @@ else
 							<!-- Historial de usuarios 
 						</ul>
 					</li>-->
-					<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.general"> &raquo;Consulta general </a><br /></li>
+					<!--<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.general"> &raquo;Consulta general </a><br /></li>-->
 					<li><a onclick="most()" href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]menu.enviada"> &raquo;Informaci&oacuten enviada a clientes</a></li>
 					
 					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
