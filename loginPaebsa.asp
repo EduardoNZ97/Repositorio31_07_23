@@ -1112,20 +1112,25 @@ else
 						Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
 					%>
 				</li>
-
-				<!-- Modulo_Nestle_Casa_Ley -->
+                <!--Carga de productos Excel-->
             </ul>
         </li> 
-
-
-
-
-
+		<li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga IMSS Excel</a>
+            <ul class="dropdown-menu">
+				<!--Carga de IMSS Excel-->
+				<li>
+					<%
+						Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
+					%>
+				</li>
+	        	<!--Carga de IMSS  Excel-->
+            </ul>
+        </li> 
         </ul>
       </div>
     </div>
-
-	</div><!--fin del contenido menu superior-->	
+ </div><!--fin del contenido menu superior-->	
 
   </nav>
 	<!--<div class="block" id="block"></div>-->
@@ -1503,11 +1508,11 @@ else
 								%>
 							<!--</li>-->
 
-							<li>
+							<!--<li>-->
 								<%
-									Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
+									'Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
 								%>
-							</li>
+							<!--</li>-->
 							<li>
 								<%
 									Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
@@ -2129,11 +2134,11 @@ else
 							%>
 						<!--</li>-->
 
-						<li>
+						<!--<li>-->
 							<%
-								Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
+								'Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
 							%>
-						</li>
+						<!--</li>-->
 						<li>
 							<%
 								Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
