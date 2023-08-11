@@ -772,11 +772,11 @@ else
 			 var modulo=iStart%2;
 			 if(iMinute<=2 && modulo==0)
 			 {
-					document.getElementById("msgSesion").style.color="#FF0000";
+					// document.getElementById("msgSesion").style.color="#FF0000";
 			 }
 			 else
 			 {
-					document.getElementById("msgSesion").style.color="#B40431";
+					// document.getElementById("msgSesion").style.color="#B40431";
 			 }
 			 //Si minuto y segundo = 0 ya expiró la sesion 
 			if (iMinute==0 && iStart==0) 
@@ -2436,7 +2436,7 @@ else
 						end if
 				%>
 				<tbody  class=" table-success">
-					<tr>
+					<tr class="<%=color%>" id="<%=fila%>">
 					<td><small><small><%= contador%></small></small></td>
 					<td><small><small><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></small></small></td>
 					<td><small><small><%= rs("Nombre_Hub")%></small></small></td>
