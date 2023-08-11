@@ -418,11 +418,7 @@ else
 			browser('AplicacionPaebsa/ASNExcel.aspx?',parametros, propiedades);
 		}
 		
-		function openNoSpots(idCliente, nombre, usuario){
-			var parameters={ idClient: idCliente, name: nombre, user: usuario, iduser: 'ADMIN',language:'<%=lg%>' };
-			var propiedades= JSON.stringify({width:'80%', height:'600'});
-			browser('AplicacionPaebsa/reporteVentasNoSpots.aspx?', parameters, propiedades);
-			}
+
 			
 		function openBrowser(idCliente, nombre, usuario){
 			var parameters={ idClient: idCliente, name: nombre, user: usuario, iduser: 'ADMIN',language:'<%=lg%>' };
@@ -1471,13 +1467,7 @@ else
 						</li>
 						<!-- Link de facturas express -->
 
-						<!-- Modulo_Nestle_Casa_Ley -->
-						<!--<li>-->
-						<%
-							'Call Modulo_Nestle_Casa_Ley(user,pass,Nombre, lg)
-						%>	
-						<!--</li>	-->
-						<!-- Modulo_Nestle_Casa_Ley -->
+		
 						
 						<!-- Modulo_ARS_Nestle -->
 						<!--<li>-->
@@ -2116,41 +2106,14 @@ else
 					
 					<li id="link_cargaInfo"><a href="#" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a></li>
 					
-					<!--<li><a href="#" onClick="openNoSpots('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="menu.cargaNoSpots">&raquo;Carga de NO SPOTS</a></li>-->
-					
-					<!--<li class="has-sub"><a href="#" data-i18n="[html]menu.administrarCuenta.titulo"> &raquo;Administre su cuenta</a>
-						<ul>
-							<li><a href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios"> &raquo;Administre sus usuarios </a><br /></li>
-							<!-- Sistema contraseñas viejo	
-							<li><a href="CambioPassword.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
-							<!-- Sistema nuevo de contraseñas>>> Quitar comentario y comentar línea de arriba
-							<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.contrasena">  &raquo;Cambiar contraseña</a><br /></li>
-							<li><a href="#" id="modal"  onclick="ventanaHistorial();" data-i18n="[html]menu.administrarCuenta.historial">  &raquo;Historial de usuarios</a></li>
-							<!-- Historial de usuarios 
-						</ul>
-					</li>-->
-					<!--<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="[html]menu.general"> &raquo;Consulta general </a><br /></li>-->
-					<!--<li><a onclick="most()" href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]menu.enviada"> &raquo;Informaci&oacuten enviada a clientes</a></li>-->
 					
 					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 					<li id="link_desadv">
 						<a href="#" onclick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="[html]menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
 					</li>		
-					 	<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
+					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
-                    <!-- Menu Colgate -->
-					<!--<li class="has-sub" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a title="" href="#" data-i18n="[html]menu.colgate.titulo">&raquo;Usuarios Colgate</a>
-						<ul>-->
-							<!-- Inicia Link SemiEdi-->	
-							<%
-											
-                               ' Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
-							%>
-							<!-- Termina Link SemiEdi-->						 
-						 <!--</ul>
-					</li>-->
-		            <!-- Menu Colgate -->
-                    <!-- Link de SemiEdiColgate-->
+            
 					<!-- Link de Facturas express -->		
 					<li>
 					<%
@@ -2159,22 +2122,10 @@ else
 					</li>
                     <!-- Link de facturas express -->	
 							
-					<!-- Modulo_Nestle_Casa_Ley -->
-					<!--<li>-->
-					<%
-						'Call Modulo_Nestle_Casa_Ley(user, pass, Nombre, lg)
-					%>	
-					<!--</li>	-->
-					<!-- Modulo_Nestle_Casa_Ley -->
+				
+				
 	
-					<!-- Modulo_ARS_Nestle -->
-					
-					<!--<li>
-					<%
-						'Call Modulo_ARS_Nestle(user, pass, Nombre, lg,"SPOKE")
-					%>	
-					</li>--	
-					<!-- Modulo_ARS_Nestle -->
+			
 	
 	
 	
@@ -2210,22 +2161,10 @@ else
 								Call CargaFragua(pass,user,Nombre)		
 							%>
 						</li>
-						<!--<li>-->
-							<%
-								'Call CargaProductosExcel(rtrim(Nombre),"loginPaebsa.asp?ln="&lg, rtrim(user), rtrim(tipoUser), pass)		
-							%>
-						<!--</li>-->
+				
 
-						<!--<li>-->
-							<%
-								'Call CargaImssExcel(rtrim(user), rtrim(pass), rtrim(Nombre), "", "loginPaebsa.asp?ln="&lg)		
-							%>
-						<!--</li>-->
-						<!--<li>-->
-							<%
-								'Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
-							%>
-						<!--</li>-->
+					
+			
 
 							<!-- Termina Link de administrar brokers  ALMGARCIA -->	
 						<li class="has-sub">
