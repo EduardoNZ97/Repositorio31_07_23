@@ -321,8 +321,8 @@ else
 
     <!--Boostrap 5.2.3-->
 
-	<script  src="bootstrap-5_2_3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
-	<link href="bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
+	<script  src="../bootstrap-5_2_3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
+	<link href="../bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
 	
 		
 
@@ -1915,7 +1915,7 @@ else
 			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
 						<ul>
 
-							<li style="color: cornflowerblue;"><img  src="bootstrap-5.2.3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
+							<li style="color: cornflowerblue;"><img  src="../bootstrap-5_2_3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
 				
                             <li class="bi bi-exclamation-triangle-fill"><img src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
 							<li style="2rem; color: cornflowerblue;"><img src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
