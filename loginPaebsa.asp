@@ -2355,8 +2355,8 @@ else
 		</form>
 	</div class=""> <br/>
 	
-		<div id="gridData">
-			<table id="" class="table table-bordered text-center " >
+		<div style="margin-left:10px; margin-right:10px">
+			<table class="table table-bordered text-center " >
 				<thead style="background-color: #3c8dbc;">	
 				        <th></th>										
 						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
