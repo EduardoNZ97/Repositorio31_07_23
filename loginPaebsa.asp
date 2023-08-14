@@ -1232,14 +1232,14 @@ else
 	<div id="templatemo_outer_wrapper_sp">
 		<div id="templatemo_wrapper_sp"><!-- end of templatemo header -->
 			<div class="filtros-busqueda">
-				<h4><strong data-i18n="filtros.tituloFiltros"> Filtros de b&uacute;squeda</strong></h4><br/>
+				<h4><strong data-i18n="filtros.tituloFiltros"> Filtros de búsqueda</strong></h4><br/>
 				<form name="formulario" action="loginPaebsa.asp" id="formInscripcion" method="get">
 						 <select  name="seleccione" id="seleccione" class="select-text select-opt" >
 						   <option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 						   <option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 						   <option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
 						   <option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
-						   <option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
+						   <option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">Código de transacci&oacute;n </option>
 						   <option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
 						   <option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
 						 </select><a class="tooltip" title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>	 
@@ -1805,18 +1805,17 @@ else
 	
 %>
 
+<!--Inicia Filtros De Búsqueda-->
 <div>
     <div ><!-- end of templatemo header -->		
-
-	        
 		       <div class="row">
 				   <div class="col-8">
-						<p  class="fs-6 text-center text-primary"><strong data-i18n="filtros.tituloFiltros"> Filtros de b&uacute;squeda</strong></p>
+						<p  class="fs-6 text-center text-primary"><strong data-i18n="filtros.tituloFiltros"> Filtros de búsqueda</strong></p>
 						<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
 					       <div class="container d-grid gap-3">
 								<div class="row">
 
-									<div class="col-3">
+									<div class="col-2">
 										<select  name="seleccione" class="form-control form-control-sm" tyle="width: 100px;" aria-label="Default select example" id="seleccione" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione una opción.">
 											<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
@@ -1830,10 +1829,9 @@ else
 
 									<div class="col-3">
 										<input    name="texto" type="text"  id="texto" class="form-control  p-1"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura" data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
-									
 									</div>
 							
-									<div class="col-3">			
+									<div class="col-2">			
 										<select  name="seleccione2" class="form-control form-control-sm" aria-label="Default select example"  id="seleccione2" data-bs-toggle="tooltip" data-bs-placement="top" title="Este es un campo opcional para agregar otro valor de búsqueda.">
 										<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
 										<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
@@ -1847,26 +1845,22 @@ else
 
 									<div class="col-3">
 										<input   name="texto2" class="form-control form-control-sm" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
-										
 									</div>
-
-							
 							    </div>
 
 
 								<div class="row">
-
 									<div class="col-3">
 										<select name="orden" class="form-control form-control-sm" aria-label="Default select example"  id="orden" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione el orden.">
 											<option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
 											<option value="Num_control_dato_docto" data-i18n="filtros.seleccione.documento">No. de documento</option>
-											<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
-											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
+											<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">Código de transacción </option>
+											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">Código tienda</option>
 											<option value="Fecha_Envio_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
-											<option value="Fecha_Canc_Documento_Edi"  data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacute;ndocumento</option>
-										</select><!--<a class="tooltip" title="[!]Importante[/!]Seleccione el orden" data-i18n="[title]filtros.ordenar.info"></a>-->
+											<option value="Fecha_Canc_Documento_Edi"  data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelación documento</option>
+										</select>
 									</div>
 
 									<div class="col-3">
@@ -1878,13 +1872,13 @@ else
 									<div class="col-3">
 										<select name="tipofecha" class="form-control form-control-sm" aria-label="Default select example"  id="tipofecha" data-bs-toggle="tooltip" data-bs-placement="top" title="Fecha documento.">
 											<option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
-											<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelaci&oacuten documento </option>
+											<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelación documento</option>
 											<option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
 										</select>				
 									</div>
-									<div class="col-3">
+									<div class="col-2">
 										<select  name="tamanopagina" class="form-control form-control-sm" aria-label="Default select example" id="tamanopagina" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es el númemero de registros a visualizar por página (25 por default).">
-											<option value="25" selected="selected" data-i18n="filtros.pagina.numero">N&uacutemero de registros por p&aacutegina </option>
+											<option value="25" selected="selected" data-i18n="filtros.pagina.numero">Número de registros por página </option>
 											<option value="25">25</option>
 											<option value="50">50</option>
 											<option value="75">75</option>
@@ -1906,10 +1900,8 @@ else
 									<div class="col-2">
 										<input  type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
 										<div><button type="submit" name="Submit" class="btn btn-primary prtText" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button></div>
-
 									</div>
 									<div class="col-2">
-								
 										<div><button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-primary prtText"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
 									</div>
 	                             </div>
@@ -1918,20 +1910,17 @@ else
 				    </div>
 				
 				    <div class="col-4">
-			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Informaci&oacute;n sobre la bit&aacute;cora de datos</strong></h2><br/></th>
+			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Información sobre la bitácora de datos</strong></h2><br/></th>
 						<ul>
-
 							<li style="color: cornflowerblue;"><img  src="bower_components/bootstrap-5_2_3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
-				
                             <li class="bi bi-exclamation-triangle-fill"><img src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label data-i18n="bitacora.consultado"> Archivo consultado</label></li>
-							<li style="2rem; color: cornflowerblue;"><img src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuraci&oacute;n </label></li>   
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.pagina"> P&aacute;gina actual:</label> <%= paginaabsoluta %></li>
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.registros">Registros por p&aacute;gina:</label> <%= rs.PageSize %></li>
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de p&aacute;ginas:</label> <%= rs.PageCount %></li>
+							<li style="2rem; color: cornflowerblue;"><img src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label data-i18n="bitacora.depuracion"> Archivo preparado a depuración </label></li>   
+							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.pagina"> Página actual:</label> <%= paginaabsoluta %></li>
+							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.registros">Registros por página:</label> <%= rs.PageSize %></li>
+							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.cantidad">Cantidad de páginas:</label> <%= rs.PageCount %></li>
 							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.totales">Registros totales:</label> <%= rs.RecordCount %></li>
 							<li style="2rem; color: cornflowerblue;"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>
-							<li style="2rem; color: cornflowerblue;"><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesi&oacute;n</a></li>
-
+							<li style="2rem; color: cornflowerblue;"><a id="btnSalir" href="Cerrar_Ses_Cli.asp" data-i18n="[html]sistema.contenido.enlace">Cerrar sesión</a></li>
 						</ul>
 					</div>
 
