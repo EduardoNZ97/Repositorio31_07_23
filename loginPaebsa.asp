@@ -1001,39 +1001,40 @@ else
 <body> 
 
 <!--ENcabezado-->
-<div class="col-md-12" style="background-color: #3c8dbc;">
+<nav class="navbar" style="background-color: #3c8dbc;">
 	<!--boostrap-->		
     <li style="color:#000080">
 
 	
 
-	    <i  class="h3 text-start" style="color:white; margin-left:10px" >Servicio de Buró Electrónico Proveedores</i>
-	
-	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:5px; margin-top:3px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png"  width="30px" height="30px" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
+	    <span  class="h3 text-start float-start" style="color:white;margin-left:10px; margin-top:5px; margin-bottom:5px" >Servicio de Buró Electrónico Proveedores</span>
+	    <span class="position-absolute top-0 end-0" style="margin-top:8px">
+	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png"  width="30px" height="30px" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
       
-	        <ul class="dropdown-menu">
-		      <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto d-block" width="100px" height="100px" alt="PAEBSA - Usuario"/><br/></li>
-              <li style="background-color:#e3f2fd;"><i class="text-center"><%=Nombre%></i></li>
-              <li style="background-color: #e3f2fd;"><p class="text-center"><%=user%></p></li>
+	        <ul class="dropdown-menu text-center" style="margin-left:340px ;background-color: #e3f2fd;" >
+		      <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto" width="150px" height="150px" alt="PAEBSA - Usuario"/><br/></li>
+              <li style="background-color:#e3f2fd;"><i><%=Nombre%></i></li>
+              <li style="background-color: #e3f2fd;"><i><%=user%></i></li><br/>
 		      <li class=" d-grid d-md-flex justify-content-md-end"><button id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary">Cerrar sesion</button>&nbsp;&nbsp;</li>
             </ul>
         </span>
 
         <span class="float-end">
-	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:1px" alt="sesion" width="30" height="30"type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
-            <ul class="dropdown-menu">
+	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" width="30" height="30" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
+            <ul class="dropdown-menu text-center">
                 <a class="dropdown-item"><%avisos()%></a>
             </ul>
         </span>
-
-		<span class="float-end" style="color: white; margin-top:8px;margin-right:10px;margin-top:6px" id="TimeLeft"></span>
+        
+		<span class="float-end" style="color: white; margin-top:8px;margin-right:10px;margin-top:10px" id="TimeLeft"></span>
 			        <script  type="text/javascript" language="javascript"> 
 				        showTimer();
 			        </script>
-	    <label class="float-end" style="color: white; margin-top:6px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
-  
+	    <label class="float-end" style="color: white; margin-top:10px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
+        <img class="float-end" style="margin-top:7px" src="imagenes/sesion.png"  alt="sesion" width="30" height="30"/>
     </li>
-</div>
+	</span>
+</nav>
 <!--Fin del Encabezado-->
 
  
@@ -2342,25 +2343,25 @@ else
 	<div>
 		<div>
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
-		<form action="ficheroExcel.php" method="post" class="d-grid gap-2 d-md-flex justify-content-md-end"><br/>
+		<form action="ficheroExcel.php" method="post" class=" gap-2 d-md-flex justify-content-md"><br/>
 			
-				<div><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+			<div><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" style="background: url(../imagenes/reprocess.jpg) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reproceso"/></div>
 									
-				<!--<a class="tooltip" title="[!]Importante[/!]Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
-				<div><input type="button" class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+				
+			<div><input type="button" class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" style="background: url(../imagenes/imgPdf.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
-				<!--<a class="tooltip" title="[!]Importante[/!]Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
+				
 			
 			
-			<div class=""><input  class="btn btn-light border-primary btn-sm text-wrap" type="button" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
-			<!--<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info"/></a>-->
-			<div class=""><input  class="btn btn-light border-primary text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
-			<!--<a class="tooltip" title="[!]Importante[/!]Para el Envio de mail solo se adjuntaran los primeros 20 registros seleccionados " data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>-->
-			<div class=""><input  class="btn btn-light border-primary text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" style="background: url(../imagenes/excel.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.excel"/></div>
-			<!--<a class="tooltip" title="[!]Importante[/!]Se exporta todo el resultado de la consulta" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a> -->
+			<div><input class="btn btn-light border-primary create-user text-wrap col-12" type="button" id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
+			
+			<div><input class="btn btn-light border-primary text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
+			
+			<div><input class="btn btn-light border-primary text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" style="background: url(../imagenes/excel.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.excel"/></div>
+			
 			
 		</form>
 	</div class=""> <br/>
