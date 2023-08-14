@@ -291,10 +291,7 @@ else
 	<meta http-equiv="Pragma" content="no-cache" />	
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
-	
-    <!-- <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />-->
-    <!-- <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->
-	
+
     <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
     <script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
     <script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>
@@ -302,13 +299,11 @@ else
 	<script type="text/javascript" src="js/Functions.js"></script>
 	
 	
-	<!--<link href="css/960.css" rel="stylesheet" media="screen" />-->
-	<!--<link href="css/defaultTheme.css" rel="stylesheet" media="screen" />-->
-	<!--<link href="css/myTheme.css" rel="stylesheet" media="screen" />-->
+
 	<!--Para el aviso Mensaje en texto-->
 	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
 	<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>
-   <!-- <script src="demo.js" type="text/javascript"></script>-->
+
 	
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
@@ -1830,12 +1825,12 @@ else
 											<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
 											<option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
 											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-										</select><!--<a title="[!]Importante[/!]Seleccione una opci&oacute;n" data-i18n="[title]filtros.seleccione.infoSeleccion"></a>-->	 
+										</select>
 									</div>
 
 									<div class="col-3">
 										<input    name="texto" type="text"  id="texto" class="form-control  p-1"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura" data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
-										<!--<a 	 title="[!]Importante[/!]Por favor escriba un texto" data-i18n="[title]filtros.seleccione.infoCaptura"></a>		-->
+									
 									</div>
 							
 									<div class="col-3">			
@@ -1847,12 +1842,12 @@ else
 										<option value="Codigo_Transaccion" data-i18n="filtros.seleccione.transaccion">C&oacute;digo de transacci&oacute;n </option>
 										<option value="Status"  data-i18n="filtros.seleccione.estado">Estado</option>
 										<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
-										</select><!--<a  title="[!]Opcional[/!]Este es un campo opcional para agregar otro valor de b&uacutesqueda" data-i18n="[title]filtros.seleccione.infoSeleccionDos"></a>	-->
+										</select>
 									</div>
 
 									<div class="col-3">
 										<input   name="texto2" class="form-control form-control-sm" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
-										<!--<a class="tooltip" title="[!]Opcional[/!]Campo de b&uacutesqueda opcional para agregar un valor de b&uacutesqueda m&aacutes a su consulta" data-i18n="[title]filtros.seleccione.infoCapturaDos"></a>-->
+										
 									</div>
 
 							
@@ -1911,10 +1906,10 @@ else
 									<div class="col-2">
 										<input  type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
 										<div><button type="submit" name="Submit" class="btn btn-primary prtText" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button></div>
-									    <!--<div><input    id="btnBuscar"/></div>-->
+
 									</div>
 									<div class="col-2">
-										<!--<div ><input class="button_opt prtText" class="form-control" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" type="button"  value="Restablecer" id="btnRestablecer" data-i18n="[value]filtros.botones.restablecer"/></div>-->
+								
 										<div><button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-primary prtText"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
 									</div>
 	                             </div>
