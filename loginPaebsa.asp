@@ -1163,12 +1163,7 @@ else
 			        </script>
 		        </div>
 	        </div>
-			
-	        <div class="enlaces">
-		        <a target="_blank" data-i18n="[html]sistema.manual;[href]sistema.hrefManual">Manual de usuario</a>
-	      
-		  
-		    </div>
+
 
 			
 			<!-- Inicia Cambio de Password -->
@@ -1809,7 +1804,7 @@ else
 <div>
     <div ><!-- end of templatemo header -->		
 		       <div class="row">
-				   <div class="col-8">
+				   <div class="col-7">
 						<p  class="fs-6 text-center text-primary"><strong data-i18n="filtros.tituloFiltros"> Filtros de búsqueda</strong></p>
 						<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
 					       <div class="container d-grid gap-3">
@@ -1922,8 +1917,12 @@ else
 							<!--<li style="2rem; color: cornflowerblue;"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>-->
 						</ul>
 					</div>
-
-
+					<div class="col-1">
+						<div class="enlaces">
+							<a target="_blank" title="Manual de usuario" href="pdf/ManualWeb.pdf"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+						</div>
+						
+					</div>
 			    </div>
 	
 
