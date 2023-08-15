@@ -1034,7 +1034,7 @@ tr.si {
         </span>
 
         <span class="float-end">
-	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" width="30" height="30" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
+	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
             <ul class="dropdown-menu text-center">
                 <a class="dropdown-item"><%avisos()%></a>
             </ul>
@@ -2563,7 +2563,7 @@ tr.si {
 
 
  
-        <div class="">
+        <div class="btn-group">
 				<div class="">
 						<div class="btn-group">
                             
@@ -2615,8 +2615,9 @@ tr.si {
 							
 						</div>
 				</div>
-			<div class="nav col-md-12 ">
-            	<div class="">
+			<div class="">
+			    <div class="float-end" style="margin-top :5px; margin-left:120px> <span class="" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
+            	<div class="float-end">
 					
 						<form name=frmDireccionesASP id=frmDireccionesASP action=loginPaebsa.asp>
 						<select class="btn btn-primary  text-wrap" style='width: 100%; height:20%;'  name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >
@@ -2630,8 +2631,9 @@ tr.si {
 						</form>
 					 
                 </div>
-                <div class=""> <span class="" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
+                
             </div>
+
         </div>
 
 		<div class=""></div>
