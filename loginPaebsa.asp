@@ -197,7 +197,7 @@
 			tamanopagina=request.QueryString("tamanopagina")
 			
 			if tamanopagina = "" then
-				tamanopagina=25
+				tamanopagina=10
 			end if
 					
 			paginaabsoluta=request.QueryString("paginaabsoluta")
