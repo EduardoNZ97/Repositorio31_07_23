@@ -1066,28 +1066,36 @@ tr.si {
 
       <div class="collapse navbar-collapse" id="navbarsExample02">
         <ul class="navbar-nav me-auto">
-          <li class="nav-item">
+           <li class="nav-item">
          
-          </li>
-          <li class="nav-item dropdown">
-            <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administr su cuenta</a>
-            <ul class="dropdown-menu">
-			  <li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="[html]menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios </a></li>
-              <li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">&raquo; Cambiar contraseña</a></li>
-              <li><a class="dropdown-item" href="#">&raquo; Historial de usuario</a></li>
-            </ul>
-          </li>      
-		<li>
-		<a href="InfoReceivedSupplier.asp?ln=<%=lg%>" class="nav-link">Informaci&oacuten enviada a clientes </a>
-		</li>	  <li class="nav-item dropdown" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" title="" href="#">Usuarios Colgate</a>
+           </li>
+           <li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administrar cuenta</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" >&raquo;Administrar usuarios </a></li>
+					<li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">&raquo; Cambiar contraseña</a></li>
+					<li><a class="dropdown-item" href="#">&raquo; Historial de usuario</a></li>
+				</ul>
+			</li> 
+			<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Consulta</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="InfoReceivedSupplier.asp?ln=<%=lg%>" >&raquo;Información enviada a clientes</a></li>
+				</ul>
+			</li> 
+	  
+		<li class="nav-item dropdown" style="display:<% if trim(user)="CPA7503043P1" then response.write "block" else response.write "none" end if %>"><a  class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false" title="" href="#">Usuarios Colgate</a>
             <ul class="dropdown-menu">
 			
 				<!-- Inicia Link SemiEdi-->	
-				<%
+	
+					<%
 								
-					Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
-				%>
-				<!-- Termina Link SemiEdi-->	
+						Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+					%>
+			
+			   <!-- Termina Link SemiEdi-->	
+
 
             </ul>
          </li> 
@@ -1904,8 +1912,10 @@ tr.si {
                              
 
 								<div class="row">
+									
 									<div class="col-2">
-										<input   placeholder="Fecha inicial" class="form-control"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial" data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>			
+									  <!--  <img  src="bower_components/bootstrap-5_2_3-dist/icons/calendar2.svg" alt="Bootstrap" />-->
+										<input    placeholder="Fecha inicial" class="form-control"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial" data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>			
 									</div>
 									<div class="col-2">
 										<input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"  data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>
