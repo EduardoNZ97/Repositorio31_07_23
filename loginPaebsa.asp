@@ -473,7 +473,7 @@ tr.si {
 				marca='c'+marca;
 				if (obj.checked)
 				{
-					document.getElementById(arguments[i]).style.background='yellow';
+					document.getElementById(arguments[i]).style.background='lightgray';
 					document.getElementById(marca).checked=true;
 				}
 				else
@@ -2368,7 +2368,7 @@ tr.si {
 	</div class=""> <br/>
 	
 		<div style="margin-left:10px; margin-right:10px">
-			<table class="table table-bordered text-center " >
+			<table class="table table-bordered text-center table-striped-columns" >
 				<thead style="background-color: #3c8dbc;">	
 				        <th></th>										
 						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
