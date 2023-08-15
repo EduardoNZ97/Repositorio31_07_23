@@ -1088,11 +1088,14 @@ tr.si {
             <ul class="dropdown-menu">
 			
 				<!-- Inicia Link SemiEdi-->	
-				<%
+	
+					<%
 								
-					Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
-				%>
-				<!-- Termina Link SemiEdi-->	
+						Call semiEDI(trim(user),trim(pass),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+					%>
+			
+			   <!-- Termina Link SemiEdi-->	
+
 
             </ul>
          </li> 
