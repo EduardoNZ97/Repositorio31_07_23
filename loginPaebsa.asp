@@ -286,11 +286,29 @@ else
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
+<style> <%'esto se agrega para quitar la refecencia de  <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" /> para los archivos consultados%>
+tr.si {
+	color: #00F;
+	
+
+}
+
+ tr.no {
+	color: #000;
+	
+}
+
+ tr.limite {
+	color: #F00;
+	
+}
+</style>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />	
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
+	
 
     <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
     <script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
@@ -320,7 +338,8 @@ else
 	<link href="bower_components\bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
 	
 
-
+    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
+	
 		
 	<title>PAEBSA</title>
 
@@ -454,12 +473,12 @@ else
 				marca='c'+marca;
 				if (obj.checked)
 				{
-					document.getElementById(arguments[i]).style.backgroundColor='#E8FF9F';
+					document.getElementById(arguments[i]).style.background='yellow';
 					document.getElementById(marca).checked=true;
 				}
 				else
 				{
-					document.getElementById(arguments[i]).style.backgroundColor='';
+					document.getElementById(arguments[i]).style.background='';
 					document.getElementById(marca).checked=false;
 					document.getElementById('cTodos').checked=false;
 				}
@@ -767,7 +786,7 @@ else
 			 var modulo=iStart%2;
 			 if(iMinute<=2 && modulo==0)
 			 {
-					// document.getElementById("msgSesion").style.color="#FF0000";
+					 document.getElementById("msgSesion").style.color="#FF0000";
 			 }
 			 else
 			 {
@@ -995,7 +1014,7 @@ else
 </head>
 <body> 
 
-<!--ENcabezado-->
+<!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
 	<!--boostrap-->		
     <li style="color:#000080">
@@ -2365,8 +2384,8 @@ else
 						<th><small><small>Clave cliente</small></small></th>
 						<th><small><small>No. de control</small></small></th>
 						<th><small><small>Estado</small></small></th>
-                        <th><small><small>C&oacute;digo tienda</small></small></th>
-                        <th><small><small>Descripci&oacute;n del proceso</small></small></th>
+                        <th><small><small>Código tienda</small></small></th>
+                        <th><small><small>Descripción del proceso</small></small></th>
                         <th><small><small>Descargar</small></small></th>
 					
 				</thead>
@@ -2417,7 +2436,7 @@ else
 						if valorFcc<>"" and  valorHcc<>"" then
 							color="si"
 							if valorFcc<>"" and  valorHcc<>"" and diasonline =>diasRestantes then
-								color="limite"
+								style.color="limite"
 							end if
 						else
 							'color="no"
@@ -2427,8 +2446,9 @@ else
 								color="no"
 							end if
 						end if
+						
 				%>
-				<tbody  class=" table-success">
+				<tbody>
 					<tr class="<%=color%>" id="<%=fila%>">
 					<td><small><small><%= contador%></small></small></td>
 					<td><small><small><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></small></small></td>
