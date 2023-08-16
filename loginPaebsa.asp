@@ -1933,17 +1933,16 @@ tr.si {
 					   </form>
 				    </div>
 				
-				    <div class="col-4">
+				   <div class="col-4">
 			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Información sobre la bitácora de datos</strong></h2><br/></th>
 						<ul>
-							<li style="color: cornflowerblue;"><img  src="bower_components/bootstrap-5_2_3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label class="text-dark"  data-i18n="bitacora.noConsultado"> Archivo no consultado</label></li>
-                            <li class="bi bi-exclamation-triangle-fill"><img src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label data-i18n="bitacora.consultado" class="text-primary"> Archivo consultado</label></li>
-							<li style="2rem; color: cornflowerblue;"><img src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label data-i18n="bitacora.depuracion" class="text-danger"> Archivo preparado a depuración </label></li>   
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.pagina" class="text-dark"> Página actual:</label> <%= paginaabsoluta %></li>
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.registros" class="text-dark">Registros por página:</label> <%= rs.PageSize %></li>
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.cantidad" class="text-dark">Cantidad de páginas:</label> <%= rs.PageCount %></li>
-							<li style="2rem; color: cornflowerblue;"><label data-i18n="bitacora.conInformacion.totales" class="text-dark">Registros totales:</label> <%= rs.RecordCount %></li>
-							<!--<li style="2rem; color: cornflowerblue;"><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="[html]bitacora.informacionEnviada"> Información enviada a clientes</a></li>-->
+							<li class="text-primary"><img    src="bower_components/bootstrap-5_2_3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label class="text-dark">Archivo no consultado</label></li>
+                            <li class="text-primary"><img    src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label class="text-primary">Archivo consultado</label></li>
+							<li class="text-primary"><img    src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label class="text-danger">Archivo preparado a depuración</label></li>   
+							<li class="text-primary"><label  class="text-dark"> Página actual: <%= paginaabsoluta %> </label></li>
+							<li class="text-primary"><label  class="text-dark">Registros por página: <%= rs.PageSize %> </label></li>
+							<li class="text-primary"><label  class="text-dark">Cantidad de páginas: <%= rs.PageCount %> </label></li>
+							<li class="text-primary"><label  class="text-dark">Registros totales: <%= rs.RecordCount %> </label></li>
 						</ul>
 					</div>
 					<div class="col-1">
