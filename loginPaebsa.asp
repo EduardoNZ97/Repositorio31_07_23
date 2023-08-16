@@ -197,7 +197,7 @@
 			tamanopagina=request.QueryString("tamanopagina")
 			
 			if tamanopagina = "" then
-				tamanopagina=25
+				tamanopagina=10
 			end if
 					
 			paginaabsoluta=request.QueryString("paginaabsoluta")
@@ -241,7 +241,7 @@
 				  "where Id_Cliente='" & user & "' and Identificador_Canal_1='C013' and  Identificador_Formato_1='F001' " &_
 				  "and Fecha_Recepcion_Sistema >=Convert(char(35),DateAdd(d, -"&Info_Dias&" ,getdate()) , 112) AND Fecha_Recepcion_Sistema<=Convert(char(35),getdate() , 112)  "&buscar&" "&_
 				  "order by "& orden & " "&alf&",Hora_Envio_Proveedor desc "
-			'response.write sql
+		    'response.write sql
 			
 			'cnn.Open 
 		    rs.Open sql,cnn,3,1
@@ -1023,7 +1023,7 @@ tr.si {
 
 	    <span  class="h3 text-start float-start" style="color:white;margin-left:10px; margin-top:5px; margin-bottom:5px" >Servicio de Buró Electrónico Proveedores</span>
 	    <span class="position-absolute top-0 end-0" style="margin-top:8px">
-	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png"  width="30px" height="30px" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
+	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
       
 	        <ul class="dropdown-menu text-center" style="margin-left:340px ;background-color: #e3f2fd;" >
 		      <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto" width="150px" height="150px" alt="PAEBSA - Usuario"/><br/></li>
@@ -1034,7 +1034,7 @@ tr.si {
         </span>
 
         <span class="float-end">
-	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" width="30" height="30" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
+	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
             <ul class="dropdown-menu text-center">
                 <a class="dropdown-item"><%avisos()%></a>
             </ul>
@@ -2377,7 +2377,7 @@ tr.si {
 	</div class=""> <br/>
 	
 		<div style="margin-left:10px; margin-right:10px">
-			<table class="table table-bordered text-center table-striped-columns" >
+			<table class="table table-bordered text-center" >
 				<thead style="background-color: #3c8dbc;">	
 				        <th></th>										
 						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
@@ -2572,38 +2572,38 @@ tr.si {
 
 
  
-        <div class="">
-				<div class="">
-						<div class="btn-group">
+        <div class="btn-group">
+				<div>
+						<div class="btn-group" style="margin-left:10px;margin-top:3px;">
                             
 							<%
                             texto= value(texto)
                             texto2= value(texto2)
                             j=0
 							if cint(paginaabsoluta) <> 1 then
-								response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/first.png width=18 height=18 style=border:0 alt=First Page /></a></td>"
+								response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/first.png width=18 height=18 style=margin-top:3px   alt=First Page /></a></td>"
 							    j=j+1
 							end if
 							%>
 							<%j=0
 							if cint(paginaabsoluta) <> 1 then
 								atras=cint(paginaabsoluta)-1	
-								response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/previous.png width=18 height=18 style=border:0 alt=Previous Page  /></a></td>"
+								response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta=" & atras & "><img src=imagenes2/previous.png width=18 height=18 style=margin-top:3px  alt=Previous Page  /></a></td>"
 							    j=j+1
 							end if
 							%>  
 							<%if cint(paginaabsoluta) <> rs.pagecount then
 								atras=cint(paginaabsoluta)+1
-                                response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/next.png width=18 height=18 style=border:0 alt=Next Page  /></a></td>"
+                                response.write "<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/next.png width=18 height=18 style=margin-top:3px alt=Next Page  /></a></td>"
 							end if%>
 							<%j=0
 							if cint(paginaabsoluta) <> rs.pagecount then
 								atras=rs.pagecount
-								response.write"<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/last.png width=18 height=18 style=border:0 alt=Last Page /></a></td>"
+								response.write"<td><a href=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina="&tamanopagina&"&paginaabsoluta="&atras&"><img src=imagenes2/last.png width=18 height=18 style=margin-top:3px alt=Last Page /></a></td>"
 							    j=j+1
 							end if
 							%>       
-							<label><span class="">Página - </span></label>
+							<label style="margin-top:2px;margin-right:5px"><span>Página - </span></label>
 							<%
 							response.write "<form name=frmDireccionesASP1 id=frmDireccionesASP1 action=loginPaebsa.asp>"
 							response.write "<select class='btn btn-primary' style='width: 100%; height:90%' name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >"	
@@ -2624,8 +2624,12 @@ tr.si {
 							
 						</div>
 				</div>
-			<div class="nav col-md-12 ">
-            	<div class="">
+
+
+				
+			<div>
+			    <div class="float-end" style="margin-top :5px"> <span class="" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
+            	<div class="float-end text-center" style="margin-left:925px;margin-right:10px">
 					
 						<form name=frmDireccionesASP id=frmDireccionesASP action=loginPaebsa.asp>
 						<select class="btn btn-primary  text-wrap" style='width: 100%; height:20%;'  name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >
@@ -2639,8 +2643,9 @@ tr.si {
 						</form>
 					 
                 </div>
-                <div class=""> <span class="" data-i18n ="grid.entradas">Entradas por p&aacute;gina </span><span data-i18n="grid.pag">P&aacute;gina</span> <span id="currentpage"><%= paginaabsoluta %></span><span data-i18n="grid.de"> de</span><span id="totalpages"><%= rs.PageCount %></span></div>
+                
             </div>
+
         </div>
 
 		<div class=""></div>
