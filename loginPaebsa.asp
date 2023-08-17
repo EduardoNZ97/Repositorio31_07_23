@@ -306,23 +306,29 @@ tr.si {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />	
+	
+	<!--Si se ocupa  'jsFromHttp/jquery-1.9.1.js' 'jsFromHttp/jquery-ui.js' es para el mensaje en una sola linea Hola mundo bootstrap2 en rojo-->
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
-	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
-	
-
-    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
-    <script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
-    <script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>
+	<script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
 	<script type="text/javascript" src="jquery/jquery.cycle.all.2.74.js"></script>
+
+    <!--Si se ocupara es para la animacion de que pareca la venta para descargar archivo dentro de la tabla-->
+	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
+	<!--Si se ocupa js/Functions.js-->
 	<script type="text/javascript" src="js/Functions.js"></script>
-	
-	
-
-	<!--Para el aviso Mensaje en texto-->
+	<!--Si se ocupa Para el aviso Mensaje en texto cuando seleciona un archivo a descargar-->
 	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
-	<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>
 
+	<!--Si se ocupa para la tabla-->	  
+    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
 	
+    <!--Candidato para eliminación jquery/jquery_validate.js-->
+    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
+	<!--Candidato para eliminación jquery/jqueryTooltip.js-->
+    <!--<script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>-->
+    <!--Candidato para eliminación js/jquery.fixedheadertable.js-->
+	<!--<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>-->
+
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/bluebird.min.js" type="text/javascript"></script>
@@ -330,15 +336,13 @@ tr.si {
     <script src="../js/i18next/paebsa/jquery-i18next.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/i18nextXHRBackend.min.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/traslatePaebsa.js" type="text/javascript"></script>
-		<!-- Traductor de la pagina Espaniol Ingles -->
+	<!-- Traductor de la pagina Espaniol Ingles -->
 
     <!--Boostrap 5.2.3-->
-
 	<script  src="bower_components\bootstrap-5_2_3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
 	<link href="bower_components\bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
 	
 
-    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
 	
 		
 	<title>PAEBSA</title>
