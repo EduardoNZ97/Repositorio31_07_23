@@ -1972,7 +1972,7 @@ tr.si {
   </div>
   
 
-	<!--Inicia Menú Nuevas Funciones del portal --> 
+	<!--Inicia Menú Nuevas Funciones del portal Bootrap--> 
 	<div class="col-3" style="padding-left: 15px;">
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
@@ -2089,7 +2089,10 @@ tr.si {
 								</li>		
 								<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
-            
+            				     <li id="link_cargaInfo">
+						           <a href="#" style="text-decoration:none; color:black;" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
+					             </li>
+
 						
 
 
@@ -2195,9 +2198,6 @@ tr.si {
 					</li>
 					 <!-- Modulo_Envio_EDI_Clientes -->
 					
-					    <li id="link_cargaInfo">
-						   <a href="#" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
-					    </li>
 					
 					
 					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
