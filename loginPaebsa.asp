@@ -1953,27 +1953,6 @@ tr.si {
 	
 
 
-<<<<<<< HEAD
-	<!-- Mensajes a clientes -->
-	<div class="post_box" style="padding-left: 15px; padding-bottom: 15px;">
-		<div class="slideshow" style="position: relative; z-index: 1;">
-			<%
-				AvisoGenerico(user)
-			%>		
-		</div>
-		<div class="slideshow" style="position: relative; z-index: 1;">
-			<%
-				mensajeCliente(user)
-			%>		
-		</div>
-	</div>	
-	<!-- Mensajes a clientes -->
-  </div>
-  
-
-	<!--Inicia Menú Nuevas Funciones del portal --> 
-	<div class="col-3" style="padding-left: 15px;">
-=======
 
 <!--Inicia Mensajes a clientes -->
 <div class="row">
@@ -2007,7 +1986,7 @@ tr.si {
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
 	<div class="col-3" style="padding-left: 15px; padding-bottom:1em;">
 
->>>>>>> EDERactMenuSuperior
+
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="headingTwo">
@@ -2123,135 +2102,7 @@ tr.si {
 								</li>		
 								<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
-<<<<<<< HEAD
-            
-						
 
-
-							</ul>
-						</div>
-					</div>
-				</div>
-			</div>
-		</div>
-    </div>	
- <!--Termina Menú Nuevas Funciones del portal --> 
-
-  <!--Nuevas funciones del portal con informacion-->
- 
-		<div class="content_menu">
-	<div id="menu">
-		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
-		<ul id="ListaMenu">
-		
-		
-					<!-- Cuadro de dialogo. subir facturas -->
-					<li id="composebtn">
-						<a href="#"  class="compose" id="composeicon" data-i18n="menu.factura.titulo"> &raquo;Env&iacuteo de facturas a clientes</a>
-							<div class="mainCompose">
-								<div class="calloutUp">
-									<div class="calloutUp2"></div>
-								</div>	
-								<div id="msgform" class="msgEnvio" width="700px">
-									<form id="sendprivatemsg" class="UsuariosCss" action="EnvioXML/ValidaXML.aspx" method="post" enctype="multipart/form-data">
-										<label data-i18n="menu.factura.xml">Factura XML/EDI</label>
-										<input type="file" name="archivo[]" accept="text/xml,.edi" size="70" multiple value="Examine"/>
-										<br /><br />
-										<label style="color:#B40404;" data-i18n="menu.factura.archivos">N&uacutemero m&aacuteximo de archivos por carga: 50</label>
-										<br /><br/>
-										<label style="color:#0B4C5F;" data-i18n="menu.factura.aviso">IMPORTANTE: Para enviar facturas con addenda resguardo de Walmart vaya a "Captura de Addendas-> Addendas de Wal-Mart-> Addenda Resguardo"</label>
-										<br /><br />
-										<%
-											sqlProveedorMerza = "select rtrim(id_cliente)id_Cliente, Codigo_Cliente,Codigo_Transaccion_Produccion,RFCSpoke,RFCHub from CATSPOKESHUBS where Codigo_Cliente='"&trim(pass)&"' and Id_Cliente='"&trim(user)&"' and Codigo_Transaccion_Produccion='INVOIC' and RFCHub='ADU800131T10'"
-											'response.write sqlProveedorMerza
-											set rsProveedor=server.createobject("ADODB.Recordset") 						
-											rsProveedor.Open sqlProveedorMerza,cnn,3,1	
-											if rsProveedor.EOF then
-											else
-											response.write "<label  style='color:#B40404;' data-i18n='menu.factura.avisoMerza'> SI ERES PROVEEDOR DE MERZA, FAVOR DE SUBIR FACTURAS CON LA ADDENDA SOLICITADA</label></a><br/><br/>"
-											end if
-										%>
-										<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
-										<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
-										<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
-										<input type="hidden" id="SpokeOhub" name="SpokeOhub" value="spoke"/>
-										<div style="padding-bottom: 25px;">
-											<div class="input" style="float:right;">
-												<input class="button_opt prtText" onclick="return validarMaximoArchivos()" type="submit" id="Submit1" value="Enviar facturas"  data-i18n="[value]menu.factura.boton" />
-											</div>
-										</div>
-										<br /><br />
-									</form>
-								  </div>
-							</div>
-					<!-- Cuadro de dialogo. subir facturas -->
-					</li>
-					
-					
-					<!-- Modulo_Genera_Addenda_Nube -->
-					<li class="has-sub"><a href="#" data-i18n="[html]menu.generarAddendaAutomatica.titulo"> &raquo; Generar Addenda en la nube</a>
-						<ul>
-							<li>
-								<%Call CargaDeAddendaGenerica(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)%><br />
-							</li>			
-						</ul>
-					</li>
-					<!-- Modulo_Genera_Addenda_Nube -->
-					
-					<!-- Modulo_Envio_EDI_Clientes -->
-					<li id="btnEdi">
-					<!-- Inicia cuadro de dialogo de archivos EDI -->
-						<a href="#" class="composeEdi" id="composeiconEdi" data-i18n="menu.asn.titulo"> &raquo;Env&iacuteo de archivos DESADV</a>
-							<div class="mainEDI">
-								<div class="calloutUp"> 
-									<div class="calloutUp2"></div>
-								</div>	
-								<div id="msgformEDI" class="msgEnvio" width="700px">
-									<form id="sendprivatemsgEdi" class="UsuariosCss" action="AplicacionPaebsa/ValidaXML.ashx" method="post" enctype="multipart/form-data">
-										<label data-i18n="menu.asn.envio">Archivos ASN(.edi) </label>
-										<input type="file" name="archivoEdi[]" id="archivoEdi" accept="text/edi" size="70" multiple />
-										<br /><br />
-										<label style="color:#B40404;" data-i18n="menu.asn.aviso">N&uacutemero m&aacuteximo de archivos por carga: 10</label>
-										<br />
-										<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
-										<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
-										<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
-										<input type="hidden" id="SpokeOhub" name="SpokeOhub" value="spoke"/>									  
-										<div style="padding-bottom: 25px;">
-											<div class="input" style="float:right;">
-												<input class="button_opt prtText" onclick="return validarMaximoArchivosEdis()" type="submit" id="btnenviafac" value="Enviar archivos" data-i18n="[value]menu.asn.boton"/>
-											</div>
-										</div>
-										<br /><br />
-									</form>
-								</div>
-							</div>
-					<!-- termina cuadro de dialogo de archivos EDI -->	
-					</li>
-					 <!-- Modulo_Envio_EDI_Clientes -->
-					
-					    <li id="link_cargaInfo">
-						   <a href="#" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
-					    </li>
-					
-					
-					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
-					<li id="link_desadv">
-						<a href="#" onclick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="[html]menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
-					</li>		
-					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
-						
-            
-=======
-         
-					 <!-- Modulo_Envio_EDI_Clientes -->
-					
-				 				     <li id="link_cargaInfo">
-						           <a href="#" style="text-decoration:none; color:black;" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
-					             </li>
-
-		
->>>>>>> EDERactMenuSuperior
 					<!-- Link de Facturas express -->		
 					<li>
 					<%
