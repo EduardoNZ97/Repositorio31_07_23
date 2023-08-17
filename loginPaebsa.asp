@@ -1051,7 +1051,7 @@ tr.si {
 	        
 			
 
-    <!--Inicia Ménu-->
+    <!--Inicia Ménu Bootstrap-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1170,7 +1170,7 @@ tr.si {
     </div>
 	</div><!--fin del contenido menu superior-->
 	  </nav>
-     <!--Termina Ménu-->
+     <!--Termina Ménu  Bootstrap-->
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
@@ -1967,7 +1967,7 @@ tr.si {
   </div>
   
 
-	<!--Inicia Menú Nuevas Funciones del portal Bootrap--> 
+	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
 	<div class="col-3" style="padding-left: 15px;">
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
@@ -2098,7 +2098,7 @@ tr.si {
 			</div>
 		</div>
     </div>	
- <!--Termina Menú Nuevas Funciones del portal --> 
+ <!--Termina Menú Nuevas Funciones del portal Bootstrap --> 
 
   <!--Nuevas funciones del portal con informacion-->
  
@@ -2106,51 +2106,7 @@ tr.si {
 	<div id="menu">
 		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
 		<ul id="ListaMenu">
-		
-		
-					<!-- Cuadro de dialogo. subir facturas -->
-					<li id="composebtn">
-						<a href="#"  class="compose" id="composeicon" data-i18n="menu.factura.titulo"> &raquo;Env&iacuteo de facturas a clientes</a>
-							<div class="mainCompose">
-								<div class="calloutUp">
-									<div class="calloutUp2"></div>
-								</div>	
-								<div id="msgform" class="msgEnvio" width="700px">
-									<form id="sendprivatemsg" class="UsuariosCss" action="EnvioXML/ValidaXML.aspx" method="post" enctype="multipart/form-data">
-										<label data-i18n="menu.factura.xml">Factura XML/EDI</label>
-										<input type="file" name="archivo[]" accept="text/xml,.edi" size="70" multiple value="Examine"/>
-										<br /><br />
-										<label style="color:#B40404;" data-i18n="menu.factura.archivos">N&uacutemero m&aacuteximo de archivos por carga: 50</label>
-										<br /><br/>
-										<label style="color:#0B4C5F;" data-i18n="menu.factura.aviso">IMPORTANTE: Para enviar facturas con addenda resguardo de Walmart vaya a "Captura de Addendas-> Addendas de Wal-Mart-> Addenda Resguardo"</label>
-										<br /><br />
-										<%
-											sqlProveedorMerza = "select rtrim(id_cliente)id_Cliente, Codigo_Cliente,Codigo_Transaccion_Produccion,RFCSpoke,RFCHub from CATSPOKESHUBS where Codigo_Cliente='"&trim(pass)&"' and Id_Cliente='"&trim(user)&"' and Codigo_Transaccion_Produccion='INVOIC' and RFCHub='ADU800131T10'"
-											'response.write sqlProveedorMerza
-											set rsProveedor=server.createobject("ADODB.Recordset") 						
-											rsProveedor.Open sqlProveedorMerza,cnn,3,1	
-											if rsProveedor.EOF then
-											else
-											response.write "<label  style='color:#B40404;' data-i18n='menu.factura.avisoMerza'> SI ERES PROVEEDOR DE MERZA, FAVOR DE SUBIR FACTURAS CON LA ADDENDA SOLICITADA</label></a><br/><br/>"
-											end if
-										%>
-										<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
-										<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
-										<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
-										<input type="hidden" id="SpokeOhub" name="SpokeOhub" value="spoke"/>
-										<div style="padding-bottom: 25px;">
-											<div class="input" style="float:right;">
-												<input class="button_opt prtText" onclick="return validarMaximoArchivos()" type="submit" id="Submit1" value="Enviar facturas"  data-i18n="[value]menu.factura.boton" />
-											</div>
-										</div>
-										<br /><br />
-									</form>
-								  </div>
-							</div>
-					<!-- Cuadro de dialogo. subir facturas -->
-					</li>
-					
-					
+						
 					<!-- Modulo_Genera_Addenda_Nube -->
 					<li class="has-sub"><a href="#" data-i18n="[html]menu.generarAddendaAutomatica.titulo"> &raquo; Generar Addenda en la nube</a>
 						<ul>
