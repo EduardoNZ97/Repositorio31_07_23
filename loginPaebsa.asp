@@ -306,23 +306,29 @@ tr.si {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />	
+	
+	<!--Si se ocupa  'jsFromHttp/jquery-1.9.1.js' 'jsFromHttp/jquery-ui.js' es para el mensaje en una sola linea Hola mundo bootstrap2 en rojo-->
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
-	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
-	
-
-    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
-    <script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
-    <script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>
+	<script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
 	<script type="text/javascript" src="jquery/jquery.cycle.all.2.74.js"></script>
+
+    <!--Si se ocupara es para la animacion de que pareca la venta para descargar archivo dentro de la tabla-->
+	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
+	<!--Si se ocupa js/Functions.js-->
 	<script type="text/javascript" src="js/Functions.js"></script>
-	
-	
-
-	<!--Para el aviso Mensaje en texto-->
+	<!--Si se ocupa Para el aviso Mensaje en texto cuando seleciona un archivo a descargar-->
 	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
-	<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>
 
+	<!--Si se ocupa para la tabla-->	  
+    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
 	
+    <!--Candidato para eliminación jquery/jquery_validate.js-->
+    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
+	<!--Candidato para eliminación jquery/jqueryTooltip.js-->
+    <!--<script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>-->
+    <!--Candidato para eliminación js/jquery.fixedheadertable.js-->
+	<!--<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>-->
+
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/bluebird.min.js" type="text/javascript"></script>
@@ -330,16 +336,11 @@ tr.si {
     <script src="../js/i18next/paebsa/jquery-i18next.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/i18nextXHRBackend.min.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/traslatePaebsa.js" type="text/javascript"></script>
-		<!-- Traductor de la pagina Espaniol Ingles -->
+	<!-- Traductor de la pagina Espaniol Ingles -->
 
     <!--Boostrap 5.2.3-->
-
 	<script  src="bower_components\bootstrap-5_2_3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
 	<link href="bower_components\bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
-	
-
-    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
-	
 		
 	<title>PAEBSA</title>
 
@@ -617,7 +618,7 @@ tr.si {
 			if(alf=='undefined'){alf='';}
 
 			
-			location.href='ExportaTablaAExcel.asp?'+'datepicker='+fechaini+'&datepickerfinal='+fechafin+'&tipofecha='+tipofecha+'&seleccione2='+seleccione2+'&texto2='+texto2+'&seleccione='+seleccione+'&texto='+texto+'&orden='+orden+'&alf='+alf+"&ln=<%=lg%>";
+			location.href='Exp_Excel_Cli_Info_Rec.asp?'+'datepicker='+fechaini+'&datepickerfinal='+fechafin+'&tipofecha='+tipofecha+'&seleccione2='+seleccione2+'&texto2='+texto2+'&seleccione='+seleccione+'&texto='+texto+'&orden='+orden+'&alf='+alf+"&ln=<%=lg%>";
 		}
 	</script>
 
@@ -1052,7 +1053,8 @@ tr.si {
 	        
 			
 
-    <!--Inicia Ménu-->
+    
+    <!--Inicia Ménu Bootstrap-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1171,7 +1173,7 @@ tr.si {
     </div>
 	</div><!--fin del contenido menu superior-->
 	  </nav>
-     <!--Termina Ménu-->
+    <!--Termina Ménu  Bootstrap-->
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
@@ -1951,6 +1953,7 @@ tr.si {
 	
 
 
+<<<<<<< HEAD
 	<!-- Mensajes a clientes -->
 	<div class="post_box" style="padding-left: 15px; padding-bottom: 15px;">
 		<div class="slideshow" style="position: relative; z-index: 1;">
@@ -1970,6 +1973,41 @@ tr.si {
 
 	<!--Inicia Menú Nuevas Funciones del portal --> 
 	<div class="col-3" style="padding-left: 15px;">
+=======
+
+<!--Inicia Mensajes a clientes -->
+<div class="row">
+       <div class="col-4">
+       </div>
+		<div class="col-4">
+		<div class="col-md-8">
+			<div class="card text-center ">
+				<div class="card-header text-bg-light">	
+				</div>
+				<div class="card-body slideshow">
+					<%
+						mensajeCliente(user)
+					%>
+				</div>
+				<div class="slideshow">
+					<%
+				        AvisoGenerico(user)
+			        %>
+				</div>
+				<!--<div class="card-footer text-muted">
+				</div>-->
+			</div>
+		</div>
+   </div>
+	<div class="col-4">
+	</div>
+</div>
+<!--Termina Mensajes a clientes -->
+
+  	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
+	<div class="col-3" style="padding-left: 15px; padding-bottom:1em;">
+
+>>>>>>> EDERactMenuSuperior
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
 				<h2 class="accordion-header" id="headingTwo">
@@ -2085,6 +2123,7 @@ tr.si {
 								</li>		
 								<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
+<<<<<<< HEAD
             
 						
 
@@ -2203,6 +2242,16 @@ tr.si {
 					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
             
+=======
+         
+					 <!-- Modulo_Envio_EDI_Clientes -->
+					
+				 				     <li id="link_cargaInfo">
+						           <a href="#" style="text-decoration:none; color:black;" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
+					             </li>
+
+		
+>>>>>>> EDERactMenuSuperior
 					<!-- Link de Facturas express -->		
 					<li>
 					<%
@@ -2211,11 +2260,6 @@ tr.si {
 					</li>
                     <!-- Link de facturas express -->	
 							
-				
-				
-	
-			
-	
 	
 	
 			   
@@ -2253,7 +2297,7 @@ tr.si {
 				
 
 					
-			
+			 <ul id="ListaMenu">
 
 							<!-- Termina Link de administrar brokers  ALMGARCIA -->	
 						<li class="has-sub">
@@ -2324,8 +2368,20 @@ tr.si {
 						</ul>
 				</li>
 		</ul>		
-	</div>
-	<!-- inicia script de acordeon-->		
+
+							</ul>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+    </div>	
+ <!--Termina Menú Nuevas Funciones del portal Bootstrap --> 
+
+  <!--Nuevas funciones del portal con informacion-->
+ 
+  <div class="content_menu">
+  	<!-- inicia script de acordeon-->		
 	<script type="text/javascript">
 	$('#ListaMenu').hide();
 	$('#ListaMenu').removeClass('activo');
