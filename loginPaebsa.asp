@@ -2345,7 +2345,7 @@ tr.si {
 
 	</div>
 </div>
- <h4 class="fs-6 text-center text-primary"><strong>Informacion Recibida</strong></h4><br/>
+ <h4 class="fs-6 text-center text-primary"><strong>Información Recibida</strong></h4><br/>
 	<div>
 		<div class="float-end">
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
