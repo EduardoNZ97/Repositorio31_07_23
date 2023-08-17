@@ -2281,7 +2281,7 @@ tr.si {
 	
 		<div style="margin-left:10px; margin-right:10px">
 			<table class="table table-bordered text-center" >
-				<thead style="background-color: #3c8dbc;">	
+				<thead class="text-white" style="background-color: #3c8dbc;">	
 				        <th></th>										
 						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
 						Response.Write matriz(i) 
