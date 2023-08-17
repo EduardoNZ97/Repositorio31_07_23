@@ -1017,10 +1017,6 @@ tr.si {
 <!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
 	<!--boostrap-->		
-    <li style="color:#000080">
-
-	
-
 	    <span  class="h3 text-start float-start" style="color:white;margin-left:10px; margin-top:5px; margin-bottom:5px" >Servicio de Buró Electrónico Proveedores</span>
 	    <span class="position-absolute top-0 end-0" style="margin-top:8px">
 	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
@@ -1046,7 +1042,6 @@ tr.si {
 			        </script>
 	    <label class="float-end" style="color: white; margin-top:10px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
         <img class="float-end" style="margin-top:7px" src="imagenes/sesion.png"  alt="sesion" width="30" height="30"/>
-    </li>
 	</span>
 </nav>
 <!--Fin del Encabezado-->
