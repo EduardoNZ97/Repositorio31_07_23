@@ -1338,8 +1338,8 @@ tr.si {
 			</div>
  
 		<!-- Mensajes a clientes -->
-		<div class="post_box">
-			<div class="slideshow" style="position: relative; z-index: 1;">
+		<div class="container ">
+			<div class="col-4" style="position: relative; z-index: 1;">
 				<%
 					AvisoGenerico(user)
 				%>		
@@ -1952,7 +1952,7 @@ tr.si {
 
 
 	<!-- Mensajes a clientes -->
-	<div class="post_box">
+	<div class="post_box" style="padding-left: 15px; padding-bottom: 15px;">
 		<div class="slideshow" style="position: relative; z-index: 1;">
 			<%
 				AvisoGenerico(user)
