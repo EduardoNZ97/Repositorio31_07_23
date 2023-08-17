@@ -306,29 +306,23 @@ tr.si {
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />	
-	
-	<!--Si se ocupa  'jsFromHttp/jquery-1.9.1.js' 'jsFromHttp/jquery-ui.js' es para el mensaje en una sola linea Hola mundo bootstrap2 en rojo-->
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
-	<script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
-	<script type="text/javascript" src="jquery/jquery.cycle.all.2.74.js"></script>
-
-    <!--Si se ocupara es para la animacion de que pareca la venta para descargar archivo dentro de la tabla-->
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
-	<!--Si se ocupa js/Functions.js-->
-	<script type="text/javascript" src="js/Functions.js"></script>
-	<!--Si se ocupa Para el aviso Mensaje en texto cuando seleciona un archivo a descargar-->
-	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
-
-	<!--Si se ocupa para la tabla-->	  
-    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
 	
-    <!--Candidato para eliminación jquery/jquery_validate.js-->
-    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
-	<!--Candidato para eliminación jquery/jqueryTooltip.js-->
-    <!--<script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>-->
-    <!--Candidato para eliminación js/jquery.fixedheadertable.js-->
-	<!--<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>-->
 
+    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
+    <script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
+    <script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>
+	<script type="text/javascript" src="jquery/jquery.cycle.all.2.74.js"></script>
+	<script type="text/javascript" src="js/Functions.js"></script>
+	
+	
+
+	<!--Para el aviso Mensaje en texto-->
+	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
+	<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>
+
+	
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/bluebird.min.js" type="text/javascript"></script>
@@ -336,13 +330,15 @@ tr.si {
     <script src="../js/i18next/paebsa/jquery-i18next.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/i18nextXHRBackend.min.js" type="text/javascript"></script>
     <script src="../js/i18next/paebsa/traslatePaebsa.js" type="text/javascript"></script>
-	<!-- Traductor de la pagina Espaniol Ingles -->
+		<!-- Traductor de la pagina Espaniol Ingles -->
 
     <!--Boostrap 5.2.3-->
+
 	<script  src="bower_components\bootstrap-5_2_3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
 	<link href="bower_components\bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
 	
 
+    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
 	
 		
 	<title>PAEBSA</title>
@@ -988,7 +984,7 @@ tr.si {
 		function ventanaHistorial() 
 		{
 		//window.showModalDialog('HistorialProveedores.asp', '', 'status:1; resizable:1; dialogWidth:900px; dialogHeight:750px; dialogTop=50px; dialogLeft:100px')
-			window.open("HistorialProveedores.asp", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=50, left=50, width=1200, height=700");
+			window.open("ventanaHistorial.asp", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=50, left=50, width=1200, height=700");
 		}
 	</script>
 	
@@ -1025,13 +1021,14 @@ tr.si {
 	    <span class="position-absolute top-0 end-0" style="margin-top:8px">
 	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
       
-	        <ul class="dropdown-menu text-center" style="margin-left:340px ;background-color: #e3f2fd;" >
+	        <ul class="dropdown-menu text-center form-control" style="background-color: #e3f2fd;" >
 		      <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto" width="150px" height="150px" alt="PAEBSA - Usuario"/><br/></li>
               <li style="background-color:#e3f2fd;"><i><%=Nombre%></i></li>
               <li style="background-color: #e3f2fd;"><i><%=user%></i></li><br/>
 		      <li class=" d-grid d-md-flex justify-content-md-end"><button id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary">Cerrar sesion</button>&nbsp;&nbsp;</li>
             </ul>
         </span>
+        
 
         <span class="float-end">
 	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
@@ -1055,7 +1052,7 @@ tr.si {
 	        
 			
 
-    <!--Inicia Ménu Bootstrap-->
+    <!--Inicia Ménu-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1174,7 +1171,7 @@ tr.si {
     </div>
 	</div><!--fin del contenido menu superior-->
 	  </nav>
-     <!--Termina Ménu  Bootstrap-->
+     <!--Termina Ménu-->
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
@@ -1971,7 +1968,7 @@ tr.si {
   </div>
   
 
-	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
+	<!--Inicia Menú Nuevas Funciones del portal --> 
 	<div class="col-3" style="padding-left: 15px;">
 		<div class="accordion" id="accordionExample">
 			<div class="accordion-item">
@@ -2088,123 +2085,9 @@ tr.si {
 								</li>		
 								<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						
-            				     <li id="link_cargaInfo">
-						           <a href="#" style="text-decoration:none; color:black;" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
-					             </li>
+            
+						
 
-								<!-- Link de Facturas express -->		
-								<li>
-								<%
-									Call facturaExpress(pass,user,Nombre)
-								%>	
-								</li>
-								<!-- Link de facturas express -->	
-
-								
-								<li><!-- Link de Reportes log -->
-								<%
-									Call reporteBitacoras(pass,user,Nombre)
-								%>	
-								</li>
-								<!-- Link de Reportes log -->
-								<!-- Link de Reportes Excel -->
-								<li>
-								<%
-									Call reporteExcel(pass,user,Nombre) 
-								%>	
-								</li>
-								<!-- Link de Reportes Excel -->
-								<!-- Inicia Link de generacion de archivo ASN ALMGARCIA --> 
-								<li  style="display:<% if trim(user)="CIVSA" or trim(user)="MXG1505" or (trim(user) = "MXG1397" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXGU435" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXG2004" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) then response.write "block" else response.write "none" end if %>">
-									<%
-											Call ASNAlmGarcia(trim(pass),trim(user),trim(Nombre),"loginPaebsa.asp?ln="&lg)
-									%>
-								</li>
-								<!-- Termina Link de generacion de archivo ASN ALMGARCIA -->
-								<!-- Inicia Link de administrar brokers  ALMGARCIA -->
-								<li  style="display:<% if trim(user)="CIVSA" then response.write "block" else response.write "none" end if %>">
-									<%
-											Call Brokers(trim(pass), trim(user),trim(Nombre))
-									%>
-								</li>
-								<li>
-									<%
-										Call CargaFragua(pass,user,Nombre)		
-									%>
-								</li>
-
-
-										            <ul id="ListaMenu">
-
-						<!-- Termina Link de administrar brokers  ALMGARCIA -->	
-						<li class="has-sub">
-						    <a href="#" data-i18n="menu.addendas">&raquo; Captura de Adendas</a>
-							<ul>
-							
-								<!-- Link de Facturas Walmart -->
-								<li class="has-sub"><a href="#" data-i18n="menu.adendaWalmart">&raquo;Addendas de Wal-Mart</a>
-									<ul>
-										<li>
-										<%
-											Call AddendaWalmartEdi(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-										%>
-										</li>
-										<li>
-										<%
-											Call addendaWalmartResguardo(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-										%>
-										</li>
-									</ul>
-								</li>
-								<!-- Link de facturas Walmart -->							
-								<!-- Link de envio de facturas con addenda de amazon-->
-								<li>
-								<%							
-									Call addendaAmazon(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-								%>	
-								</li>
-								<!-- Fin link -->
-								<!-- Link de envio de facturas con addenda de BB&B-->
-								<li>
-								<%							
-									Call  addendaEdiBBB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg) 
-								%>	
-								</li>							
-								<!-- Fin link -->
-								<!-- Link de envio de facturas con addenda de almacenes Garcia-->
-								<li>
-								<%							
-									Call addendaAlmacenesGarcia(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-								%>	
-								</li>							
-								<!-- Fin link -->
-								
-								<!-- Inicia Addenda de MERZA -->
-								<li>
-								<%
-									Call addendaMerza(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)		
-								%>
-								</li>
-									<!-- Termina Addenda de Merza -->
-								<!-- Inicia Addenda de Corvi -->
-								<li>
-								<%
-									Call addendaCorvi(pass,user,"", "loginPaebsa.asp?ln="&lg)		
-								%>
-								</li>
-								<li>
-								<%
-									Call addendaChedraui(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
-								%>
-								</li>
-								<li>
-								<%
-									Call AddendaHEB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
-								%>
-								</li>
-						    </ul>
-				        </li>
-		            </ul>	
 
 							</ul>
 						</div>
@@ -2213,12 +2096,235 @@ tr.si {
 			</div>
 		</div>
     </div>	
- <!--Termina Menú Nuevas Funciones del portal Bootstrap --> 
+ <!--Termina Menú Nuevas Funciones del portal --> 
 
   <!--Nuevas funciones del portal con informacion-->
  
-  <div class="content_menu">
+		<div class="content_menu">
+	<div id="menu">
+		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
+		<ul id="ListaMenu">
+		
+		
+					<!-- Cuadro de dialogo. subir facturas -->
+					<li id="composebtn">
+						<a href="#"  class="compose" id="composeicon" data-i18n="menu.factura.titulo"> &raquo;Env&iacuteo de facturas a clientes</a>
+							<div class="mainCompose">
+								<div class="calloutUp">
+									<div class="calloutUp2"></div>
+								</div>	
+								<div id="msgform" class="msgEnvio" width="700px">
+									<form id="sendprivatemsg" class="UsuariosCss" action="EnvioXML/ValidaXML.aspx" method="post" enctype="multipart/form-data">
+										<label data-i18n="menu.factura.xml">Factura XML/EDI</label>
+										<input type="file" name="archivo[]" accept="text/xml,.edi" size="70" multiple value="Examine"/>
+										<br /><br />
+										<label style="color:#B40404;" data-i18n="menu.factura.archivos">N&uacutemero m&aacuteximo de archivos por carga: 50</label>
+										<br /><br/>
+										<label style="color:#0B4C5F;" data-i18n="menu.factura.aviso">IMPORTANTE: Para enviar facturas con addenda resguardo de Walmart vaya a "Captura de Addendas-> Addendas de Wal-Mart-> Addenda Resguardo"</label>
+										<br /><br />
+										<%
+											sqlProveedorMerza = "select rtrim(id_cliente)id_Cliente, Codigo_Cliente,Codigo_Transaccion_Produccion,RFCSpoke,RFCHub from CATSPOKESHUBS where Codigo_Cliente='"&trim(pass)&"' and Id_Cliente='"&trim(user)&"' and Codigo_Transaccion_Produccion='INVOIC' and RFCHub='ADU800131T10'"
+											'response.write sqlProveedorMerza
+											set rsProveedor=server.createobject("ADODB.Recordset") 						
+											rsProveedor.Open sqlProveedorMerza,cnn,3,1	
+											if rsProveedor.EOF then
+											else
+											response.write "<label  style='color:#B40404;' data-i18n='menu.factura.avisoMerza'> SI ERES PROVEEDOR DE MERZA, FAVOR DE SUBIR FACTURAS CON LA ADDENDA SOLICITADA</label></a><br/><br/>"
+											end if
+										%>
+										<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
+										<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
+										<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
+										<input type="hidden" id="SpokeOhub" name="SpokeOhub" value="spoke"/>
+										<div style="padding-bottom: 25px;">
+											<div class="input" style="float:right;">
+												<input class="button_opt prtText" onclick="return validarMaximoArchivos()" type="submit" id="Submit1" value="Enviar facturas"  data-i18n="[value]menu.factura.boton" />
+											</div>
+										</div>
+										<br /><br />
+									</form>
+								  </div>
+							</div>
+					<!-- Cuadro de dialogo. subir facturas -->
+					</li>
+					
+					
+					<!-- Modulo_Genera_Addenda_Nube -->
+					<li class="has-sub"><a href="#" data-i18n="[html]menu.generarAddendaAutomatica.titulo"> &raquo; Generar Addenda en la nube</a>
+						<ul>
+							<li>
+								<%Call CargaDeAddendaGenerica(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)%><br />
+							</li>			
+						</ul>
+					</li>
+					<!-- Modulo_Genera_Addenda_Nube -->
+					
+					<!-- Modulo_Envio_EDI_Clientes -->
+					<li id="btnEdi">
+					<!-- Inicia cuadro de dialogo de archivos EDI -->
+						<a href="#" class="composeEdi" id="composeiconEdi" data-i18n="menu.asn.titulo"> &raquo;Env&iacuteo de archivos DESADV</a>
+							<div class="mainEDI">
+								<div class="calloutUp"> 
+									<div class="calloutUp2"></div>
+								</div>	
+								<div id="msgformEDI" class="msgEnvio" width="700px">
+									<form id="sendprivatemsgEdi" class="UsuariosCss" action="AplicacionPaebsa/ValidaXML.ashx" method="post" enctype="multipart/form-data">
+										<label data-i18n="menu.asn.envio">Archivos ASN(.edi) </label>
+										<input type="file" name="archivoEdi[]" id="archivoEdi" accept="text/edi" size="70" multiple />
+										<br /><br />
+										<label style="color:#B40404;" data-i18n="menu.asn.aviso">N&uacutemero m&aacuteximo de archivos por carga: 10</label>
+										<br />
+										<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
+										<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
+										<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
+										<input type="hidden" id="SpokeOhub" name="SpokeOhub" value="spoke"/>									  
+										<div style="padding-bottom: 25px;">
+											<div class="input" style="float:right;">
+												<input class="button_opt prtText" onclick="return validarMaximoArchivosEdis()" type="submit" id="btnenviafac" value="Enviar archivos" data-i18n="[value]menu.asn.boton"/>
+											</div>
+										</div>
+										<br /><br />
+									</form>
+								</div>
+							</div>
+					<!-- termina cuadro de dialogo de archivos EDI -->	
+					</li>
+					 <!-- Modulo_Envio_EDI_Clientes -->
+					
+					    <li id="link_cargaInfo">
+						   <a href="#" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
+					    </li>
+					
+					
+					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
+					<li id="link_desadv">
+						<a href="#" onclick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="[html]menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
+					</li>		
+					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
+						
+            
+					<!-- Link de Facturas express -->		
+					<li>
+					<%
+						Call facturaExpress(pass,user,Nombre)
+					%>	
+					</li>
+                    <!-- Link de facturas express -->	
+							
+				
+				
+	
+			
+	
+	
+	
+			   
+					<li><!-- Link de Reportes log -->
+					<%
+						Call reporteBitacoras(pass,user,Nombre)
+					%>	
+					</li>
+							<!-- Link de Reportes log -->
+						<!-- Link de Reportes Excel -->
+						<li>
+						<%
+							Call reporteExcel(pass,user,Nombre) 
+						%>	
+						</li>
+						<!-- Link de Reportes Excel -->
+						<!-- Inicia Link de generacion de archivo ASN ALMGARCIA --> 
+						<li  style="display:<% if trim(user)="CIVSA" or trim(user)="MXG1505" or (trim(user) = "MXG1397" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXGU435" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXG2004" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) then response.write "block" else response.write "none" end if %>">
+							<%
+									Call ASNAlmGarcia(trim(pass),trim(user),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+							%>
+						</li>
+						<!-- Termina Link de generacion de archivo ASN ALMGARCIA -->
+						<!-- Inicia Link de administrar brokers  ALMGARCIA -->
+						<li  style="display:<% if trim(user)="CIVSA" then response.write "block" else response.write "none" end if %>">
+							<%
+									Call Brokers(trim(pass), trim(user),trim(Nombre))
+							%>
+						</li>
+						<li>
+							<%
+								Call CargaFragua(pass,user,Nombre)		
+							%>
+						</li>
+				
 
+					
+			
+
+							<!-- Termina Link de administrar brokers  ALMGARCIA -->	
+						<li class="has-sub">
+						<a href="#" data-i18n="menu.addendas">&raquo; Captura de Adendas</a>
+							<ul>
+							
+							<!-- Link de Facturas Walmart -->
+							<li class="has-sub"><a href="#" data-i18n="menu.adendaWalmart">&raquo;Addendas de Wal-Mart</a>
+							    <ul>
+								    <li>
+								    <%
+								        Call AddendaWalmartEdi(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+								    %>
+								    </li>
+								    <li>
+								    <%
+								        Call addendaWalmartResguardo(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+								    %>
+								    </li>
+							    </ul>
+							</li>
+							<!-- Link de facturas Walmart -->							
+							<!-- Link de envio de facturas con addenda de amazon-->
+							<li>
+							<%							
+								Call addendaAmazon(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+							%>	
+							</li>
+							<!-- Fin link -->
+							<!-- Link de envio de facturas con addenda de BB&B-->
+							<li>
+							<%							
+								Call  addendaEdiBBB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg) 
+							%>	
+							</li>							
+							<!-- Fin link -->
+							<!-- Link de envio de facturas con addenda de almacenes Garcia-->
+							<li>
+							<%							
+								Call addendaAlmacenesGarcia(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+							%>	
+							</li>							
+							<!-- Fin link -->
+							
+							<!-- Inicia Addenda de MERZA -->
+							<li>
+							<%
+								Call addendaMerza(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)		
+							%>
+							</li>
+                                <!-- Termina Addenda de Merza -->
+                            <!-- Inicia Addenda de Corvi -->
+							<li>
+							<%
+								Call addendaCorvi(pass,user,"", "loginPaebsa.asp?ln="&lg)		
+							%>
+							</li>
+							<li>
+							<%
+								Call addendaChedraui(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
+							%>
+							</li>
+							<li>
+							<%
+								Call AddendaHEB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
+							%>
+							</li>
+						</ul>
+				</li>
+		</ul>		
+	</div>
 	<!-- inicia script de acordeon-->		
 	<script type="text/javascript">
 	$('#ListaMenu').hide();
@@ -2239,11 +2345,11 @@ tr.si {
 
 	</div>
 </div>
- 
+ <h4 class="fs-6 text-center text-primary"><strong>Informacion Recibida</strong></h4><br/>
 	<div>
-		<div>
+		<div class="float-end">
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
-		<form action="ficheroExcel.php" method="post" class=" gap-2 d-md-flex justify-content-md"><br/>
+		  <form  action="ficheroExcel.php" method="post" class=" gap-2 d-md-flex justify-content-md" style="margin-right:10px;"><br/>
 			
 			<div><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
@@ -2256,15 +2362,15 @@ tr.si {
 				
 			
 			
-			<div><input class="btn btn-light border-primary create-user text-wrap col-12" type="button" id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
+			<div><input class="btn btn-light border-primary text-wrap" type="button" id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" style="background: url(../imagenes/excel.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.excel"/></div>
 			
 			
-		</form>
-	</div class=""> <br/>
+		   </form><br/>
+	    </div> <br/>
 	
 		<div style="margin-left:10px; margin-right:10px">
 			<table class="table table-bordered text-center" >
