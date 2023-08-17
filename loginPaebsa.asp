@@ -2107,14 +2107,6 @@ tr.si {
 		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
 		<ul id="ListaMenu">
 						
-			
-					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
-					<li id="link_desadv">
-						<a href="#" onclick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="[html]menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
-					</li>		
-					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
-						
-            
 					<!-- Link de Facturas express -->		
 					<li>
 					<%
@@ -2122,9 +2114,7 @@ tr.si {
 					%>	
 					</li>
                     <!-- Link de facturas express -->	
-							
-				
-			   
+
 					<li><!-- Link de Reportes log -->
 					<%
 						Call reporteBitacoras(pass,user,Nombre)
