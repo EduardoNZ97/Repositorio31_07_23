@@ -2213,11 +2213,8 @@ tr.si {
 
   <!--Nuevas funciones del portal con informacion-->
  
-		<div class="content_menu">
-	<div id="menu">
-		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
-	
-	</div>
+  <div class="content_menu">
+
 	<!-- inicia script de acordeon-->		
 	<script type="text/javascript">
 	$('#ListaMenu').hide();
