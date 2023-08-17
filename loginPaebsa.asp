@@ -2088,8 +2088,119 @@ tr.si {
 						           <a href="#" style="text-decoration:none; color:black;" onclick="openBrowser('<%=trim(user)%>','<%=trim(Nombre)%>','ADMIN');" data-i18n="[html]menu.cargaInformacion"> &raquo;Carga de informaci&oacute;n</a>
 					             </li>
 
-						
+								<!-- Link de Facturas express -->		
+								<li>
+								<%
+									Call facturaExpress(pass,user,Nombre)
+								%>	
+								</li>
+								<!-- Link de facturas express -->	
 
+								
+								<li><!-- Link de Reportes log -->
+								<%
+									Call reporteBitacoras(pass,user,Nombre)
+								%>	
+								</li>
+								<!-- Link de Reportes log -->
+								<!-- Link de Reportes Excel -->
+								<li>
+								<%
+									Call reporteExcel(pass,user,Nombre) 
+								%>	
+								</li>
+								<!-- Link de Reportes Excel -->
+								<!-- Inicia Link de generacion de archivo ASN ALMGARCIA --> 
+								<li  style="display:<% if trim(user)="CIVSA" or trim(user)="MXG1505" or (trim(user) = "MXG1397" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXGU435" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXG2004" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) then response.write "block" else response.write "none" end if %>">
+									<%
+											Call ASNAlmGarcia(trim(pass),trim(user),trim(Nombre),"loginPaebsa.asp?ln="&lg)
+									%>
+								</li>
+								<!-- Termina Link de generacion de archivo ASN ALMGARCIA -->
+								<!-- Inicia Link de administrar brokers  ALMGARCIA -->
+								<li  style="display:<% if trim(user)="CIVSA" then response.write "block" else response.write "none" end if %>">
+									<%
+											Call Brokers(trim(pass), trim(user),trim(Nombre))
+									%>
+								</li>
+								<li>
+									<%
+										Call CargaFragua(pass,user,Nombre)		
+									%>
+								</li>
+
+
+										            <ul id="ListaMenu">
+
+						<!-- Termina Link de administrar brokers  ALMGARCIA -->	
+						<li class="has-sub">
+						    <a href="#" data-i18n="menu.addendas">&raquo; Captura de Adendas</a>
+							<ul>
+							
+								<!-- Link de Facturas Walmart -->
+								<li class="has-sub"><a href="#" data-i18n="menu.adendaWalmart">&raquo;Addendas de Wal-Mart</a>
+									<ul>
+										<li>
+										<%
+											Call AddendaWalmartEdi(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+										%>
+										</li>
+										<li>
+										<%
+											Call addendaWalmartResguardo(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+										%>
+										</li>
+									</ul>
+								</li>
+								<!-- Link de facturas Walmart -->							
+								<!-- Link de envio de facturas con addenda de amazon-->
+								<li>
+								<%							
+									Call addendaAmazon(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+								%>	
+								</li>
+								<!-- Fin link -->
+								<!-- Link de envio de facturas con addenda de BB&B-->
+								<li>
+								<%							
+									Call  addendaEdiBBB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg) 
+								%>	
+								</li>							
+								<!-- Fin link -->
+								<!-- Link de envio de facturas con addenda de almacenes Garcia-->
+								<li>
+								<%							
+									Call addendaAlmacenesGarcia(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+								%>	
+								</li>							
+								<!-- Fin link -->
+								
+								<!-- Inicia Addenda de MERZA -->
+								<li>
+								<%
+									Call addendaMerza(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)		
+								%>
+								</li>
+									<!-- Termina Addenda de Merza -->
+								<!-- Inicia Addenda de Corvi -->
+								<li>
+								<%
+									Call addendaCorvi(pass,user,"", "loginPaebsa.asp?ln="&lg)		
+								%>
+								</li>
+								<li>
+								<%
+									Call addendaChedraui(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
+								%>
+								</li>
+								<li>
+								<%
+									Call AddendaHEB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
+								%>
+								</li>
+						    </ul>
+				        </li>
+		            </ul>	
 
 							</ul>
 						</div>
@@ -2105,121 +2216,7 @@ tr.si {
 		<div class="content_menu">
 	<div id="menu">
 		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
-		<ul id="ListaMenu">
-						
-					<!-- Link de Facturas express -->		
-					<li>
-					<%
-						Call facturaExpress(pass,user,Nombre)
-					%>	
-					</li>
-                    <!-- Link de facturas express -->	
-
-					<li><!-- Link de Reportes log -->
-					<%
-						Call reporteBitacoras(pass,user,Nombre)
-					%>	
-					</li>
-							<!-- Link de Reportes log -->
-						<!-- Link de Reportes Excel -->
-						<li>
-						<%
-							Call reporteExcel(pass,user,Nombre) 
-						%>	
-						</li>
-						<!-- Link de Reportes Excel -->
-						<!-- Inicia Link de generacion de archivo ASN ALMGARCIA --> 
-						<li  style="display:<% if trim(user)="CIVSA" or trim(user)="MXG1505" or (trim(user) = "MXG1397" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXGU435" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) or (trim(user) = "MXG2004" and CDate("2023-01-01 00:00:00") >= CDate("2022-01-24 00:00:00")) then response.write "block" else response.write "none" end if %>">
-							<%
-									Call ASNAlmGarcia(trim(pass),trim(user),trim(Nombre),"loginPaebsa.asp?ln="&lg)
-							%>
-						</li>
-						<!-- Termina Link de generacion de archivo ASN ALMGARCIA -->
-						<!-- Inicia Link de administrar brokers  ALMGARCIA -->
-						<li  style="display:<% if trim(user)="CIVSA" then response.write "block" else response.write "none" end if %>">
-							<%
-									Call Brokers(trim(pass), trim(user),trim(Nombre))
-							%>
-						</li>
-						<li>
-							<%
-								Call CargaFragua(pass,user,Nombre)		
-							%>
-						</li>
-				
-
-					
-			
-
-							<!-- Termina Link de administrar brokers  ALMGARCIA -->	
-						<li class="has-sub">
-						<a href="#" data-i18n="menu.addendas">&raquo; Captura de Adendas</a>
-							<ul>
-							
-							<!-- Link de Facturas Walmart -->
-							<li class="has-sub"><a href="#" data-i18n="menu.adendaWalmart">&raquo;Addendas de Wal-Mart</a>
-							    <ul>
-								    <li>
-								    <%
-								        Call AddendaWalmartEdi(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-								    %>
-								    </li>
-								    <li>
-								    <%
-								        Call addendaWalmartResguardo(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-								    %>
-								    </li>
-							    </ul>
-							</li>
-							<!-- Link de facturas Walmart -->							
-							<!-- Link de envio de facturas con addenda de amazon-->
-							<li>
-							<%							
-								Call addendaAmazon(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-							%>	
-							</li>
-							<!-- Fin link -->
-							<!-- Link de envio de facturas con addenda de BB&B-->
-							<li>
-							<%							
-								Call  addendaEdiBBB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg) 
-							%>	
-							</li>							
-							<!-- Fin link -->
-							<!-- Link de envio de facturas con addenda de almacenes Garcia-->
-							<li>
-							<%							
-								Call addendaAlmacenesGarcia(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-							%>	
-							</li>							
-							<!-- Fin link -->
-							
-							<!-- Inicia Addenda de MERZA -->
-							<li>
-							<%
-								Call addendaMerza(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)		
-							%>
-							</li>
-                                <!-- Termina Addenda de Merza -->
-                            <!-- Inicia Addenda de Corvi -->
-							<li>
-							<%
-								Call addendaCorvi(pass,user,"", "loginPaebsa.asp?ln="&lg)		
-							%>
-							</li>
-							<li>
-							<%
-								Call addendaChedraui(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
-							%>
-							</li>
-							<li>
-							<%
-								Call AddendaHEB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
-							%>
-							</li>
-						</ul>
-				</li>
-		</ul>		
+	
 	</div>
 	<!-- inicia script de acordeon-->		
 	<script type="text/javascript">
