@@ -2117,37 +2117,7 @@ tr.si {
 					</li>
 					<!-- Modulo_Genera_Addenda_Nube -->
 					
-					<!-- Modulo_Envio_EDI_Clientes -->
-					<li id="btnEdi">
-					<!-- Inicia cuadro de dialogo de archivos EDI -->
-						<a href="#" class="composeEdi" id="composeiconEdi" data-i18n="menu.asn.titulo"> &raquo;Env&iacuteo de archivos DESADV</a>
-							<div class="mainEDI">
-								<div class="calloutUp"> 
-									<div class="calloutUp2"></div>
-								</div>	
-								<div id="msgformEDI" class="msgEnvio" width="700px">
-									<form id="sendprivatemsgEdi" class="UsuariosCss" action="AplicacionPaebsa/ValidaXML.ashx" method="post" enctype="multipart/form-data">
-										<label data-i18n="menu.asn.envio">Archivos ASN(.edi) </label>
-										<input type="file" name="archivoEdi[]" id="archivoEdi" accept="text/edi" size="70" multiple />
-										<br /><br />
-										<label style="color:#B40404;" data-i18n="menu.asn.aviso">N&uacutemero m&aacuteximo de archivos por carga: 10</label>
-										<br />
-										<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
-										<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
-										<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
-										<input type="hidden" id="SpokeOhub" name="SpokeOhub" value="spoke"/>									  
-										<div style="padding-bottom: 25px;">
-											<div class="input" style="float:right;">
-												<input class="button_opt prtText" onclick="return validarMaximoArchivosEdis()" type="submit" id="btnenviafac" value="Enviar archivos" data-i18n="[value]menu.asn.boton"/>
-											</div>
-										</div>
-										<br /><br />
-									</form>
-								</div>
-							</div>
-					<!-- termina cuadro de dialogo de archivos EDI -->	
-					</li>
-					 <!-- Modulo_Envio_EDI_Clientes -->
+				
 					
 					
 					
