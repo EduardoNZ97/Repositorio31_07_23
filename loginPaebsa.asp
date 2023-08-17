@@ -2107,20 +2107,7 @@ tr.si {
 		<dt id="TituloMenu" class="tituloMenu" data-i18n="menu.titulo">Nuevas funciones del portal</dt>	
 		<ul id="ListaMenu">
 						
-					<!-- Modulo_Genera_Addenda_Nube -->
-					<li class="has-sub"><a href="#" data-i18n="[html]menu.generarAddendaAutomatica.titulo"> &raquo; Generar Addenda en la nube</a>
-						<ul>
-							<li>
-								<%Call CargaDeAddendaGenerica(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)%><br />
-							</li>			
-						</ul>
-					</li>
-					<!-- Modulo_Genera_Addenda_Nube -->
-					
-				
-					
-					
-					
+			
 					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 					<li id="link_desadv">
 						<a href="#" onclick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="[html]menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
@@ -2137,12 +2124,6 @@ tr.si {
                     <!-- Link de facturas express -->	
 							
 				
-				
-	
-			
-	
-	
-	
 			   
 					<li><!-- Link de Reportes log -->
 					<%
