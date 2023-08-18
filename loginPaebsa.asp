@@ -322,12 +322,6 @@ tr.si {
 	<!--Si se ocupa para la tabla-->	  
     <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
 	
-    <!--Candidato para eliminación jquery/jquery_validate.js-->
-    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
-	<!--Candidato para eliminación jquery/jqueryTooltip.js-->
-    <!--<script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>-->
-    <!--Candidato para eliminación js/jquery.fixedheadertable.js-->
-	<!--<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>-->
 
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
