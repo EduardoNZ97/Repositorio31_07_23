@@ -1007,41 +1007,54 @@ tr.si {
 	</script>
 
 </head>
-<body> 
+<body>
+
 
 <!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
-	<!--boostrap-->		
-	    <span  class="h3 text-start float-start" style="color:white;margin-left:10px; margin-top:5px; margin-bottom:5px" >Servicio de Buró Electrónico Proveedores</span>
-	    <span class="position-absolute top-0 end-0" style="margin-top:8px">
-	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
-      
-	        <ul class="dropdown-menu text-center form-control" style="background-color: #e3f2fd;" >
-		      <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto" width="150px" height="150px" alt="PAEBSA - Usuario"/><br/></li>
-              <li style="background-color:#e3f2fd;"><i><%=Nombre%></i></li>
-              <li style="background-color: #e3f2fd;"><i><%=user%></i></li><br/>
-		      <li class=" d-grid d-md-flex justify-content-md-end"><button id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary">Cerrar sesion</button>&nbsp;&nbsp;</li>
-            </ul>
-        </span>
-        
+    <div class="d-flex align-items-center">
+        <span class="h3 text-white" style="margin-left: 10px; margin-top: 5px; margin-bottom: 5px;">Servicio de Buró Electrónico Proveedores</span>
+</div>
 
-        <span class="float-end">
-	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
-            <ul class="dropdown-menu text-center">
-                <a class="dropdown-item"><%avisos()%></a>
+
+ <div class="d-flex justify-content-end" >
+
+        <span style="margin-top:5px">
+        	<img src="imagenes/sesion.png" alt="sesion" width="20" height="20" style="margin-top:-1px" />   
+            <label class="text-white " data-i18n="sistema.sesion">Su sesión expira en:</label>
+			<span class="text-white me-2" id="TimeLeft"></span>   
+				<script type="text/javascript" language="javascript">
+                	showTimer();
+            	</script>            
+        	</span>
+    
+
+   
+        <div class="dropdown me-2">
+            <img src="imagenes/mensajes.png" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false" />
+            <ul class="dropdown-menu dropdown-menu-end form-contol">
+                <li><a class="dropdown-item"><%=avisos()%></a></li>
             </ul>
-        </span>
-        
-		<span class="float-end" style="color: white; margin-top:8px;margin-right:10px;margin-top:10px" id="TimeLeft"></span>
-			        <script  type="text/javascript" language="javascript"> 
-				        showTimer();
-			        </script>
-	    <label class="float-end" style="color: white; margin-top:10px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
-        <img class="float-end" style="margin-top:7px" src="imagenes/sesion.png"  alt="sesion" width="30" height="30"/>
-	</span>
+        </div>
+
+        <div class="dropdown" style="margin-top:4px">
+            <span class="text-white" style="background-color: #3c8dbc;" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="imagenes/servicioConsulta.png" alt="PAEBSA" /><%=Nombre%>&nbsp;&nbsp;
+            </span>
+            <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #e3f2fd; margin-top: 7px;">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="../imagenes/proveedor.png" class="rounded-circle" width="100px" height="100px" alt="PAEBSA - Usuario" />
+                    <i><%=Nombre%></i>
+                    <i><%=user%></i>
+                </div>
+                <button style="margin-right: 5px;" id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary float-end">Cerrar sesión</button>
+            </div>
+        </div>
+
+
+    </div>
 </nav>
-<!--Fin del Encabezado-->
-
+<!--Fin encabezado-->
  
 		        
 	        
@@ -1951,68 +1964,66 @@ tr.si {
 					<div class="col-2">
 						<div class="enlaces">
 							<a target="_blank" title="Manual de usuario" href="pdf/ManualWeb.pdf"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
-						
-						
 						</div>
 						
-					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Notificaciones
-					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-						99+
-						<span class="visually-hidden">unread messages</span>
-					</span>
-					</button>
-
-						<!--Inicia Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-				
+               <!--Inicia Mensajes a clientes -->
+               <%
+					dim sql_Men_Cli
+					dim Men_Aviso
+					On Error Resume Next	
+					sql_Men_Cli = "select Mensaje_Cliente from CATCLIENTES where  Id_Cliente='"&user&"' and Mensaje_Cliente IS NOT NULL and Mensaje_Cliente <>''"
+					'response.write sql_Men_Cli
+					set rsDos2=server.createobject("ADODB.Recordset") 						
+					rsDos2.Open sql_Men_Cli,cnn,3,1	
+					Men_Aviso=""
+					Men_Aviso= rtrim((rsDos2.fields ("Mensaje_Cliente")  & " "))
+					rsDos2.Close
+					Set rsDos2= Nothing
+					if Men_Aviso<> "" then
 						
-							<div class="modal-body">
-										<div class="col-12 slideshow">
-							<%
-								mensajeCliente(user)
-							%>
-							</div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-							</div>
-							</div>
-						</div>
-						</div>
-					<!--Termina Modal -->
-						
-					
-				</div>
-			</div>
-
-
-
-
-	<!--Inicia Mensajes a clientes -->
-	<!--<div class="row">
-		<div class="text-center ">
+		         %>
 		
-			<div class=" slideshow">
+		
+						<!-- Button trigger modal -->
+						<!--<a title="Avisos" >
+							<img target="_blank" class="position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal"  src="bower_components/bootstrap-5_2_3-dist/icons/chat-text.svg" alt="Bootstrap" width="25" height="32"/>
+						</a>-->
+						<button type="button" class="btn btn-primary position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+							Notificaciones
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+							1
+						<span class="visually-hidden"></span>
+						</span>
+						</button>
+
+							<!--Inicia Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<div class="col-12 slideshow">
+											<%
+												mensajeCliente(user)
+											%>
+									</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+									</div>
+								</div>
+					    	</div>
+					<!--Termina Modal -->
 				<%
-					mensajeCliente(user)
-				%>
-			</div>
-			<div class="slideshow">
-				<%
-					AvisoGenerico(user)
+				'Termina Mensajes a clientes 
+				end if 
 				%>
 			</div>
 		</div>
-	</div>-->
-<!--Termina Mensajes a clientes -->
+
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
 	<div class="col-3" style="padding-left: 15px; padding-bottom:1em;">
 
