@@ -1872,7 +1872,7 @@ tr.si {
 
 									<div class="col-3">
 										<div  class="input-group input-group-sm mb-3">
-										   <input   name="texto2" class="form-control " type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
+										   <input   name="texto2" class="form-control" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
 										</div>
 									</div>
 							    </div>
@@ -1942,7 +1942,7 @@ tr.si {
 					   </form>
 				    </div>
 				
-				   <div class="col-4">
+				   <div class="col-3">
 			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Información sobre la bitácora de datos</strong></h2><br/></th>
 						<ul>
 							<li class="text-primary"><img    src="bower_components/bootstrap-5_2_3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label class="text-dark">Archivo no consultado</label></li>
@@ -1954,45 +1954,71 @@ tr.si {
 							<li class="text-primary"><label  class="text-dark">Registros totales: <%= rs.RecordCount %> </label></li>
 						</ul>
 					</div>
-					<div class="col-1">
+					<div class="col-2">
 						<div class="enlaces">
 							<a target="_blank" title="Manual de usuario" href="pdf/ManualWeb.pdf"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+						
+						
 						</div>
 						
-					</div>
-			    </div>
-	
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Notificaciones
+					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+						99+
+						<span class="visually-hidden">unread messages</span>
+					</span>
+					</button>
+
+						<!--Inicia Modal -->
+						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+				
+						
+							<div class="modal-body">
+										<div class="col-12 slideshow">
+							<%
+								mensajeCliente(user)
+							%>
+							</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+							</div>
+							</div>
+						</div>
+						</div>
+					<!--Termina Modal -->
+						
+					
+				</div>
+			</div>
 
 
 
-<!--Inicia Mensajes a clientes -->
-<div class="row">
-       <div class="col-4">
-       </div>
-		<div class="col-4">
-		<div class="col-md-8">
-			<div class="card text-center ">
-				<div class="card-header text-bg-light">	
-				</div>
-				<div class="card-body slideshow">
-					<%
-						mensajeCliente(user)
-					%>
-				</div>
-				<div class="slideshow">
-					<%
-				        AvisoGenerico(user)
-			        %>
-				</div>
-				<!--<div class="card-footer text-muted">
-				</div>-->
+
+	<!--Inicia Mensajes a clientes -->
+	<!--<div class="row">
+		<div class="text-center ">
+		
+			<div class=" slideshow">
+				<%
+					mensajeCliente(user)
+				%>
+			</div>
+			<div class="slideshow">
+				<%
+					AvisoGenerico(user)
+				%>
 			</div>
 		</div>
-   </div>
-	<div class="col-4">
-	</div>
-</div>
-<!--Termina Mensajes a clientes -->
+	</div>-->
+	<!--Termina Mensajes a clientes -->
 
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
 	<div class="col-3" style="padding-left: 15px; padding-bottom:1em;">
