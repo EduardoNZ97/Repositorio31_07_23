@@ -1973,10 +1973,14 @@ tr.si {
 				</div>-->
 			</div>
 		</div>
+<<<<<<< HEAD
    </div>
 	<div class="col-4">
 	</div>
 </div>
+=======
+	</div>-->
+>>>>>>> EderActFiltrosBusqueda
 <!--Termina Mensajes a clientes -->
 
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
