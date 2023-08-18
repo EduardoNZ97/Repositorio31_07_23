@@ -1007,41 +1007,54 @@ tr.si {
 	</script>
 
 </head>
-<body> 
+<body>
+
 
 <!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
-	<!--boostrap-->		
-	    <span  class="h3 text-start float-start" style="color:white;margin-left:10px; margin-top:5px; margin-bottom:5px" >Servicio de Buró Electrónico Proveedores</span>
-	    <span class="position-absolute top-0 end-0" style="margin-top:8px">
-	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
-      
-	        <ul class="dropdown-menu text-center form-control" style="background-color: #e3f2fd;" >
-		      <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto" width="150px" height="150px" alt="PAEBSA - Usuario"/><br/></li>
-              <li style="background-color:#e3f2fd;"><i><%=Nombre%></i></li>
-              <li style="background-color: #e3f2fd;"><i><%=user%></i></li><br/>
-		      <li class=" d-grid d-md-flex justify-content-md-end"><button id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary">Cerrar sesion</button>&nbsp;&nbsp;</li>
-            </ul>
-        </span>
-        
+    <div class="d-flex align-items-center">
+        <span class="h3 text-white" style="margin-left: 10px; margin-top: 5px; margin-bottom: 5px;">Servicio de Buró Electrónico Proveedores</span>
+</div>
 
-        <span class="float-end">
-	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
-            <ul class="dropdown-menu text-center">
-                <a class="dropdown-item"><%avisos()%></a>
+
+ <div class="d-flex justify-content-end" >
+
+        <span style="margin-top:5px">
+        	<img src="imagenes/sesion.png" alt="sesion" width="20" height="20" style="margin-top:-1px" />   
+            <label class="text-white " data-i18n="sistema.sesion">Su sesión expira en:</label>
+			<span class="text-white me-2" id="TimeLeft"></span>   
+				<script type="text/javascript" language="javascript">
+                	showTimer();
+            	</script>            
+        	</span>
+    
+
+   
+        <div class="dropdown me-2">
+            <img src="imagenes/mensajes.png" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false" />
+            <ul class="dropdown-menu dropdown-menu-end form-contol">
+                <li><a class="dropdown-item"><%=avisos()%></a></li>
             </ul>
-        </span>
-        
-		<span class="float-end" style="color: white; margin-top:8px;margin-right:10px;margin-top:10px" id="TimeLeft"></span>
-			        <script  type="text/javascript" language="javascript"> 
-				        showTimer();
-			        </script>
-	    <label class="float-end" style="color: white; margin-top:10px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
-        <img class="float-end" style="margin-top:7px" src="imagenes/sesion.png"  alt="sesion" width="30" height="30"/>
-	</span>
+        </div>
+
+        <div class="dropdown" style="margin-top:4px">
+            <span class="text-white" style="background-color: #3c8dbc;" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="imagenes/servicioConsulta.png" alt="PAEBSA" /><%=Nombre%>&nbsp;&nbsp;
+            </span>
+            <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #e3f2fd; margin-top: 7px;">
+                <div class="d-flex flex-column align-items-center">
+                    <img src="../imagenes/proveedor.png" class="rounded-circle" width="100px" height="100px" alt="PAEBSA - Usuario" />
+                    <i><%=Nombre%></i>
+                    <i><%=user%></i>
+                </div>
+                <button style="margin-right: 5px;" id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary float-end">Cerrar sesión</button>
+            </div>
+        </div>
+
+
+    </div>
 </nav>
-<!--Fin del Encabezado-->
-
+<!--Fin encabezado-->
  
 		        
 	        
