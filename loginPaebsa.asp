@@ -1852,7 +1852,7 @@ tr.si {
 									</div>
 		                           <div  class="col-3">
 											<div  class="input-group input-group-sm mb-3">
-												<input    name="texto" type="text"  id="texto"   class="form-control"  size="15" placeholder="Valor obligatorio"  data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
+												<input    name="texto" type="text"  id="texto"   class="form-control "  size="15" placeholder="Valor obligatorio"  data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
 											</div>
 									</div>
 
@@ -1872,7 +1872,7 @@ tr.si {
 
 									<div class="col-3">
 										<div  class="input-group input-group-sm mb-3">
-										   <input   name="texto2" class="form-control" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
+										   <input   name="texto2" class="form-control " type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
 										</div>
 									</div>
 							    </div>
@@ -1907,8 +1907,8 @@ tr.si {
 									</div>
 									<div class="col-2">
 										<select  name="tamanopagina" class="form-select form-select-sm" aria-label="Default select example" id="tamanopagina" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es el númemero de registros a visualizar por página (25 por default).">
-											<option value="25" selected="selected" data-i18n="filtros.pagina.numero">Número de registros por página </option>
-											<option value="25">25</option>
+											<!--<option value="25"  data-i18n="filtros.pagina.numero">Número de registros por página </option>-->
+											<option value="25" selected="selected">25</option>
 											<option value="50">50</option>
 											<option value="75">75</option>
 											<option value="100">100</option>
