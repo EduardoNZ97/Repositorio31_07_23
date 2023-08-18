@@ -322,12 +322,6 @@ tr.si {
 	<!--Si se ocupa para la tabla-->	  
     <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
 	
-    <!--Candidato para eliminación jquery/jquery_validate.js-->
-    <!--<script type="text/javascript" src="jquery/jquery_validate.js"></script>-->
-	<!--Candidato para eliminación jquery/jqueryTooltip.js-->
-    <!--<script type="text/javascript" src="jquery/jqueryTooltip.js" ></script>-->
-    <!--Candidato para eliminación js/jquery.fixedheadertable.js-->
-	<!--<script src="js/jquery.fixedheadertable.js" type="text/javascript"></script>-->
 
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
@@ -1016,96 +1010,36 @@ tr.si {
 <body> 
 
 <!--Encabezado-->
-<!--<nav class="navbar btn-group" style="background-color: #3c8dbc;">
-    bootstrap
-	<span  class="h3 text-start float-start" style="color:white;margin-left:10px; margin-top:5px; margin-bottom:5px" >Servicio de Buró Electrónico Proveedores</span>
-
-    <span>
-        	<span class="float-end" style="color: white; margin-top:8px;margin-right:10px;margin-top:10px" id="TimeLeft"></span>
-				        <script  type="text/javascript" language="javascript"> 
-					        showTimer();
-			        	</script>
-	    	
-			<label class="float-end" style="color: white; margin-top:10px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
-			<img class="float-end" style="margin-top:7px" src="imagenes/sesion.png"  alt="sesion" width="30" height="30"/>
-	</span>  
-
-    <span class="navbar-item navbar-end">
-        <div class="dropdown">
-	        <img src="imagenes/mensajes.png"  alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
-                <ul class="dropdown-menu">
-                    <a class="dropdown-item form-contol"><%avisos()%></a>
-                </ul>        
-	    </div>
-    </span>
-
-    <span class="navbar-item">
-        <span class="dropdown float-end">
-            <span class=" text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="imagenes/servicioConsulta.png" alt="PAEBSA" /><%=Nombre%>&nbsp;&nbsp;
-            </span>
-        <span class="dropdown-menu dropdown-menu-end form-control" style="background-color: #e3f2fd; margin-top: 7px;">
-            <span class="d-flex flex-column align-items-center">
-                <img src="../imagenes/proveedor.png" class="rounded-circle" width="100px" height="100px" alt="PAEBSA - Usuario" />
-                <i><%=Nombre%></i>
-                <i><%=user%></i>
-            </span>			
-            <button style="margin-right:5px" id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary float-end">Cerrar sesión</button>
-        </span>
-		</span>
-    </span>	
-
-</nav>-->
 <nav class="navbar" style="background-color: #3c8dbc;">
-    <div class="d-flex align-items-center">
-        <span class="h3 text-white" style="margin-left: 10px; margin-top: 5px; margin-bottom: 5px;">Servicio de Buró Electrónico Proveedores</span>
-</div>
-
-
- <div class="d-flex justify-content-end" >
-
-        <span style="margin-top:5px">
-        	<img src="imagenes/sesion.png" alt="sesion" width="20" height="20" style="margin-top:-1px" />   
-            <label class="text-white " data-i18n="sistema.sesion">Su sesión expira en:</label>
-			<span class="text-white me-2" id="TimeLeft"></span>   
-				<script type="text/javascript" language="javascript">
-                	showTimer();
-            	</script>            
-        	</span>
-    
-
-   
-        <div class="dropdown me-2">
-            <img src="imagenes/mensajes.png" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false" />
-            <ul class="dropdown-menu dropdown-menu-end form-contol">
-                <li><a class="dropdown-item"><%=avisos()%></a></li>
+	<!--boostrap-->		
+	    <span  class="h3 text-start float-start" style="color:white;margin-left:10px; margin-top:5px; margin-bottom:5px" >Servicio de Buró Electrónico Proveedores</span>
+	    <span class="position-absolute top-0 end-0" style="margin-top:8px">
+	    <span class="float-end text-white" style="background-color: #3c8dbc; margin-right:1px; margin-top:7px" data-bs-toggle="dropdown" role="button" aria-expanded="false"><img src="imagenes/servicioConsulta.png" alt="PAEBSA"/><%=Nombre%>&nbsp;&nbsp;	 
+      
+	        <ul class="dropdown-menu text-center form-control" style="background-color: #e3f2fd;" >
+		      <li  style="background-color: #e3f2fd;"><img src="../imagenes/proveedor.png"  class="rounded-circle mx-auto" width="150px" height="150px" alt="PAEBSA - Usuario"/><br/></li>
+              <li style="background-color:#e3f2fd;"><i><%=Nombre%></i></li>
+              <li style="background-color: #e3f2fd;"><i><%=user%></i></li><br/>
+		      <li class=" d-grid d-md-flex justify-content-md-end"><button id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary">Cerrar sesion</button>&nbsp;&nbsp;</li>
             </ul>
-        </div>
-
-        <div class="dropdown" style="margin-top:4px">
-            <span class="text-white" style="background-color: #3c8dbc;" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="imagenes/servicioConsulta.png" alt="PAEBSA" /><%=Nombre%>&nbsp;&nbsp;
-            </span>
-            <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #e3f2fd; margin-top: 7px;">
-                <div class="d-flex flex-column align-items-center">
-                    <img src="../imagenes/proveedor.png" class="rounded-circle" width="100px" height="100px" alt="PAEBSA - Usuario" />
-                    <i><%=Nombre%></i>
-                    <i><%=user%></i>
-                </div>
-                <button style="margin-right: 5px;" id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary float-end">Cerrar sesión</button>
-            </div>
-        </div>
-
-
-    </div>
-</nav>
-
-
-
- 
+        </span>
         
-		
 
+        <span class="float-end">
+	    <img src="imagenes/mensajes.png" style="margin-right:15px;margin-left:10px;margin-top:5px" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false"/>
+            <ul class="dropdown-menu text-center">
+                <a class="dropdown-item"><%avisos()%></a>
+            </ul>
+        </span>
+        
+		<span class="float-end" style="color: white; margin-top:8px;margin-right:10px;margin-top:10px" id="TimeLeft"></span>
+			        <script  type="text/javascript" language="javascript"> 
+				        showTimer();
+			        </script>
+	    <label class="float-end" style="color: white; margin-top:10px;margin-right:5px " data-i18n="sistema.sesion">Su sesi&oacute;n expira en: </label>
+        <img class="float-end" style="margin-top:7px" src="imagenes/sesion.png"  alt="sesion" width="30" height="30"/>
+	</span>
+</nav>
 <!--Fin del Encabezado-->
 
  
@@ -1375,6 +1309,7 @@ tr.si {
 							<option value="50">50</option>
 							<option value="75">75</option>
 							<option value="100">100</option>
+							<option value="200">200</option>
 						 </select><a class="tooltip" title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacute;gina (25 por default)" data-i18n="[title]filtros.pagina.info"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>	 
 						<!-- termina el nuevo campo de paginas por busqueda-->
 						<br/><br/>
@@ -1790,7 +1725,7 @@ tr.si {
 				rs.absolutepage=cint(paginaabsoluta)
 		contador=1
 
-			dim matriz (100)
+			dim matriz (200)
 				PageSize=rs.PageSize
 					
 					 for i=1 to  PageSize
@@ -1884,7 +1819,6 @@ tr.si {
 <%
 	
 %>
-
 <!--Inicia Filtros De Búsqueda-->
 <div>
     <div ><!-- end of templatemo header -->		
@@ -1895,8 +1829,10 @@ tr.si {
 					       <div class="container d-grid gap-3">
 								<div class="row">
 
-									<div class="col-2">
-										<select  name="seleccione" class="form-control form-control-sm" tyle="width: 100px;" aria-label="Default select example" id="seleccione" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione una opción.">
+									<div class="col-3">
+
+									
+										<select  name="seleccione" class="form-select form-select-sm"  id="seleccione" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione una opción.">
 											<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1905,14 +1841,19 @@ tr.si {
 											<option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
 											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
 										</select>
+								
+
+									</div>
+		                           <div  class="col-3">
+											<div  class="input-group input-group-sm mb-3">
+												<input    name="texto" type="text"  id="texto"   class="form-control "  size="15" placeholder="Valor obligatorio"  data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
+											</div>
 									</div>
 
-									<div class="col-3">
-										<input    name="texto" type="text"  id="texto" class="form-control  p-1"  size="15" placeholder="Valor obligatorio" data-i18n="[placeholder]filtros.seleccione.captura" data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
-									</div>
+
 							
 									<div class="col-2">			
-										<select  name="seleccione2" class="form-control form-control-sm" aria-label="Default select example"  id="seleccione2" data-bs-toggle="tooltip" data-bs-placement="top" title="Este es un campo opcional para agregar otro valor de búsqueda.">
+										<select  name="seleccione2" class="form-select form-select-sm" aria-label="Default select example"  id="seleccione2" data-bs-toggle="tooltip" data-bs-placement="top" title="Este es un campo opcional para agregar otro valor de búsqueda.">
 										<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
 										<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 										<option value="Numero_Proveedor_Hub" data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1924,14 +1865,16 @@ tr.si {
 									</div>
 
 									<div class="col-3">
-										<input   name="texto2" class="form-control form-control-sm" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
+										<div  class="input-group input-group-sm mb-3">
+										   <input   name="texto2" class="form-control" type="text"  id="texto2" size="15" placeholder="Valor opcional" data-i18n="[placeholder]filtros.seleccione.capturaDos"  data-bs-toggle="tooltip" data-bs-placement="top" title="Campo de búsqueda opcional para agregar un valor de búsqueda más a su consulta."/>
+										</div>
 									</div>
 							    </div>
 
 
 								<div class="row">
 									<div class="col-3">
-										<select name="orden" class="form-control form-control-sm" aria-label="Default select example"  id="orden" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione el orden.">
+										<select name="orden" class="form-select form-select-sm" aria-label="Default select example"  id="orden" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione el orden.">
 											<option value="" data-i18n="filtros.ordenar.resultados">Ordenar resultados por</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
 											<option value="Numero_Proveedor_Hub"  data-i18n="filtros.seleccione.proveedor">No. proveedor</option>
@@ -1944,30 +1887,28 @@ tr.si {
 									</div>
 
 									<div class="col-3">
-										<select name="alf" class="form-control form-control-sm" aria-label="Default select example" id="alf" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione orden.">
+										<select name="alf" class="form-select form-select-sm" aria-label="Default select example" id="alf" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione orden.">
 											<option value="desc" data-i18n="filtros.ordenar.descendente">Orden descendente</option>
 											<option value="asc" data-i18n="filtros.ordenar.ascendente">Orden ascendente</option>
 										</select>
 									</div>
 									<div class="col-3">
-										<select name="tipofecha" class="form-control form-control-sm" aria-label="Default select example"  id="tipofecha" data-bs-toggle="tooltip" data-bs-placement="top" title="Fecha documento.">
+										<select name="tipofecha" class="form-select form-select-sm" aria-label="Default select example"  id="tipofecha" data-bs-toggle="tooltip" data-bs-placement="top" title="Fecha documento.">
 											<option value="Fecha_Recepcion_Sistema" data-i18n="filtros.ordenar.fecha">Fecha documento</option>
 											<option value="Fecha_Canc_Documento_Edi" data-i18n="filtros.ordenar.fechaCancelacion">Fecha cancelación documento</option>
 											<option value="Fecha_Consulta_Cliente" data-i18n="filtros.ordenar.fechaConsulta">Fecha consulta</option>
 										</select>				
 									</div>
 									<div class="col-2">
-										<select  name="tamanopagina"  class="form-control form-control-sm" aria-label="Default select example" id="tamanopagina" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es el númemero de registros a visualizar por página (25 por default).">
-											<option value="10" selected="selected" data-i18n="filtros.pagina.numero">Número de registros por página </option>
-											<option value="10">10</option>
-											<option value="25">25</option>
+										<select  name="tamanopagina" class="form-select form-select-sm" aria-label="Default select example" id="tamanopagina" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es el númemero de registros a visualizar por página (25 por default).">
+											<!--<option value="25"  data-i18n="filtros.pagina.numero">Número de registros por página </option>-->
+											<option value="25" selected="selected">25</option>
 											<option value="50">50</option>
 											<option value="75">75</option>
 											<option value="100">100</option>
+											<option value="200">200</option>
 										</select><!--<a  title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 -->
 									</div>
-
-									
 								</div>
                              
 
@@ -1975,25 +1916,27 @@ tr.si {
 									
 									<div class="col-2">
 									  <!--  <img  src="bower_components/bootstrap-5_2_3-dist/icons/calendar2.svg" alt="Bootstrap" />-->
-										<input    placeholder="Fecha inicial" class="form-control"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial" data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>			
+									  	<div  class="input-group input-group-sm mb-3">
+										    <input    placeholder="Fecha inicial" class="form-control"  type="text" id="datepicker" name="datepicker" data-i18n="[placeholder]filtros.fecha.fechaInicial" data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>			
+									    </div>
 									</div>
 									<div class="col-2">
-										<input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"  data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>
+									 	<div  class="input-group input-group-sm mb-3">
+										      <input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"  data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>
+										</div>
 									</div>
-								
-									<div class="col-2">
-										<input  type="hidden" class="form-control" name="ln" value="<%=lg%>"/>
-										<div><button type="submit" name="Submit" class="btn btn-primary prtText" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button></div>
-									</div>
-									<div class="col-2">
-										<div><button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-primary prtText"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
+								<!--btn btn-primary prtText-->
+									<div class="col-4">
+										<div><button type="submit" name="Submit" class="btn btn-outline-primary  btn-sm" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button>
+									    <button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-outline-primary  btn-sm"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
+						
 									</div>
 	                             </div>
 							</div>	
 					   </form>
 				    </div>
 				
-				   <div class="col-4">
+				   <div class="col-3">
 			           	<th><strong data-i18n="filtros.tituloBitacoras"  class="fs-6 text-primary">Información sobre la bitácora de datos</strong></h2><br/></th>
 						<ul>
 							<li class="text-primary"><img    src="bower_components/bootstrap-5_2_3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label class="text-dark">Archivo no consultado</label></li>
@@ -2005,46 +1948,71 @@ tr.si {
 							<li class="text-primary"><label  class="text-dark">Registros totales: <%= rs.RecordCount %> </label></li>
 						</ul>
 					</div>
-					<div class="col-1">
+					<div class="col-2">
 						<div class="enlaces">
 							<a target="_blank" title="Manual de usuario" href="pdf/ManualWeb.pdf"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+						
+						
 						</div>
 						
-					</div>
-			    </div>
-	
+					<!-- Button trigger modal -->
+					<button type="button" class="btn btn-primary position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+						Notificaciones
+					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+						99+
+						<span class="visually-hidden">unread messages</span>
+					</span>
+					</button>
+
+						<!--Inicia Modal -->
+						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+						<div class="modal-dialog">
+							<div class="modal-content">
+							<div class="modal-header">
+								<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
+								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+							</div>
+				
+						
+							<div class="modal-body">
+										<div class="col-12 slideshow">
+							<%
+								mensajeCliente(user)
+							%>
+							</div>
+							</div>
+							<div class="modal-footer">
+								<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+							</div>
+							</div>
+						</div>
+						</div>
+					<!--Termina Modal -->
+						
+					
+				</div>
+			</div>
 
 
 
-<!--Inicia Mensajes a clientes -->
-<div class="row">
-       <div class="col-4">
-       </div>
-		<div class="col-4">
-		<div class="col-md-8">
-			<div class="card text-center ">
-				<div class="card-header text-bg-light">	
-				</div>
-				<div class="card-body slideshow">
-					<%
-						mensajeCliente(user)
-					%>
-				</div>
-				<div class="slideshow">
-					<%
-				        AvisoGenerico(user)
-			        %>
-				</div>
-				<!--<div class="card-footer text-muted">
-				</div>-->
+
+	<!--Inicia Mensajes a clientes -->
+	<!--<div class="row">
+		<div class="text-center ">
+		
+			<div class=" slideshow">
+				<%
+					mensajeCliente(user)
+				%>
+			</div>
+			<div class="slideshow">
+				<%
+					AvisoGenerico(user)
+				%>
 			</div>
 		</div>
-   </div>
-	<div class="col-4">
-	</div>
-</div>
+	</div>-->
 <!--Termina Mensajes a clientes -->
-
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
 	<div class="col-3" style="padding-left: 15px; padding-bottom:1em;">
 
