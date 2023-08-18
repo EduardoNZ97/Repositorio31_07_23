@@ -2258,22 +2258,32 @@ tr.si {
 		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
 		  <form  action="ficheroExcel.php" method="post" class=" gap-2 d-md-flex justify-content-md" style="margin-right:10px;"><br/>
 			
-			<div><input type="button" class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+			<div>
+			<input type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
-									next%>)" style="background: url(../imagenes/reprocess.jpg) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reproceso"/></div>
+									next%>)" style="background: url(../imagenes/reprocess.jpg) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reproceso"/>
+			</div>
 									
 				
-			<div><input type="button" class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+			<div><input type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" style="background: url(../imagenes/imgPdf.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				
 			
 			
-			<div><input class="btn btn-light border-primary text-wrap" type="button" id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
+			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
+			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
-			<div><input class="btn btn-light border-primary text-wrap" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
+			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Para el envio de email solo se adjuntaran los primeros 20 registros seleccionados."
+			value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
 			
-			<div><input class="btn btn-light border-primary text-wrap" type="button"  value="Exportar datos a un excel" onclick="descargaExcel()" style="background: url(../imagenes/excel.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.excel"/></div>
+			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Se exporta todo el resultado de la consulta."
+			value="Exportar datos a un excel" onclick="descargaExcel()" style="background: url(../imagenes/excel.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.excel"/></div>
 			
 			
 		   </form><br/>
