@@ -316,8 +316,10 @@ tr.si {
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
 	<!--Si se ocupa js/Functions.js-->
 	<script type="text/javascript" src="js/Functions.js"></script>
-	<!--Si se ocupa Para el aviso Mensaje en texto cuando seleciona un archivo a descargar-->
-	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
+	<!--Si se ocupa Para el aviso Mensaje en texto cuando seleciona un archivo a descargar
+	para estilos del calendario
+	-->
+	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery_ui_loginPaebsa.css" />
 
 	<!--Si se ocupa para la tabla-->	  
     <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
@@ -334,6 +336,8 @@ tr.si {
 
     <!--Boostrap 5.2.3-->
 	<script  src="bower_components\bootstrap-5_2_3-dist\js\bootstrap.bundle.min.js" type="text/javascript"></script>
+	  <script src="https://code.jquery.com/jquery-3.6.0.js"></script>
+  <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.js"></script>
 	<link href="bower_components\bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
 		
 	<title>PAEBSA</title>
@@ -349,7 +353,10 @@ tr.si {
 	</script>
 	
 	<script type="text/javascript">
-        
+	
+
+
+	
         $(document).ready(function () 
 		{
 		 
@@ -1077,15 +1084,15 @@ tr.si {
            <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administrar cuenta</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" >&raquo;Administrar usuarios </a></li>
-					<li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>">&raquo; Cambiar contraseña</a></li>
-					<li><a class="dropdown-item" href="#">&raquo; Historial de usuario</a></li>
+					<li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" style="font-size:14px;">&raquo;Administrar usuarios </a></li>
+					<li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>" style="font-size:14px;">&raquo; Cambiar contraseña</a></li>
+					<li><a class="dropdown-item" href="#" style="font-size:14px;">&raquo; Historial de usuario</a></li>
 				</ul>
 			</li> 
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Consulta</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="InfoReceivedSupplier.asp?ln=<%=lg%>" >&raquo;Información enviada a clientes</a></li>
+					<li><a class="dropdown-item" href="InfoReceivedSupplier.asp?ln=<%=lg%>" style="font-size:14px;">&raquo;Información enviada a clientes</a></li>
 				</ul>
 			</li> 
 	  
@@ -1159,7 +1166,7 @@ tr.si {
 					</ul>
 				</li> 
 				<li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga de catálogo tiendass</a>
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Carga de catálogo tiendas</a>
 					<ul class="dropdown-menu">
 						<!--Inicia carga de catálogo de tiendas-->
 						<li>
@@ -1915,12 +1922,12 @@ tr.si {
 									<div class="col-2">
 										<select  name="tamanopagina" class="form-select form-select-sm" aria-label="Default select example" id="tamanopagina" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es el númemero de registros a visualizar por página (25 por default).">
 											<!--<option value="25"  data-i18n="filtros.pagina.numero">Número de registros por página </option>-->
-											<option value="25" selected="selected">25</option>
+											<option value="10" selected="selected">10</option>
+											<option value="25">25</option>
 											<option value="50">50</option>
 											<option value="75">75</option>
 											<option value="100">100</option>
-											<option value="200">200</option>
-										</select><!--<a  title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 -->
+										</select>
 									</div>
 								</div>
                              
@@ -1938,11 +1945,10 @@ tr.si {
 										      <input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"  data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>
 										</div>
 									</div>
-								<!--btn btn-primary prtText-->
+
 									<div class="col-4">
 										<div><button type="submit" name="Submit" class="btn btn-outline-primary  btn-sm" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button>
 									    <button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-outline-primary  btn-sm"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
-						
 									</div>
 	                             </div>
 							</div>	
@@ -1966,7 +1972,7 @@ tr.si {
 							<a target="_blank" title="Manual de usuario" href="pdf/ManualWeb.pdf"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
 						</div>
 						
-               <!--Inicia Mensajes a clientes -->
+               <!--Inicia Mensajes a clientes  notificaciones-->
                <%
 					dim sql_Men_Cli
 					dim Men_Aviso
@@ -2004,21 +2010,21 @@ tr.si {
 											<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
 											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
-										<div class="modal-body">
+										<div class="modal-body ">
 											<div class="col-12 slideshow">
 											<%
 												mensajeCliente(user)
 											%>
 									</div>
 									</div>
-									<div class="modal-footer">
-										<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+									<div class="modal-footer p-1">
+										<button type="button" class="btn btn-primary btn-sm"  data-bs-dismiss="modal">Close</button>
 									</div>
 								</div>
 					    	</div>
 					<!--Termina Modal -->
 				<%
-				'Termina Mensajes a clientes 
+				'Termina Mensajes a clientes  notificaciones
 				end if 
 				%>
 			</div>
