@@ -1915,12 +1915,12 @@ tr.si {
 									<div class="col-2">
 										<select  name="tamanopagina" class="form-select form-select-sm" aria-label="Default select example" id="tamanopagina" data-bs-toggle="tooltip" data-bs-placement="top" title="Este campo es el númemero de registros a visualizar por página (25 por default).">
 											<!--<option value="25"  data-i18n="filtros.pagina.numero">Número de registros por página </option>-->
-											<option value="25" selected="selected">25</option>
+											<option value="10" selected="selected">10</option>
+											<option value="25">25</option>
 											<option value="50">50</option>
 											<option value="75">75</option>
 											<option value="100">100</option>
-											<option value="200">200</option>
-										</select><!--<a  title="[!]Opcional[/!]Este campo es el n&uacutemero de registros a visualizar por p&aacutegina (25 por default)" data-i18n="[title]filtros.pagina.info"></a>	 -->
+										</select>
 									</div>
 								</div>
                              
@@ -1938,11 +1938,10 @@ tr.si {
 										      <input   placeholder="Fecha final" class="form-control"  type="text" id="datepickerfinal" name="datepickerfinal" data-i18n="[placeholder]filtros.fecha.fechaFinal"  data-bs-toggle="tooltip" data-bs-placement="top" title="Las fechas son datos opcionales, en caso de seleccionar solo una entonces la busqueda se hara de forma especifica  de acuerdo a esa fecha."/>
 										</div>
 									</div>
-								<!--btn btn-primary prtText-->
+
 									<div class="col-4">
 										<div><button type="submit" name="Submit" class="btn btn-outline-primary  btn-sm" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button>
 									    <button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-outline-primary  btn-sm"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
-						
 									</div>
 	                             </div>
 							</div>	
