@@ -1964,68 +1964,66 @@ tr.si {
 					<div class="col-2">
 						<div class="enlaces">
 							<a target="_blank" title="Manual de usuario" href="pdf/ManualWeb.pdf"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
-						
-						
 						</div>
 						
-					<!-- Button trigger modal -->
-					<button type="button" class="btn btn-primary position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-						Notificaciones
-					<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-						99+
-						<span class="visually-hidden">unread messages</span>
-					</span>
-					</button>
-
-						<!--Inicia Modal -->
-						<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-						<div class="modal-dialog">
-							<div class="modal-content">
-							<div class="modal-header">
-								<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
-								<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-							</div>
-				
+               <!--Inicia Mensajes a clientes -->
+               <%
+					dim sql_Men_Cli
+					dim Men_Aviso
+					On Error Resume Next	
+					sql_Men_Cli = "select Mensaje_Cliente from CATCLIENTES where  Id_Cliente='"&user&"' and Mensaje_Cliente IS NOT NULL and Mensaje_Cliente <>''"
+					'response.write sql_Men_Cli
+					set rsDos2=server.createobject("ADODB.Recordset") 						
+					rsDos2.Open sql_Men_Cli,cnn,3,1	
+					Men_Aviso=""
+					Men_Aviso= rtrim((rsDos2.fields ("Mensaje_Cliente")  & " "))
+					rsDos2.Close
+					Set rsDos2= Nothing
+					if Men_Aviso<> "" then
 						
-							<div class="modal-body">
-										<div class="col-12 slideshow">
-							<%
-								mensajeCliente(user)
-							%>
-							</div>
-							</div>
-							<div class="modal-footer">
-								<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
-							</div>
-							</div>
-						</div>
-						</div>
-					<!--Termina Modal -->
-						
-					
-				</div>
-			</div>
-
-
-
-
-	<!--Inicia Mensajes a clientes -->
-	<!--<div class="row">
-		<div class="text-center ">
+		         %>
 		
-			<div class=" slideshow">
+		
+						<!-- Button trigger modal -->
+						<!--<a title="Avisos" >
+							<img target="_blank" class="position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal"  src="bower_components/bootstrap-5_2_3-dist/icons/chat-text.svg" alt="Bootstrap" width="25" height="32"/>
+						</a>-->
+						<button type="button" class="btn btn-primary position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+							Notificaciones
+						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+							1
+						<span class="visually-hidden"></span>
+						</span>
+						</button>
+
+							<!--Inicia Modal -->
+							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body">
+											<div class="col-12 slideshow">
+											<%
+												mensajeCliente(user)
+											%>
+									</div>
+									</div>
+									<div class="modal-footer">
+										<button type="button" class="btn btn-primary" data-bs-dismiss="modal">Close</button>
+									</div>
+								</div>
+					    	</div>
+					<!--Termina Modal -->
 				<%
-					mensajeCliente(user)
-				%>
-			</div>
-			<div class="slideshow">
-				<%
-					AvisoGenerico(user)
+				'Termina Mensajes a clientes 
+				end if 
 				%>
 			</div>
 		</div>
-	</div>-->
-<!--Termina Mensajes a clientes -->
+
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
 	<div class="col-3" style="padding-left: 15px; padding-bottom:1em;">
 
