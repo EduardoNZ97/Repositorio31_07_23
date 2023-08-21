@@ -1256,7 +1256,7 @@ tr.si {
 	' no tiene informacion registrada.
 	%>
 	<!-- Inicia - Sin informacion -->
-	<div id="templatemo_outer_wrapper_sp">
+	<div id="templatemo_outer_wrapper_sp" >
 		<div id="templatemo_wrapper_sp"><!-- end of templatemo header -->
 			<div class="filtros-busqueda">
 				<h4><strong data-i18n="filtros.tituloFiltros"> Filtros de búsqueda</strong></h4><br/>
@@ -1835,7 +1835,7 @@ tr.si {
 <!--Inicia Filtros De Búsqueda-->
 <div>
     <div ><!-- end of templatemo header -->		
-		       <div class="row">
+		       <div class="row" style="margin-top:15px;">
 				   <div class="col-7">
 						<p  class="fs-6 text-center text-primary"><strong data-i18n="filtros.tituloFiltros"> Filtros de búsqueda</strong></p>
 						<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
@@ -1955,10 +1955,10 @@ tr.si {
 							<li class="text-primary"><img    src="bower_components/bootstrap-5_2_3-dist/icons/exclamation-triangle-fill.svg" alt="Bootstrap" width="25" height="32"><label class="text-dark">Archivo no consultado</label></li>
                             <li class="text-primary"><img    src="imagenes2/azul.png" width="25" alt="PAEBSA" ><label class="text-primary">Archivo consultado</label></li>
 							<li class="text-primary"><img    src="imagenes2/rojo.png" width="25" alt="PAEBSA" /><label class="text-danger">Archivo preparado a depuración</label></li>   
-							<li class="text-primary"><label  class="text-dark"> Página actual: <%= paginaabsoluta %> </label></li>
-							<li class="text-primary"><label  class="text-dark">Registros por página: <%= rs.PageSize %> </label></li>
-							<li class="text-primary"><label  class="text-dark">Cantidad de páginas: <%= rs.PageCount %> </label></li>
-							<li class="text-primary"><label  class="text-dark">Registros totales: <%= rs.RecordCount %> </label></li>
+							<li class="text-primary"><label  class="text-dark"> Página actual: <strong><%= paginaabsoluta %></strong></label></li>
+							<li class="text-primary"><label  class="text-dark">Registros por página: <strong><%= rs.PageSize %></strong></label></li>
+							<li class="text-primary"><label  class="text-dark">Cantidad de páginas: <strong><%= rs.PageCount %></strong></label></li>
+							<li class="text-primary"><label  class="text-dark">Registros totales: <strong><%= rs.RecordCount %></strong></label></li>
 						</ul>
 					</div>
 					<div class="col-2">
