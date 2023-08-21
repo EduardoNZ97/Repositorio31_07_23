@@ -1030,11 +1030,11 @@ tr.si {
     
 
    
-        <div class="dropdown me-2">
-            <img src="imagenes/mensajes.png" alt="sesion" type="button" data-bs-toggle="dropdown" aria-expanded="false" />
-            <ul class="dropdown-menu dropdown-menu-end form-contol">
-                <li><a class="dropdown-item"><%=avisos()%></a></li>
-            </ul>
+         <div class="dropdown me-2">
+            <img src="imagenes/mensajes.png" alt="mensajes" type="button" data-bs-toggle="dropdown"  aria-expanded="false"  />
+            <span  class="dropdown-menu dropdown-menu-end form-contol" style="max-width: 500px; max-height:500px;">
+                <span><span class="dropdown-item" style="background-color:transparent"><%=avisos()%></span></span>
+            </span>
         </div>
 
         <div class="dropdown" style="margin-top:4px">
