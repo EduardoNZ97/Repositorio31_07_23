@@ -1835,7 +1835,7 @@ tr.si {
 <!--Inicia Filtros De Búsqueda-->
 <div>
     <div ><!-- end of templatemo header -->		
-		       <div class="row">
+		       <div class="row" style="margin-top:15px;">
 				   <div class="col-7">
 						<p  class="fs-6 text-center text-primary"><strong data-i18n="filtros.tituloFiltros"> Filtros de búsqueda</strong></p>
 						<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
