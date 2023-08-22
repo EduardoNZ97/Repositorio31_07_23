@@ -1840,17 +1840,17 @@ tr.si {
 %>
 <!--Inicia Filtros De Búsqueda-->
 <div>
-    <div ><!-- end of templatemo header -->		
+    <div>
+		
+	<!-- end of templatemo header -->	
 		       <div class="row" style="margin-top:15px;">
 				   <div class="col-7">
 						<p  class="fs-6 text-center text-primary"><strong data-i18n="filtros.tituloFiltros"> Filtros de búsqueda</strong></p>
 						<form name="formulario" action="loginPaebsa.asp?ln=<%=lg%>" id="formInscripcion" method="get">
 					       <div class="container d-grid gap-3">
+								
 								<div class="row">
-
 									<div class="col-3">
-
-									
 										<select  name="seleccione" class="form-select form-select-sm"  id="seleccione" data-bs-toggle="tooltip" data-bs-placement="top" title="Seleccione una opción.">
 											<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione</option>
 											<option value="Nombre_Hub" data-i18n="filtros.seleccione.nombre">Nombre cadena</option>
@@ -1860,17 +1860,14 @@ tr.si {
 											<option value="Status" data-i18n="filtros.seleccione.estado">Estado</option>
 											<option value="Codigo_Tienda" data-i18n="filtros.seleccione.tienda">C&oacute;digo tienda</option>
 										</select>
-								
-
 									</div>
+
 		                           <div  class="col-3">
 											<div  class="input-group input-group-sm mb-3">
 												<input    name="texto" type="text"  id="texto"   class="form-control "  size="15" placeholder="Valor obligatorio"  data-bs-toggle="tooltip" data-bs-placement="top" title="Por favor escriba un texto."/>
 											</div>
 									</div>
 
-
-							
 									<div class="col-2">			
 										<select  name="seleccione2" class="form-select form-select-sm" aria-label="Default select example"  id="seleccione2" data-bs-toggle="tooltip" data-bs-placement="top" title="Este es un campo opcional para agregar otro valor de búsqueda.">
 										<option value="" selected="selected" data-i18n="filtros.seleccione.seleccion">Seleccione (opcional)</option>
@@ -1932,7 +1929,6 @@ tr.si {
                              
 
 								<div class="row">
-									
 									<div class="col-2">
 									  <!--  <img  src="bower_components/bootstrap-5_2_3-dist/icons/calendar2.svg" alt="Bootstrap" />-->
 									  	<div  class="input-group input-group-sm mb-3">
@@ -1949,7 +1945,7 @@ tr.si {
 										<div><button type="submit" name="Submit" class="btn btn-outline-primary  btn-sm" value="Buscar"  data-i18n="[value]filtros.botones.buscar">Buscar</button>
 									    <button type="button" name="button" onclick="cancelarFormulariodeBusqueda('loginPaebsa.asp?ln=<%=lg%>')" class="btn btn-outline-primary  btn-sm"  value="Restablecer"    data-i18n="[value]filtros.botones.restablecer">Restablecer</button></div>
 									</div>
-	                             </div>
+	                            </div>
 							</div>	
 					   </form>
 				    </div>
@@ -1966,10 +1962,18 @@ tr.si {
 							<li class="text-primary"><label  class="text-dark">Registros totales: <strong><%= rs.RecordCount %></strong></label></li>
 						</ul>
 					</div>
-					<div class="col-2">
-						<div class="enlaces">
-							<a target="_blank" title="Manual de usuario" href="pdf/ManualWeb.pdf"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
-						</div>
+
+	<!--	<li class="nav-item dropdown">
+				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Consulta</a>
+				<ul class="dropdown-menu">
+					<li><a class="dropdown-item" href="InfoReceivedSupplier.asp?ln=<%=lg%>" style="font-size:14px;">&raquo;Información enviada a clientes</a></li>
+				</ul>
+			</li> -->
+			
+
+					
+
+				
 						
                <!--Inicia Mensajes a clientes  notificaciones-->
                <%
@@ -1993,13 +1997,26 @@ tr.si {
 						<!--<a title="Avisos" >
 							<img target="_blank" class="position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal"  src="bower_components/bootstrap-5_2_3-dist/icons/chat-text.svg" alt="Bootstrap" width="25" height="32"/>
 						</a>-->
-						<button type="button" class="btn btn-primary position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-							Notificaciones
-						<span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
-							1
-						<span class="visually-hidden"></span>
-						</span>
-						</button>
+					<div class="col-2">
+							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
+								1
+							<span class="visually-hidden"></span>
+							</span>
+						<div class="enlaces dropdown">
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+					
+							<ul class="dropdown-menu">
+								<li>
+							    	<a class="dropdown-item" target="_blank"  href="pdf/ManualWeb.pdf" style="font-size:14px;">Manual de usuario</a>
+								</li>
+								<li>
+								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size:14px;">Notificaciones
+									<span class="position-absolute top-8  translate-middle badge rounded-pill bg-danger">
+									1
+								<span class="visually-hidden"></span></a>
+								</li>
+							</ul>
+					    </div>
 
 							<!--Inicia Modal -->
 							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -2024,10 +2041,23 @@ tr.si {
 					<!--Termina Modal -->
 				<%
 				'Termina Mensajes a clientes  notificaciones
-				end if 
+
+               else%>
+	               <div class="col-2">
+							<div class="enlaces dropdown">
+							   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+					
+							<ul class="dropdown-menu">
+								<li>
+                                    <a class="dropdown-item" target="_blank"  href="pdf/ManualWeb.pdf" style="font-size:14px;">Manual de usuario</a>
+								</li>
+							</ul>
+					    </div>
+				<%end if 
 				%>
 			</div>
 		</div>
+
 
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
 	<div class="col-3" style="padding-left: 15px; padding-bottom:1em;">
@@ -2113,6 +2143,7 @@ tr.si {
 													<br /><br />
 													<label style="color:#B40404;" data-i18n="menu.asn.aviso">N&uacutemero m&aacuteximo de archivos por carga: 10</label>
 													<br />
+													<% response.write user%>
 													<input type="hidden" id="pba" name="pba" value="<%=trim(pass)%>"/> 
 													<input type="hidden" id="userBuzon" name="userBuzon" value="<%=trim(user)%>"/>
 													<input type="hidden" id="paginaRetornoXML" name="paginaRetornoXML" value="loginPaebsa.asp?ln=<%=lg%>"/>
