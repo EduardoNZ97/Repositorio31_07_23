@@ -1061,17 +1061,18 @@ tr.si {
             </span>
         </div>
 
+
         <div class="dropdown" style="margin-top:4px">
             <span class="text-white" style="background-color: #3c8dbc;" data-bs-toggle="dropdown" aria-expanded="false">
-                <%=Nombre%>&nbsp;&nbsp;
+                <%=Left(Nombre, 25)%>&nbsp;&nbsp;
             </span>
-            <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #e3f2fd; margin-right: 5px;">
-                <div class="d-flex flex-column align-items-center">
+            <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #white; margin-right: 5px;">
+                <div class="d-flex flex-column align-items-center text-center">
                     <img src="../imagenes/proveedor.png" class="rounded-circle" width="100px" height="100px" alt="PAEBSA - Usuario" />
-                    <i><%=Nombre%></i>
-                    <i><%=user%></i>
-                </div>
-                <button style="margin-right: 5px;" id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-primary float-end">Cerrar sesión</button>
+                    <i style="color: #3c8dbc;"><b><%=Nombre%></b></i>
+                    <i><b><%=user%></b></i><br/>
+                </div>				
+                <button style="margin-right: 5px;" id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-outline-primary  btn-sm float-end">Cerrar sesión</button>
             </div>
         </div>
 
