@@ -339,8 +339,9 @@ tr.si {
 	-->
 	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery_ui_loginPaebsa.css" />
 
-	<!--Si se ocupa para la tabla  
-    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->	
+	<!--Si se ocupa para la tabla  	
+     <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />
+    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->
 	
 
 	<!-- Traductor de la pagina Espaniol Ingles -->
@@ -505,64 +506,6 @@ tr.si {
 		}
 	</script>
 
-	<script type="text/javascript">
-				function marcarb2() {
-				   try{
-					obj=arguments[0];
-					var urlArchivos="";
-					var contadorarcl=0;
-						for(i=1;i<arguments.length;i++)
-						{
-							marca=arguments[i].replace('fila','');
-							marca='c'+marca;
-								if (obj.checked){
-								}
-								else{
-								//EL +10 INDICA EL NUMERO DE LINKS ANTES DE LOS CHECKBOX, SI SE AUMENTE UN BOTN O LINK AY QUE AUMENTAR LA CIFRA DEL +10
-									selChk = document.getElementsByTagName("a")[i+26];							
-									if(document.getElementById(marca).checked){
-									   if(contadorarcl<20){
-										var rCliente="";
-										var rArchivo="";
-										var url = selChk.href;
- 
- 										var indexCliente = url.indexOf("?");
-										var indexArchivo = url.indexOf("?");
-
- 										indexCliente = url.indexOf("cliente",indexCliente) + "cliente".length;
- 										indexArchivo = url.indexOf("archivo",indexArchivo) + "archivo".length;
-
-										if (url.charAt(indexCliente) == "="){
-											var rCliente = url.indexOf("&",indexCliente);
-											if (rCliente == -1){rCliente=url.length;};
-											urlArchivos=urlArchivos+"nCl"+contadorarcl+"="+url.substring(indexCliente + 1,rCliente)+"&";
- 										}
-										if (url.charAt(indexArchivo) == "="){
-											var rArchivo = url.indexOf("&",indexArchivo);
-											if (rArchivo == -1){rArchivo=url.length;};
-											urlArchivos=urlArchivos+"nAr"+(contadorarcl)+"="+url.substring(indexArchivo + 1,rArchivo)+"&";
- 										}
-										contadorarcl++;
-									   }
-									}
-							}
-						}
-					  }catch(e){
-					  }finally{
-					  
-					  		var adjuntarFicheros = confirm ("AVISO: -Para el envio de archivos por E-mail-\nPara enviar los archivos adjuntos como uno solo presione Aceptar,\npara enviarlos por separado presione cancelar.")
-							if (adjuntarFicheros){
-							location.href="EnviaEmailUsuarioMaestro.asp?"+urlArchivos+"totvar="+contadorarcl+"&adf=S";
-							}
-							else{
-							location.href="EnviaEmailUsuarioMaestro.asp?"+urlArchivos+"totvar="+contadorarcl+"&adf=N";
-							}
-						
-						}
-
-				}
-	</script>
- 
 	
 
     <script type="text/javascript">
@@ -2616,7 +2559,7 @@ Se exporta todo el resultado de la consulta."
 							<%
 							%>
 							<form name=frmDireccionesASP1 id=frmDireccionesASP1 action=loginPaebsa.asp>	
-							<select class='btn btn-primary' style='width: 60px; height:30px;' name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >
+							<select class='btn btn-primary' style='width: auto; height:30px;' name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >
 							<%
 							for i = 1 to rs.pagecount
 								j=j+1
@@ -2643,7 +2586,7 @@ Se exporta todo el resultado de la consulta."
             	<div class="text-center float-end">					
 						<%
 						response.write "<form name=frmDireccionesASP id=frmDireccionesASP action=loginPaebsa.asp>"
-						response.write "<select class='btn btn-primary' style='width: 130px; height:30px; margin-top:3px' name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >"
+						response.write "<select class='btn btn-primary' style='width: auto; height:30px; margin-top:3px' name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >"
 						response.write "<option  selected=selected data-i18n='grid.seleccionar'> Seleccione</option>"
 						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=10&paginaabsoluta=1>10</option>"
 						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=25&paginaabsoluta=1>25</option>"
