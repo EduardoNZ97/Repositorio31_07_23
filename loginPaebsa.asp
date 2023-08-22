@@ -5,6 +5,7 @@
 		   <!--#include file="fecha.asp"-->
 		   <!--#include file="functions.asp"-->
 		   <!--#include file="Fun_Fechas.asp"-->
+		   <!--#include file="LogUserAdmin.asp"-->
 
  
             <%
@@ -249,30 +250,47 @@
 		   'ttttttttttttttttttttttttttttttttttttttttttttttttttttttttttttt
 		   %>
 		   
-		   
-		   <%
-		   
+				   <%
+
+	
 		If (Err.Number <> 0) Then
 		
 			' Inicia Genera Archivo LOG errores del sistema 
-			dim archivo
+			dim Val_Carp_Error,Ruta_Carp_Error,archivo,Val_Archivo,fich
+
+			'AÑO Actual
+            AA = Fecha_Formato_AnioMesDia("yyyy")	
+
+			'Verificamos y creamos estructura de carpetas y archivo
+			call Est_Carp_Error_Port_Sistemas()
 			
-			archivo= request.serverVariables("APPL_PHYSICAL_PATH") & "errores\sistema.txt" 
-			
-			set confile = createObject("scripting.filesystemobject") 
-			set fich = confile.OpenTextFile (archivo,8) 
-			'escribo en el archivo 
-			fich.WriteLine("Información general del proceso.") 
-			fich.WriteLine(""&now()&" - Id Cliente: "&user& " | Codigo Cliente: "&pass&"") 
-			fich.WriteLine("Error: "&Err.Number&": "& Err.Description) 
-			fich.WriteLine("-----------------------------") 
-			fich.WriteLine("") 
-			'cerramos el fichero 
-			fich.close() 
-			response.redirect"Men_Mantenimiento.asp"
-			' Termina Genera Archivo LOG errores del sistema  
-			
-			
+
+			'Validamos que exita la ruta la carpeta
+			set Val_Carp_Error=Server.CreateObject("Scripting.FileSystemObject")
+				Ruta_Carp_Error = request.serverVariables("APPL_PHYSICAL_PATH") & "AplicacionPaebsa\Archivos_Generados\LOGS\ERRORES_PORTAL\"&AA&"" 
+				if Val_Carp_Error.FolderExists(Ruta_Carp_Error) then
+					
+					'Validamos que exita el archvio
+					archivo= request.serverVariables("APPL_PHYSICAL_PATH") & "AplicacionPaebsa\Archivos_Generados\LOGS\ERRORES_PORTAL\"&AA&"\Sistema.txt" 
+					set Val_Archivo=Server.CreateObject("Scripting.FileSystemObject")
+					if Val_Archivo.FileExists(archivo) then
+
+						set fich = Val_Archivo.OpenTextFile (archivo,8) 
+						'escribo en el archivo 
+				        fich.WriteLine("No se encontro la tabla solicitada error de conexion a la tabla") 
+						fich.WriteLine(""&now()&" - Id Cliente Spoke: "&trim(user)& " | Codigo Cliente: "&trim(pass)&"") 
+						fich.WriteLine("Error: "&Err.Number&": "& Err.Description) 
+						fich.WriteLine("-----------------------------") 
+						fich.WriteLine("") 
+						'cerramos el fichero 
+						fich.close() 
+						 response.redirect"Men_Mantenimiento.asp"
+					else
+						 response.redirect"Men_Mantenimiento.asp"
+					end if
+				else
+					 response.redirect"Men_Mantenimiento.asp"
+				end if			
 %>
 
 
