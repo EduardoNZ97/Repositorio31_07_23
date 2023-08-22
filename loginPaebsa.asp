@@ -339,8 +339,8 @@ tr.si {
 	-->
 	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery_ui_loginPaebsa.css" />
 
-	<!--Si se ocupa para la tabla-->	  
-    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	
+	<!--Si se ocupa para la tabla  
+    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->	
 	
 
 	<!-- Traductor de la pagina Espaniol Ingles -->
@@ -1037,7 +1037,7 @@ tr.si {
 <!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
     <div class="d-flex align-items-center">
-        <span class="h3 text-white" style="margin-left: 10px; margin-top: 5px; margin-bottom: 5px;">Servicio de Buró Electrónico Proveedores</span>
+        <img src="imagenes/servicioConsulta.png" width="40" height="40" alt="PAEBSA" /><span class="h3 text-white" style="margin-top: 5px; margin-bottom: 5px;">Servicio de Buró Electrónico Proveedores</span>
 </div>
 
 
@@ -1063,9 +1063,9 @@ tr.si {
 
         <div class="dropdown" style="margin-top:4px">
             <span class="text-white" style="background-color: #3c8dbc;" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="imagenes/servicioConsulta.png" alt="PAEBSA" /><%=Nombre%>&nbsp;&nbsp;
+                <%=Nombre%>&nbsp;&nbsp;
             </span>
-            <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #e3f2fd; margin-top: 7px;">
+            <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #e3f2fd; margin-right: 5px;">
                 <div class="d-flex flex-column align-items-center">
                     <img src="../imagenes/proveedor.png" class="rounded-circle" width="100px" height="100px" alt="PAEBSA - Usuario" />
                     <i><%=Nombre%></i>
