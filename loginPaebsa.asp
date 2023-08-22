@@ -589,6 +589,7 @@ tr.si {
 				obj=arguments[0];
 				var urlArchivos="";
 				var contadorarcl=0;
+				var unarchivselec = false;
 					for(i=1;i<arguments.length;i++)
 					{
 						marca=arguments[i].replace('fila','');
@@ -601,52 +602,56 @@ tr.si {
 									if(contadorarcl<20){
 										urlArchivos=urlArchivos+""+(document.getElementById(marca).value)+"&";
 										contadorarcl++;
+										unarchivselec = true;
+										location.href="ReprocesoArchivos.asp?ln=<%=lg%>&idc="+"<%=trim(user)%>"+"&coc="+"<%=trim(pass)%>"+"&"+urlArchivos+"totvar="+contadorarcl;
 									}
 								}
-							}
-					}
+							}							
+					}	
+					 if (!unarchivselec) {
+                			alert("Por favor, selecciona al menos un archivo.");
+               				 return false;
+					        }											
 					}catch(e){
-					}finally{
-						location.href="ReprocesoArchivos.asp?ln=<%=lg%>&idc="+"<%=trim(user)%>"+"&coc="+"<%=trim(pass)%>"+"&"+urlArchivos+"totvar="+contadorarcl;
-					}
+					}	
 		}
 	</script>
 
 	<script type="text/javascript">
-		function generarPDFs(){
-			try
-			{
-				obj=arguments[0];
-				var urlArchivos="";
-				var contadorarcl=0;
-				for(i=1;i<arguments.length;i++)
-				{
-					marca=arguments[i].replace('fila','');
-					marca='c'+marca;
+    function generarPDFs() {
+        try {
+            obj = arguments[0];
+            var urlArchivos = "";
+            var contadorarcl = 0;
+            var alMenosUnArchivoSeleccionado = false; // Variable para verificar si al menos un archivo está seleccionado
+            
+            for (i = 1; i < arguments.length; i++) {
+                marca = arguments[i].replace('fila', '');
+                marca = 'c' + marca;
 
-						if (obj.checked){
-							alert(obj.value);
-						}
-						else{
-							if(document.getElementById(marca).checked){
-								if(contadorarcl<20){
-									urlArchivos=urlArchivos+""+(document.getElementById(marca).value)+"&";
-									contadorarcl++;
-									
-								}
-							}
-						}
-				}
-			}
-			catch(e)
-			{
-			}
-			finally
-			{
-				location.href="GenerarPDF.asp?ln=<%=lg%>&idc="+"<%=trim(user)%>"+"&coc="+"<%=trim(pass)%>"+"&"+urlArchivos+"totvar="+contadorarcl;
-			}
-		}
-	</script>
+                if (obj.checked) {
+                    alert(obj.value);
+                } else {
+                    if (document.getElementById(marca).checked) {
+                        if (contadorarcl < 20) {
+                            urlArchivos = urlArchivos + "" + (document.getElementById(marca).value) + "&";
+                            contadorarcl++;
+                            alMenosUnArchivoSeleccionado = true; // Marcar que al menos un archivo está seleccionado
+							location.href = "GenerarPDF.asp?ln=<%=lg%>&idc=" + "<%=trim(user)%>" + "&coc=" + "<%=trim(pass)%>" + "&" + urlArchivos + "totvar=" + contadorarcl;
+                        }
+                    }
+                }
+            }
+            
+            // Mostrar una alerta si ningún archivo está seleccionado
+            if (!alMenosUnArchivoSeleccionado) {
+                alert("Por favor, selecciona al menos un archivo.");
+                return false;
+            }
+        } catch (e) {
+        } 
+    }
+</script>
 
 	<link rel="stylesheet" href="css/EstiloEnviaFacturas.css" type="text/css" />
 
@@ -2312,13 +2317,16 @@ Para la generación de PDF solo se tomaran los primeros 20 registros seleccionad
 				
 			
 			
-			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+			<div><input class="btn btn-light border-primary text-wrap create-user btn_download" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
 			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
+			<!--<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>-->
+
+			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Para el envio de email solo se adjuntaran los primeros 20 registros seleccionados."
-			value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
+			value="Enviar información por e-mail" onclick="marcarb('S')" id ="btnEmail" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Se exporta todo el resultado de la consulta."
