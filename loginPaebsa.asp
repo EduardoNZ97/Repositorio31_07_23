@@ -1002,16 +1002,52 @@ tr.si {
     
 
    
-         <div class="dropdown me-2">
+        <!-- <div class="dropdown me-2">
             <img src="imagenes/mensajes.png" alt="mensajes" type="button" data-bs-toggle="dropdown"  aria-expanded="false"  />
             <span  class="dropdown-menu dropdown-menu-end form-contol" style="max-width: 500px; max-height:500px;">
                 <span><span class="dropdown-item" style="background-color:transparent"><%=avisos()%></span></span>
             </span>
-        </div>
+        </div>-->
+
+
+		<div>
+							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
+								1
+							<span class="visually-hidden"></span>
+							</span>
+						<div class="dropdown">
+							<a class="dropdown" data-bs-toggle="dropdown" aria-expanded="false"><img src="imagenes/mensajes.png" alt="Bootstrap"/></a>
+					
+							<ul class="dropdown-menu dropdown-menu-end" style="max-width:500px; max-height:500px;">
+								<li>
+								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Mensajes" style="font-size:14px;"> <%=avisos()%></a>
+								</li>
+							</ul>
+					    </div>
+
+							<div class="modal fade" id="Mensajes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+								<div class="modal-dialog">
+									<div class="modal-content">
+										<div class="modal-header">
+											<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
+											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+										</div>
+										<div class="modal-body ">											
+											<%
+												avisos()
+											%>									
+									</div>
+									<div class="modal-footer p-1">
+										<button type="button" class="btn btn-primary btn-sm"  data-bs-dismiss="modal">Cerrar</button>
+									</div>
+								</div>
+					    	</div>
+							</div>
+							</div>
 
 
         <div class="dropdown" style="margin-top:4px">
-            <span class="text-white" style="background-color: #3c8dbc;" data-bs-toggle="dropdown" aria-expanded="false">
+            <span class="text-white" style="background-color: #3c8dbc; margin-left:5px" data-bs-toggle="dropdown" aria-expanded="false">
                 <%=Left(Nombre, 25)%>&nbsp;&nbsp;
             </span>
             <div class="dropdown-menu dropdown-menu-end form-control" style="background-color: #white; margin-right: 5px;">
