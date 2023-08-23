@@ -999,7 +999,32 @@ tr.si {
                 	showTimer();
             	</script>            
         	</span>
+			
     
+
+				
+						<div class="enlaces dropdown">
+						
+							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
+								1
+							<span class="visually-hidden"></span>
+							</span>
+							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+					
+							<ul class="dropdown-menu">
+								<li>
+							    	<a class="dropdown-item" target="_blank"  href="pdf/ManualWeb.pdf" style="font-size:14px;">Manual de usuario</a>
+								</li>
+								<li>
+								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size:14px;">Notificaciones
+								 </a>
+								</li>
+							</ul>
+					    </div>
+
+							
+
+	
 
    
          <div class="dropdown me-2">
@@ -1007,6 +1032,10 @@ tr.si {
             <span  class="dropdown-menu dropdown-menu-end form-contol" style="max-width: 500px; max-height:500px;">
                 <span><span class="dropdown-item" style="background-color:transparent"><%=avisos()%></span></span>
             </span>
+
+
+
+			
         </div>
 
 
@@ -1958,12 +1987,7 @@ tr.si {
 					if Men_Aviso<> "" then
 						
 		         %>
-		
-		
-						<!-- Button trigger modal -->
-						<!--<a title="Avisos" >
-							<img target="_blank" class="position-relative"  data-bs-toggle="modal" data-bs-target="#exampleModal"  src="bower_components/bootstrap-5_2_3-dist/icons/chat-text.svg" alt="Bootstrap" width="25" height="32"/>
-						</a>-->
+	
 					<div class="col-2">
 							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
 								1
