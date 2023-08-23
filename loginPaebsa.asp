@@ -320,6 +320,20 @@ tr.si {
 	color: #F00;
 	
 }
+.btn_download{
+	background: url(../imagenes2/guardar.png) no-repeat;
+	-webkit-appearance:none;
+	-moz-appearance: none;
+	-o-appearance: none;
+	appearance: none;
+	width: 30px;
+	height: 30px;
+	border: 0px;
+}
+#btnDescargaM {
+    background: url(../imagenes2/guardarDatos_1.png) left center no-repeat;
+    width: auto;
+}
 </style>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Expires" content="0" />
@@ -473,10 +487,13 @@ tr.si {
 			autoOpen: false,
 			width: 350,
 			modal: true,
+			resizable: false,
+			draggable: false,
 			close: function() {}
 		});
 
 		$('.create-user').on('click',function(eEvento){
+			
 			$( "#dialog-form" ).dialog( "open" );
 		});
 	});
@@ -980,8 +997,55 @@ tr.si {
 
 </head>
 <body>
+<%
+Function avisos222()
+'Se busca si existen avisos en la BD
+	dim sqlAvisos, bandera
+    if lg="es" or idioma="es" then
+        banderA="P"
+    end if
+    if lg="en" or idioma="en" then
+        banderA="PE"
+    end if
+	sqlAvisos = "select Titulo,Contenido,Destinatario,Emisor,ArchivoAdjunto from CATAVISOSPAGINAWEB where BanderaMostrar='S' and MostrarAvisoA='"&bandera&"'"
+	set rsDosAvisos=server.createobject("ADODB.Recordset") 		
+	rsDosAvisos.Open sqlAvisos,cnn,3,1	
+    'response.write sqlAvisos
+	if(rsDosAvisos.RecordCount>0)then								
+				response.write "<div class=''>"
+					Do Until rsDosAvisos.EOF
+						 response.write "<div class=''>"
+					'For each aviso in rsDosAvisos.fields
+						If Trim(rsDosAvisos("Titulo"))&"" <> "" Then
+									
+							response.write "	<div class=''>"
+							response.write "	<b>"
+							response.write ""&rsDosAvisos("Titulo")&""
+							response.write "	</b>"
+							response.write "	</div>"
+							
+						
+							response.write "<div class='text-wrap' style=""width:400px;max-width:auto;height:auto;max-height:500px;margin-top: 0;margin-right: 0;margin-left: 0;font-size:14px;color: #1E598E;padding: 5px;background-color: #ffffff;"">"
 
+							if(trim(rsDosAvisos.fields("Emisor")&"")<>"") then 
+								response.write "<b>De:</b>"&rsDosAvisos.fields("Emisor")&" <br />"
+							end if
+							if(trim(rsDosAvisos.fields("Destinatario"))&""<>"")then
+								response.write "<b>Para:</b>"&rsDosAvisos.fields("Destinatario")&"<br />"
+							end if
 
+							    response.write "<b>Mensaje:</b>"&rsDosAvisos.fields("Contenido")&"</div>"
+							
+						end if
+						rsDosAvisos.MoveNext
+                        response.write "</div>" 
+					'Next
+					Loop
+					response.write "</div>" 'content
+	end if
+			
+End Function
+%>
 <!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
     <div class="d-flex align-items-center">
@@ -1020,21 +1084,21 @@ tr.si {
 					
 							<ul class="dropdown-menu dropdown-menu-end" style="max-width:500px; max-height:500px;">
 								<li>
-								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Mensajes" style="font-size:14px;"> <%=avisos()%></a>
+								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Mensajes" style="font-size:14px;">Leer mensajes</a>
 								</li>
 							</ul>
 					    </div>
 
-							<div class="modal fade" id="Mensajes" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+							<div class="modal fade" id="Mensajes" tabindex="-1" aria-labelledby="MensajeModel" aria-hidden="true">
 								<div class="modal-dialog">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
-											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+											<h1 class="modal-title fs-6" id="MensajeModel">Notificaciones</h1>
+											<button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
 										<div class="modal-body ">											
 											<%
-												avisos()
+												avisos222()
 											%>									
 									</div>
 									<div class="modal-footer p-1">
@@ -2353,7 +2417,7 @@ Para la generación de PDF solo se tomaran los primeros 20 registros seleccionad
 				
 			
 			
-			<div><input class="btn btn-light border-primary text-wrap create-user btn_download" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+			<div><input class="btn btn-light border-primary text-wrap create-user " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
 			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
@@ -2537,12 +2601,21 @@ Se exporta todo el resultado de la consulta."
                         NombreArchivoLog=iif(NombreArchivoLog,NombreArchivoLog,"N-LOG")
  
 					   Set dataFiles = Server.CreateObject("Scripting.Dictionary")
+						   if archivo <> "" or archivo <> null then
 						   dataFiles.Add "EDI",archivo
+						   end if
+						    if NombreArchivoPdf <> "" or NombreArchivoPdf <> null then
 						   dataFiles.Add "PDF",NombreArchivoPdf
+						   end if
+						    if NombreArchivoExcel <> "" or NombreArchivoExcel <> null then
 						   dataFiles.Add "XLS",NombreArchivoExcel
+						   end if
+						    if NombreArchivoTxt <> "" or NombreArchivoTxt <> null then
 						   dataFiles.Add "TXT",NombreArchivoTxt
+						   end if 
+						    if NombreArchivoXml <> "" or NombreArchivoXml <> null then
 						   dataFiles.Add "XML",NombreArchivoXml
-							
+							end if
                         If transaccion="CONTRL" or transaccion="APERAK" or transaccion="APECOM" or transaccion="APEFIS" or transaccion="864" then
                             dataFiles.Add "LOG",NombreArchivoLog
                             Call dictionaryArchive(cliente,idHub,user,dataFiles,contador)
