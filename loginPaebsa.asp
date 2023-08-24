@@ -299,42 +299,8 @@
 
 
 else
-			' Inicia pagina que se muestra para el usuario cuando el proceso es correcto
+' Inicia pagina que se muestra para el usuario cuando el proceso es correcto
 %>
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<style> <%'esto se agrega para quitar la refecencia de  <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" /> para los archivos consultados%>
-tr.si {
-	color: #00F;
-	
-
-}
-
- tr.no {
-	color: #000;
-	
-}
-
- tr.limite {
-	color: #F00;
-	
-}
-.btn_download{
-	background: url(../imagenes2/guardar.png) no-repeat;
-	-webkit-appearance:none;
-	-moz-appearance: none;
-	-o-appearance: none;
-	appearance: none;
-	width: 30px;
-	height: 30px;
-	border: 0px;
-}
-#btnDescargaM {
-    background: url(../imagenes2/guardarDatos_1.png) left center no-repeat;
-    width: auto;
-}
-</style>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />	
@@ -373,6 +339,40 @@ tr.si {
 	<link href="bower_components\bootstrap-5_2_3-dist\css\bootstrap.min.css" rel="stylesheet">
 		
 	<title>PAEBSA</title>
+
+	<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+		<style> <%'esto se agrega para quitar la refecencia de  <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" /> para los archivos consultados%>
+		tr.si {
+			color: #00F;
+			
+
+		}
+
+		tr.no {
+			color: #000;
+			
+		}
+
+		tr.limite {
+			color: #F00;
+			
+		}
+		.btn_download{
+			background: url(../imagenes2/guardar.png) no-repeat;
+			-webkit-appearance:none;
+			-moz-appearance: none;
+			-o-appearance: none;
+			appearance: none;
+			width: 30px;
+			height: 30px;
+			border: 0px;
+		}
+		#btnDescargaM {
+			background: url(../imagenes2/guardarDatos_1.png) left center no-repeat;
+			width: auto;
+		}
+		</style>
 
 	<script type="text/javascript">
 		if (window.history) {
@@ -1064,12 +1064,28 @@ End Function
             	</script>            
         	</span>
 			
-    
+							
+				<!--Inicia Mensajes a clientes  notificaciones-->
+				<%
+						dim sql_Men_Noti_Cli
+						dim Men_Noti_Aviso
+						On Error Resume Next	
+						sql_Men_Noti_Cli = "select Mensaje_Cliente from CATCLIENTES where  Id_Cliente='"&user&"' and Mensaje_Cliente IS NOT NULL and Mensaje_Cliente <>''"
+						'response.write sql_Men_Noti_Cli
+						set rsDos2=server.createobject("ADODB.Recordset") 						
+						rsDos2.Open sql_Men_Noti_Cli,cnn,3,1	
+						Men_Noti_Aviso=""
+						Men_Noti_Aviso= rtrim((rsDos2.fields ("Mensaje_Cliente")  & " "))
+						rsDos2.Close
+						Set rsDos2= Nothing
+						if Men_Noti_Aviso<> "" then
+				
+					%>
+		
 
 				
 						<div class="enlaces dropdown">
-						
-							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
+							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-info">
 								1
 							<span class="visually-hidden"></span>
 							</span>
@@ -1080,26 +1096,36 @@ End Function
 							    	<a class="dropdown-item" target="_blank"  href="pdf/ManualWeb.pdf" style="font-size:14px;">Manual de usuario</a>
 								</li>
 								<li>
-								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size:14px;">Notificaciones
-								 </a>
+								    <a class="dropdown-item fw-bold" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size:14px;" role="button">Notificaciones</a>
 								</li>
 							</ul>
 					    </div>
 
-							
+					<%else %>
+	               <div class="col-2">
+							<div class="enlaces dropdown">
+							   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+					
+							<ul class="dropdown-menu">
+								<li>
+                                    <a class="dropdown-item" target="_blank"  href="pdf/ManualWeb.pdf" style="font-size:14px;">Manual de usuario</a>
+								</li>
+							</ul>
+					    </div>
+				<%end if%>
 
 	
 
-   
-        <!-- <div class="dropdown me-2">
-            <img src="imagenes/mensajes.png" alt="mensajes" type="button" data-bs-toggle="dropdown"  aria-expanded="false"  />
-            <span  class="dropdown-menu dropdown-menu-end form-contol" style="max-width: 500px; max-height:500px;">
-                <span><span class="dropdown-item" style="background-color:transparent"><%=avisos()%></span></span>
-            </span>
-        </div>-->
+				
+						<!-- <div class="dropdown me-2">
+							<img src="imagenes/mensajes.png" alt="mensajes" type="button" data-bs-toggle="dropdown"  aria-expanded="false"  />
+							<span  class="dropdown-menu dropdown-menu-end form-contol" style="max-width: 500px; max-height:500px;">
+								<span><span class="dropdown-item" style="background-color:transparent"><%=avisos()%></span></span>
+							</span>
+						</div>-->
 
 
-		<div>
+		               <div>
 							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
 								1
 							<span class="visually-hidden"></span>
@@ -1148,9 +1174,36 @@ End Function
                 <button style="margin-right: 5px;" id="btnCerrarSesion" href="Cerrar_Ses_Cli.asp" type="button" class="btn btn-outline-primary  btn-sm float-end">Cerrar sesión</button>
             </div>
         </div>
-
-
     </div>
+
+	    <!--
+			Modal de notificaciones realizado con bootstrap
+			Muestra una ventana ermergente con las notificaciones obtenidas de la BD
+			el cual consulta ela rchivo funtions.asp para obneter el estilo y mensaje de
+			las notifiaciones para el usuario, solo se muestra esta opción cuando exite una 
+			notifiación en la BD.
+		-->
+		<!--Inicia Modal notificaciones-->
+		<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
+						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+					</div>
+					<div class="modal-body ">
+						<div class="col-12 slideshow">
+						<%
+							mensajeCliente(user)
+						%>
+					</div>
+				</div>
+				<div class="modal-footer p-1">
+					<button type="button" class="btn btn-outline-primary  btn-sm"  data-bs-dismiss="modal">Aceptar</button>
+				</div>
+			</div>
+		</div>
+		<!--Termina Modal notificaciones-->
 </nav>
 <!--Fin encabezado-->
  
@@ -2055,95 +2108,8 @@ End Function
 						</ul>
 					</div>
 
-	<!--	<li class="nav-item dropdown">
-				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Consulta</a>
-				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="InfoReceivedSupplier.asp?ln=<%=lg%>" style="font-size:14px;">&raquo;Información enviada a clientes</a></li>
-				</ul>
-			</li> -->
+
 			
-
-					
-
-				
-						
-               <!--Inicia Mensajes a clientes  notificaciones-->
-               <%
-					dim sql_Men_Cli
-					dim Men_Aviso
-					On Error Resume Next	
-					sql_Men_Cli = "select Mensaje_Cliente from CATCLIENTES where  Id_Cliente='"&user&"' and Mensaje_Cliente IS NOT NULL and Mensaje_Cliente <>''"
-					'response.write sql_Men_Cli
-					set rsDos2=server.createobject("ADODB.Recordset") 						
-					rsDos2.Open sql_Men_Cli,cnn,3,1	
-					Men_Aviso=""
-					Men_Aviso= rtrim((rsDos2.fields ("Mensaje_Cliente")  & " "))
-					rsDos2.Close
-					Set rsDos2= Nothing
-					if Men_Aviso<> "" then
-						
-		         %>
-	
-					<div class="col-2">
-							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
-								1
-							<span class="visually-hidden"></span>
-							</span>
-						<div class="enlaces dropdown">
-							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
-					
-							<ul class="dropdown-menu">
-								<li>
-							    	<a class="dropdown-item" target="_blank"  href="pdf/ManualWeb.pdf" style="font-size:14px;">Manual de usuario</a>
-								</li>
-								<li>
-								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal" style="font-size:14px;">Notificaciones
-									<span class="position-absolute top-8  translate-middle badge rounded-pill bg-danger">
-									1
-								<span class="visually-hidden"></span></a>
-								</li>
-							</ul>
-					    </div>
-
-							<!--Inicia Modal -->
-							<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-								<div class="modal-dialog">
-									<div class="modal-content">
-										<div class="modal-header">
-											<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
-											<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-										</div>
-										<div class="modal-body ">
-											<div class="col-12 slideshow">
-											<%
-												mensajeCliente(user)
-											%>
-									</div>
-									</div>
-									<div class="modal-footer p-1">
-										<button type="button" class="btn btn-primary btn-sm"  data-bs-dismiss="modal">Close</button>
-									</div>
-								</div>
-					    	</div>
-					<!--Termina Modal -->
-				<%
-				'Termina Mensajes a clientes  notificaciones
-
-               else%>
-	               <div class="col-2">
-							<div class="enlaces dropdown">
-							   <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
-					
-							<ul class="dropdown-menu">
-								<li>
-                                    <a class="dropdown-item" target="_blank"  href="pdf/ManualWeb.pdf" style="font-size:14px;">Manual de usuario</a>
-								</li>
-							</ul>
-					    </div>
-				<%end if 
-				%>
-			</div>
-		</div>
 
 
   	<!--Inicia Menú Nuevas Funciones del portal Bootsrap--> 
