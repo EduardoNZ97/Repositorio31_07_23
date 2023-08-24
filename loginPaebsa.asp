@@ -317,12 +317,7 @@ else
 	<!--Si se ocupa Para el aviso Mensaje en texto cuando seleciona un archivo a descargar
 	para estilos del calendario
 	-->
-	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery_ui_loginPaebsa.css" />
-
-	<!--Si se ocupa para la tabla  	
-     <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />
-    <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" />	-->
-	
+	<!-- <link type="text/css" rel="stylesheet" href="jsFromHttp/jquery_ui_loginPaebsa.css" />-->
 
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
@@ -342,24 +337,20 @@ else
 
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-		<style> <%'esto se agrega para quitar la refecencia de  <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" /> para los archivos consultados%>
+		<style> <%'esto se agrega para quitar la refecencia de  <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" /> y <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" /> para los archivos consultados%>
 		tr.si {
 			color: #00F;
-			
-
 		}
 
 		tr.no {
 			color: #000;
-			
 		}
 
 		tr.limite {
 			color: #F00;
-			
 		}
 		.btn_download{
-			background: url(../imagenes2/guardar.png) no-repeat;
+			background: url(imagenes/guardar.png) no-repeat;
 			-webkit-appearance:none;
 			-moz-appearance: none;
 			-o-appearance: none;
@@ -369,7 +360,7 @@ else
 			border: 0px;
 		}
 		#btnDescargaM {
-			background: url(../imagenes2/guardarDatos_1.png) left center no-repeat;
+			background: url(imagenes/guardar.png) left center no-repeat;
 			width: auto;
 		}
 		</style>
@@ -385,10 +376,7 @@ else
 	</script>
 	
 	<script type="text/javascript">
-	
 
-
-	
         $(document).ready(function () 
 		{
 		 
@@ -483,19 +471,11 @@ else
 	/* Tabla de Informacion/ Columna 'Descargar'/ Cuadro de dialogo */
 	$(document).ready(function () 
 	{
-		$("#dialog-form").dialog({
-			autoOpen: false,
-			width: 350,
-			modal: true,
-			resizable: false,
-			draggable: false,
-			close: function() {}
-		});
-
-		$('.create-user').on('click',function(eEvento){
-			
-			$( "#dialog-form" ).dialog( "open" );
-		});
+		$(document).ready(function () {
+  $('.create-user').on('click', function(eEvento) {
+    $('#dialog-form').modal('show');
+  });
+});
 	});
 	</script>
 		
@@ -994,6 +974,25 @@ else
 
 </head>
 <body>
+
+<div class="modal fade" id="dialog-form" tabindex="-1" aria-labelledby="dialog-form-label" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered"> <!-- Agrega la clase modal-dialog-centered -->
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="dialog-form-label">Seleccione </h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Cerrar"></button>
+      </div>
+      <div id=links class="modal-body">
+        <!-- Contenido del modal aquí -->
+      </div>
+      <div class="modal-footer">
+        <!-- Botones del pie del modal aquí -->
+      </div>
+    </div>
+  </div>
+</div>
+
+
 <%
 Function avisos222()
 'Se busca si existen avisos en la BD
@@ -2499,7 +2498,6 @@ Se exporta todo el resultado de la consulta."
 						end if
 						
 				%>
-				<tbody>
 					<tr class="<%=color%>" id="<%=fila%>">
 					<td><small><small><%= contador%></small></small></td>
 					<td><small><small><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></small></small></td>
@@ -2616,7 +2614,7 @@ Se exporta todo el resultado de la consulta."
 						contador = contador +1
 						loop
 					%> 
-				</tbody>
+				
 			</table>	
 		</div>
 
@@ -2658,7 +2656,7 @@ Se exporta todo el resultado de la consulta."
 							<%
 							%>
 							<form name=frmDireccionesASP1 id=frmDireccionesASP1 action=loginPaebsa.asp>	
-							<select class='btn btn-primary' style='width: auto; height:30px;' name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >
+							<select class='btn btn-primary' style='width: auto; height:auto;' name=listaDireccionesASP1 onchange=window.top.location.href=frmDireccionesASP1.listaDireccionesASP1.options[frmDireccionesASP1.listaDireccionesASP1.selectedIndex].value >
 							<%
 							for i = 1 to rs.pagecount
 								j=j+1
@@ -2685,7 +2683,7 @@ Se exporta todo el resultado de la consulta."
             	<div class="text-center float-end">					
 						<%
 						response.write "<form name=frmDireccionesASP id=frmDireccionesASP action=loginPaebsa.asp>"
-						response.write "<select class='btn btn-primary' style='width: auto; height:30px; margin-top:3px' name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >"
+						response.write "<select class='btn btn-primary' style='width: auto; height:auto; margin-top:3px' name=listaDireccionesASP onchange=window.top.location.href=frmDireccionesASP.listaDireccionesASP.options[frmDireccionesASP.listaDireccionesASP.selectedIndex].value >"
 						response.write "<option  selected=selected data-i18n='grid.seleccionar'> Seleccione</option>"
 						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=10&paginaabsoluta=1>10</option>"
 						response.write "<option value=loginPaebsa.asp?ln="&lg&"&seleccione="&seleccione&"&texto="&texto&"&seleccione2="&seleccione2&"&texto2="&texto2&"&alf="&alf&"&orden="&orden&"&tipofecha="&tipofecha&"&datepicker="&fechaini&"&datepickerfinal="&fechafin&"&tamanopagina=25&paginaabsoluta=1>25</option>"
@@ -2707,11 +2705,11 @@ Se exporta todo el resultado de la consulta."
 
 		<div class=""></div>
 	</div>
-	<%
-		Response.write("<div id=dialog-form title=Seleccione su archivo data-i18n='[title]dialogo.archivo'>")
-		Response.write("<div id=links></div>")
-		Response.write("</div>")
-	%>
+	
+		<div id=dialog-form title=Seleccione su archivo data-i18n='[title]dialogo.archivo'>
+		<div id=links></div>
+		</div>
+	
 	<%
         Response.Write("<div id='contentPDF'></div>")
 	%>
