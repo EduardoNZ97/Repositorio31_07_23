@@ -670,9 +670,6 @@ else
     }
 </script>
 
-	<link rel="stylesheet" href="css/EstiloEnviaFacturas.css" type="text/css" />
-
-	
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".mainCompose").hide();
@@ -1227,15 +1224,15 @@ End Function
            <li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Administrar cuenta</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" style="font-size:14px;">&raquo;Administrar usuarios </a></li>
-					<li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>" style="font-size:14px;">&raquo; Cambiar contraseña</a></li>
-					<li><a class="dropdown-item" href="#" style="font-size:14px;">&raquo; Historial de usuario</a></li>
+					<li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" style="font-size:14px;">Administrar usuarios </a></li>
+					<li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>" style="font-size:14px;">Cambiar contraseña</a></li>
+					<li><a class="dropdown-item" href="#" style="font-size:14px;">Historial de usuario</a></li>
 				</ul>
 			</li> 
 			<li class="nav-item dropdown">
 				<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Consulta</a>
 				<ul class="dropdown-menu">
-					<li><a class="dropdown-item" href="InfoReceivedSupplier.asp?ln=<%=lg%>" style="font-size:14px;">&raquo;Información enviada a clientes</a></li>
+					<li><a class="dropdown-item" href="InfoReceivedSupplier.asp?ln=<%=lg%>" style="font-size:14px;">Información enviada a clientes</a></li>
 				</ul>
 			</li> 
 	  
