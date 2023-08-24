@@ -2418,25 +2418,25 @@ Se exporta todo el resultado de la consulta."
 	    </div> <br/>
 	
 		<div style="margin-left:10px; margin-right:10px">
-			<table class="table table-bordered text-center" >
+			<table class="small table table-bordered text-center" >
 				<thead class="text-white" style="background-color: #3c8dbc;">	
 				        <th></th>										
 						<th><input id="cTodos" name="checkbox" type="checkbox" onClick="marcar(this,<%For i = 0 to ubound(matriz) 
 						Response.Write matriz(i) 
 						next%>)"/></th>
-						<th><small><small>Nombre cadena</small></small></th>
-						<th><small><small>No. de proveedor cadena</small></small></th>
-						<th><small><small>C&oacute;digo de transacci&oacute;n</small></small></th>
-						<th><small><small>No. de documento</small></small></th>
-						<th><small><small>Fecha y hora de consulta</small></small></th>
-                        <th><small><small>Fecha cancelaci&oacute;n documento</small></small></th>
-						<th><small><small>Fecha documento</small></small></th>
-						<th><small><small>Clave cliente</small></small></th>
-						<th><small><small>No. de control</small></small></th>
-						<th><small><small>Estado</small></small></th>
-                        <th><small><small>Código tienda</small></small></th>
-                        <th><small><small>Descripción del proceso</small></small></th>
-                        <th><small><small>Descargar</small></small></th>
+						<th>Nombre cadena</th>
+						<th>No. de proveedor cadena</th>
+						<th>C&oacute;digo de transacci&oacute;n</th>
+						<th>No. de documento</th>
+						<th>Fecha y hora de consulta</th>
+                        <th>Fecha cancelaci&oacute;n documento</th>
+						<th>Fecha documento</th>
+						<th>Clave cliente<></th>
+						<th>No. de control</th>
+						<th>Estado</th>
+                        <th>Código tienda</th>
+                        <th>Descripción del proceso</th>
+                        <th>Descargar</th>
 					
 				</thead>
 				<% 
@@ -2498,14 +2498,14 @@ Se exporta todo el resultado de la consulta."
 						end if
 						
 				%>
-					<tr class="<%=color%>" id="<%=fila%>">
-					<td><small><small><%= contador%></small></small></td>
-					<td><small><small><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></small></small></td>
-					<td><small><small><%= rs("Nombre_Hub")%></small></small></td>
-					<td><small><small><%= rs("Numero_Proveedor_Hub")%></small></small></td>
-					<td><small><small><%= rs("Codigo_Transaccion")%></small></small></td>
-					<td><small><small><%= rs("Num_control_dato_docto")%></small></small></td>
-					<td><small><small><% 
+					<tr class="small <%=color%>" id="<%=fila%>">
+					<td><%= contador%></td>
+					<td><input id="<%=id%>" type="checkbox" value="<%= "ndd"&contador&"="&trim(rs("Num_control_dato_docto"))&"&"&"idf"&contador&"="&trim(rs("Identificador_Formato_1"))&"&ctr"&contador&"="&trim(rs("Codigo_Transaccion")) &"&na"&contador&"="&trim(rs("Nombre_Archivo")) %>" onClick="marcar(this,'<%=fila%>')"/></small></small></td>
+					<td><%= rs("Nombre_Hub")%></td>
+					<td><%= rs("Numero_Proveedor_Hub")%></td>
+					<td><%= rs("Codigo_Transaccion")%></td>
+					<td><%= rs("Num_control_dato_docto")%></td>
+					<td><% 
 						if  (Trim(rs("Fecha_Consulta_Cliente")) = "" or isNull (rs("Fecha_Consulta_Cliente"))) AND (Trim(rs("Hora_Consulta_Cliente")) = "" or isNull (rs("Hora_Consulta_Cliente"))) then
 							response.Write("-")
 						else
@@ -2517,11 +2517,11 @@ Se exporta todo el resultado de la consulta."
 						end if
 					
 					%></small></small></td>
-					<td><small><small><%response.write formatoFechas(trim(rs("Fecha_Canc_Documento_Edi")))%></small></small></td>
-                    <td><small><small><%response.write formatoFechas(trim(rs("Fecha_Recepcion_Sistema")))%></small></small></td>
-		            <td><small><small><%= rs("Id_Hub")%></small></small></td>
-					<td><small><small><%= rs("Num_Intercambio_Recibido")%></small></small></td>
-					<td><small><small><%
+					<td><%response.write formatoFechas(trim(rs("Fecha_Canc_Documento_Edi")))%></td>
+                    <td><%response.write formatoFechas(trim(rs("Fecha_Recepcion_Sistema")))%></td>
+		            <td><%= rs("Id_Hub")%></td>
+					<td><%= rs("Num_Intercambio_Recibido")%></td>
+					<td><%
 							estadoArchivo=Trim(rs("Status"))
 								if estadoArchivo="ERROR07" then 
 									response.Write("No es proveedor") 
@@ -2540,15 +2540,15 @@ Se exporta todo el resultado de la consulta."
 							end if
 						end if
 						end if
-						%></small></small>
+						%>
 					</td>
-					<td><small><small>
-                        <%= rs("Codigo_Tienda")%></small></small>
+					<td>
+                        <%= rs("Codigo_Tienda")%>
 					</td>
-                    <td><small><small>
-                        <%=Trim(rs("Descripcion_Error")) %></small></small>
+                    <td>
+                        <%=Trim(rs("Descripcion_Error")) %>
                     </td>
-					<td><small><small>
+					<td>
 					<%
 					' Creacion de la lista de archivos para su descarga 
                     transaccion=trim(rs("Codigo_Transaccion"))
