@@ -1066,6 +1066,7 @@ End Function
 			
 							
 				<!--Inicia Mensajes a clientes  notificaciones-->
+				<!--Consulta BD para saber si el isuario tiene un mensaje y pueda visualizar sus mensaje-->
 				<%
 						dim sql_Men_Noti_Cli
 						dim Men_Noti_Aviso
@@ -1081,15 +1082,13 @@ End Function
 						if Men_Noti_Aviso<> "" then
 				
 					%>
-		
-
-				
-						<div class="enlaces dropdown">
-							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-info">
+	
+						<div class="enlaces dropdown ">
+							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-info mx-4">
 								1
 							<span class="visually-hidden"></span>
 							</span>
-							<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="Bootstrap" width="25" height="32"/></a>
+							<a class="nav-link  mx-4"  href="#" data-bs-toggle="dropdown" aria-expanded="false"><img target="_blank"  src="bower_components/bootstrap-5_2_3-dist/icons/book.svg" alt="manual" width="25" height="32"/></a>
 					
 							<ul class="dropdown-menu">
 								<li>
@@ -1191,14 +1190,14 @@ End Function
 						<h1 class="modal-title fs-5" id="exampleModalLabel">Notificaciones</h1>
 						<button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 					</div>
-					<div class="modal-body ">
-						<div class="col-12 slideshow">
+					<div class="modal-body">
+						<div class="col-12">
 						<%
 							mensajeCliente(user)
 						%>
 					</div>
 				</div>
-				<div class="modal-footer p-1">
+				<div class="modal-footer p-0">
 					<button type="button" class="btn btn-outline-primary  btn-sm"  data-bs-dismiss="modal">Aceptar</button>
 				</div>
 			</div>
