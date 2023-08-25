@@ -252,7 +252,7 @@
 		   
 		<%
 
-	
+	    'Cuando existe un error en laconexion a la BD genera el lo y muestra la pagina mantenimiento
 		If (Err.Number <> 0) Then
 		
 			' Inicia Genera Archivo LOG errores del sistema 
@@ -305,19 +305,18 @@ else
 	<meta http-equiv="Expires" content="0" />
 	<meta http-equiv="Pragma" content="no-cache" />	
 	
-	<!--Si se ocupa  'jsFromHttp/jquery-1.9.1.js' 'jsFromHttp/jquery-ui.js' es para el mensaje en una sola linea Hola mundo bootstrap2 en rojo-->
+	<!--Si se ocupa  es para el boton de descarga de archivo de la tabla-->
 	<script src="jsFromHttp/jquery-1.9.1.js" type="text/javascript"></script>
 	<script type="text/javascript" src="jquery/jquery.jMagnify.js" ></script>
 	<script type="text/javascript" src="jquery/jquery.cycle.all.2.74.js"></script>
-
-    <!--Si se ocupara es para la animacion de que pareca la venta para descargar archivo dentro de la tabla-->
 	<script src="jsFromHttp/jquery-ui.js" type="text/javascript"></script>
+	<!--Si se ocupa  es para el boton de descarga de archivo de la tabla-->
+
 	<!--Si se ocupa js/Functions.js-->
 	<script type="text/javascript" src="js/Functions.js"></script>
-	<!--Si se ocupa Para el aviso Mensaje en texto cuando seleciona un archivo a descargar
-	para estilos del calendario
-	-->
-	<!-- <link type="text/css" rel="stylesheet" href="jsFromHttp/jquery_ui_loginPaebsa.css" />-->
+
+	<!--Si se ocupa para el para estilos del calendario-->
+	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
 
 	<!-- Traductor de la pagina Espaniol Ingles -->
 	<script src="js/translate.js" type="text/javascript"></script>
@@ -337,7 +336,8 @@ else
 
 	<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
-		<style> <%'esto se agrega para quitar la refecencia de  <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" /> y <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" /> para los archivos consultados%>
+	
+	<style> <%'esto se agrega para quitar la refecencia de  <link href="css/disenioTabla.css" rel="stylesheet" type="text/css" /> y <link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" /> para los archivos consultados%>
 		tr.si {
 			color: #00F;
 		}
@@ -363,7 +363,12 @@ else
 			background: url(imagenes/guardar.png) left center no-repeat;
 			width: auto;
 		}
-		</style>
+        /*Para el tamaño del calendario*/
+		div.ui-datepicker 
+		{ 
+			font-size: 80.5%; 
+		}
+	</style>
 
 	<script type="text/javascript">
 		if (window.history) {
@@ -447,7 +452,7 @@ else
           
 		});
         
-
+        //Para el modulo de captura de confirmación para los templates de Walmart(DESAV) 
 		function openTemplate(cliente,idUsuario){
 			var parametros={idCliente: cliente, idUser: idUsuario,language:'<%=lg%>'};
 			var propiedades= JSON.stringify({width:'80%', height:'600'});
@@ -455,13 +460,11 @@ else
 		}
 		
 
-			
+		//Pamtalla emergente para carga de archivos	formato plano, csv, xml, Excel, Edi
 		function openBrowser(idCliente, nombre, usuario){
 			var parameters={ idClient: idCliente, name: nombre, user: usuario, iduser: 'ADMIN',language:'<%=lg%>' };
 			var propiedades= JSON.stringify({width:'80%', height:'600'});
 			browser('AplicacionPaebsa/Browser.aspx?', parameters, propiedades);
-			
-
 		}
 	</script>
 	
@@ -472,15 +475,15 @@ else
 	$(document).ready(function () 
 	{
 		$(document).ready(function () {
-  $('.create-user').on('click', function(eEvento) {
-    $('#dialog-form').modal('show');
-  });
-});
+			$('.create-user').on('click', function(eEvento) {
+				$('#dialog-form').modal('show');
+			});
+		});
 	});
 	</script>
 		
 		
-	
+	<!--Cuando se selecionan varios registros de la tabla se sombrean de color gris-->
 	<script type="text/javascript">
 		function marcar() {
 			obj=arguments[0];
@@ -504,7 +507,7 @@ else
 	</script>
 
 	
-
+    <!--Para mostrar inf calendario -->
     <script type="text/javascript">
         $(function () {
             var lenguaje ="<%=lg%>";
@@ -553,6 +556,7 @@ else
 		}
 	</script>
 	
+	<!--Función para el botón de 'Exportar datos a un Excel'-->
 	<script type="text/javascript">
 		function descargaExcel(){
 			var fechaini=''+obtenerParametros('datepicker');
@@ -580,6 +584,7 @@ else
 		}
 	</script>
 
+    <!--Función para el botón de 'Reprocesar archvios'-->
 	<script type="text/javascript">
 		function reprocesoarchivos(){
 		try{
@@ -614,6 +619,7 @@ else
 		}
 	</script>
 
+    <!--Función para el botón de 'Reprocesar PDF'-->
 	<script type="text/javascript">
     function generarPDFs() {
         try {
@@ -649,7 +655,11 @@ else
         } 
     }
 </script>
-
+    
+	<!--
+	.mainCompose ---despliega Envío de facturas a clientes
+	
+	-->
 	<script type="text/javascript">
 		$(document).ready(function() {
 			$(".mainCompose").hide();
