@@ -939,7 +939,7 @@ else
 		function ventanaHistorial() 
 		{
 		//window.showModalDialog('HistorialProveedores.asp', '', 'status:1; resizable:1; dialogWidth:900px; dialogHeight:750px; dialogTop=50px; dialogLeft:100px')
-			window.open("ventanaHistorial.asp", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=50, left=50, width=1200, height=700");
+			window.open("HistorialProveedores.asp", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=50, left=50, width=1200, height=700");
 		}
 	</script>
 	
@@ -1201,7 +1201,7 @@ End Function
 			
 
     
-    <!--Inicia Ménu Bootstrap-->
+    <!--Inicia Ménu Superior  Bootstrap-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1219,7 +1219,7 @@ End Function
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" style="font-size:14px;">Administrar usuarios </a></li>
 					<li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>" style="font-size:14px;">Cambiar contraseña</a></li>
-					<li><a class="dropdown-item" href="#" style="font-size:14px;">Historial de usuario</a></li>
+					<li><a class="dropdown-item" id="modal"  onClick="ventanaHistorial();"  style="font-size:14px;">Historial de usuario</a></li>
 				</ul>
 			</li> 
 			<li class="nav-item dropdown">
@@ -1306,21 +1306,90 @@ End Function
 						<%
 							Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
 						%>
-					</li>
+					   </li>
 						<!--Termina carga de catálogo de tiendas-->
 					</ul>
 				</li> 
 
+	            <li class="nav-item dropdown">
+					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Captura de Adendas</a>
+					<ul class="dropdown-menu">
+                      
+						<!-- Link de Facturas Walmart -->
+						<li class="nav-item dropdown">
+							<a class="nav-link dropdown-toggle"  href="#" data-bs-toggle="dropdown"   aria-expanded="false">Addendas de Wal-Mart</a>
+					           <ul class="dropdown-menu">
+								<li>
+								<%
+									Call AddendaWalmartEdi(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+								%>
+								</li>
+								<li>
+								<%
+									Call addendaWalmartResguardo(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+								%>
+								</li>
+							</ul>
+						</li>
+                            <!-- Link de facturas Walmart -->							
+							<!-- Link de envio de facturas con addenda de amazon-->
+							<li>
+							<%							
+								Call addendaAmazon(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+							%>	
+							</li>
+							<!-- Fin link -->
+							<!-- Link de envio de facturas con addenda de BB&B-->
+							<li>
+							<%							
+								Call  addendaEdiBBB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg) 
+							%>	
+							</li>							
+							<!-- Fin link -->
+							<!-- Link de envio de facturas con addenda de almacenes Garcia-->
+							<li>
+							<%							
+								Call addendaAlmacenesGarcia(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
+							%>	
+							</li>							
+							<!-- Fin link -->
+							
+							<!-- Inicia Addenda de MERZA -->
+							<li>
+							<%
+								Call addendaMerza(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)		
+							%>
+							</li>
+                                <!-- Termina Addenda de Merza -->
+                            <!-- Inicia Addenda de Corvi -->
+							<li>
+							<%
+								Call addendaCorvi(pass,user,"", "loginPaebsa.asp?ln="&lg)		
+							%>
+							</li>
+							<li>
+							<%
+								Call addendaChedraui(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
+							%>
+							</li>
+							<li>
+							<%
+								Call AddendaHEB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
+							%>
+							</li>
+
+					</ul>
+				</li> 
 
 
-
+			
 
         </ul>
       </div>
     </div>
 	</div><!--fin del contenido menu superior-->
 	  </nav>
-    <!--Termina Ménu  Bootstrap-->
+    <!--Fin Ménu Superior  Bootstrap-->
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
@@ -1596,22 +1665,7 @@ End Function
 						
 						<li class="has-sub">
 						
-						<!--<a href="#" data-i18n="menu.administrarCuenta.titulo">&raquo;Administre su cuenta</a>
-							<ul>
-								<li><a href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios</a></li>
-								<!--Sistema viejo de contraseñas
-								<li><a href="CambioPassword.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
-								<!--Sistema nuevo de contraseñas>>>Quitar comentario y comentar línea de arriba
-								<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
-								<li><a href="#" id="modal"  onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial">&raquo;Historial de usuarios</a></li>
-							</ul>
-						</li>-->
-						
-						
-						
-						<!--<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.general">&raquo;Consulta general</a></li>-->
-	 
-						<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
+					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						<li id="link_desadv">
 							<a href="#" onClick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
 						</li>
@@ -1628,8 +1682,7 @@ End Function
 							 <!--</ul>
 						</li>-->
 						<!-- Menu Colgate -->
-						<!-- Link de SemiEdiColgate-->
-						<!-- Link de Facturas express -->		
+					
 						
 						<!-- Fin link -->
 						<!--<li><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="menu.enviada">&raquo;Informaci&oacuten enviada a clientes </a></li>-->
