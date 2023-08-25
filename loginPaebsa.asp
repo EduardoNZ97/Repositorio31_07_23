@@ -933,23 +933,7 @@ else
 		}
 	</script>
 	
-	<script type="text/javascript">
-	   function submitForm()
-	   {
-		   document.reportesLogs.target = "myActionWin";
-		   window.open("","myActionWin","height=650px,width=750px,toolbar=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,modal=yes");
-		   document.reportesLogs.submit();
-	   }
-	</script>
 	
-   <script type="text/javascript">
-	   function submitReportesExcel()
-	   {
-		   document.reportesExcel.target = "myActionWin";
-		   window.open("","myActionWin","height=650px,width=750px,toolbar=no,directories=no,status=no,menubar=no,scrollbars=yes,resizable=yes,modal=yes");
-		   document.reportesExcel.submit();
-	   }
-   </script>
 
    <script language="javascript" type="text/javascript">
 		function ventanaHistorial() 
@@ -1810,54 +1794,74 @@ End Function
 
 
 
-		<div class="container_12 divider">
-			<div class="info_options">
-				<form action="ficheroExcel.php" method="post"  id="FormularioExportacion">
-					 
-					<div class="input"><input type="button"  value="Reprocesar archivos"  class="button_opt prtText" id="btnReprocesoEdi" data-i18n="[value]funcionalidad.reproceso"/></div>
-					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoReproceso"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					<div class="input"><input type="button"  value="Reprocesar PDF" class="button_opt prtText" id="btnReprocesoPDF" data-i18n="[value]funcionalidad.reprocesoPDF"/></div>
-					<a class="tooltip" title=""  data-i18n="[title]funcionalidad.infoReprocesoPDF"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a></div>
-					
-					<div class="input"><input  class="button_opt prtText create-user btn_download" type="button" value="Descarga masiva de archivos" id="btnDescargaM"/></div>
-					<a class="tooltip" title="" data-i18n="[title]funcionalidad.descargaMasiva"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					<div class="input"><input type="button" value="Enviar informaci&oacute;n por e-mail" class="button_opt prtText" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>
-					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoEmail"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a>
-					<div class="input"><input type="button"  value="Exportar datos a un excel"  class="button_opt prtText" id="btnExcel" data-i18n="[value]funcionalidad.excel"/></div>
-					<a class="tooltip" title="" data-i18n="[title]funcionalidad.infoExcel"><img src="imagenes2/infoAd.jpg" width="15" height="15" alt="info" longdesc="Descripcion de Nombre" /></a></div>
-				</form>
+		<div>
+		<div class="float-end">
+		<!--<strong><label style="font-size: 10pt;color:#000; "><< Informaci&oacuten Enviada >> </label></strong>-->
+		  <form  action="ficheroExcel.php" method="post" class=" gap-2 d-md-flex justify-content-md" style="margin-right:10px;"><br/>
+			
+			<div>
+			<input type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+									Response.Write matriz(i) 
+									next%>)" style="background: url(../imagenes/reprocess.jpg) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reproceso"/>
 			</div>
+									
+				
+			<div><input type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Para la generación de PDF solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." class="btn btn-light border-primary " value="Reprocesar PDF" onclick="generarPDFs(this,<%For i = 0 to ubound(matriz) 
+									Response.Write matriz(i) 
+									next%>)" style="background: url(../imagenes/imgPdf.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
+				
+			
+			
+			<div><input class="btn btn-light border-primary text-wrap create-user " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
+			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
+			
+			<!--<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>-->
 
+			
+			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Para el envio de email solo se adjuntaran los primeros 20 registros seleccionados."
+			value="Enviar información por e-mail" onclick="marcarb('S')" id ="btnEmail" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
+			
+			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+Se exporta todo el resultado de la consulta."
+			value="Exportar datos a un excel" onclick="descargaExcel()" style="background: url(../imagenes/excel.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.excel"/></div>
+			
+			
+		   </form><br/>
+	    </div> 
 
 
 			
-			<div class="">
+			<div style="margin-left:10px; margin-right:10px">
 				<!-- Principia la tabla vacia-->
-				<table cellpadding="0" cellspacing="0" border="0" id="myTable02" class="">
-					<thead>
+				<table class="small table table-bordered text-center ">
+					<thead class="text-white" style="background-color: #3c8dbc;">
 						<tr>
-							<th class="nosort"></th>
+							<th class=""></th>
 							<th><input id="cTodos" name="checkbox" type="checkbox"/></th>
-							<th><h3 data-i18n="grid.nombre">Nombre cadena</h3></th>
-							<th><h3 data-i18n="grid.noProveedor">No. de proveedor cadena</h3></th>
-							<th><h3 data-i18n="grid.transaccion">C&oacute;digo de transacci&oacute;n </h3></th>
-							<th><h3 data-i18n="grid.noDocumento">No. de documento</h3></th>
-							<th><h3 data-i18n="grid.fechaHora">Fecha y hora de consulta </h3></th>
+							<th>Nombre cadena</th>
+							<th>No. de proveedor cadena</th>
+							<th>Código de transacción</th>
+							<th>No. de documento</th>
+							<th>Fecha y hora de consulta</th>
 							<!--<th><h3>Fecha de publicaci&oacuten </h3></th>
 							<th><h3>Hora de publicaci&oacuten </h3></th>-->
-							<th><h3 data-i18n="grid.fechaCancelacion">Fecha cancelaci&oacuten documento </h3></th>
-							<th><h3 data-i18n="grid.fechaDocumento">Fecha documento </h3></th>
-							<th><h3 data-i18n="grid.claveCliente">Clave cliente </h3></th>
-							<th><h3 data-i18n="grid.noControl">No. de control</h3></th>
-							<th><h3 data-i18n="grid.estado" class="sizeTittle60">Estado</h3></th>
-							<th><h3 data-i18n="grid.codigoTienda" class="sizeTittle60">C&oacute;digo tienda </h3></th>
-							<th><h3 data-i18n="grid.descripcion">Descripci&oacute;n del proceso </h3></th>
-							<th><h3 data-i18n="grid.descargar" class="sizeTittle40">Descargar</h3></th>
+							<th>Fecha cancelaci&oacuten documento</th>
+							<th>Fecha documento</th>
+							<th>Clave cliente</th>
+							<th>No. de control</th>
+							<th>Estado</th>
+							<th>Código tienda</th>
+							<th>Descripción del proceso</th>
+							<th>Descargar</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-						<td colspan="8" style="vertical-align: top;height:400px;padding-top: 25px;"><label style="font-size:18px;font-style:italic;" data-i18n="grid.informacion">Sin Informaci&oacute;n </label></td>
+						<td colspan="15" style="vertical-align: top;height:400px;padding-top: 25px;"><label style="font-size:18px;font-style:italic;" data-i18n="grid.informacion">Sin Información </label></td>
 						</tr>
 					</tbody>
 				</table>
@@ -2781,6 +2785,7 @@ Se exporta todo el resultado de la consulta."
     }
 
 </script>
+
 <script>
 	$(document).ready(function(e)
 	{
