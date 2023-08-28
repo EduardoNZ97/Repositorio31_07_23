@@ -314,6 +314,8 @@ else
 
 	<!--Si se ocupa js/Functions.js-->
 	<script type="text/javascript" src="js/Functions.js"></script>
+    <!--<link href="css/loginPaebsa.css" rel="stylesheet" type="text/css" />-->
+
 
 	<!--Si se ocupa para el para estilos del calendario-->
 	<link type="text/css" rel="stylesheet" href="jsFromHttp/jquery-ui.css" />
@@ -368,6 +370,9 @@ else
 		{ 
 			font-size: 80.5%; 
 		}
+		
+		
+
 	</style>
 
 	<script type="text/javascript">
@@ -647,6 +652,38 @@ else
             }
             
             // Mostrar una alerta si ningún archivo está seleccionado
+            if (!alMenosUnArchivoSeleccionado) {
+                alert("Por favor, selecciona al menos un archivo.");
+                return false;
+            }
+        } catch (e) {
+        } 
+    }
+</script>
+
+
+<script>
+ function validardescargamasiva() {
+        try {
+            obj = arguments[0];
+            var urlArchivos = "";
+            var contadorarcl = 0;
+            var alMenosUnArchivoSeleccionado = false; // Variable para verificar si al menos un archivo está seleccionado
+            
+            for (i = 1; i < arguments.length; i++) {
+                marca = arguments[i].replace('fila', '');
+                marca = 'c' + marca;
+
+                if (obj.checked) {
+                    alert(obj.value);
+                } else {
+                    if (document.getElementById(marca).checked) {                      
+                            urlArchivos = urlArchivos + "" + (document.getElementById(marca).value) + "&";
+                            contadorarcl++;
+                            alMenosUnArchivoSeleccionado = true; // Marcar que al menos un archivo está seleccionado							
+                    }
+                }
+            }                       
             if (!alMenosUnArchivoSeleccionado) {
                 alert("Por favor, selecciona al menos un archivo.");
                 return false;
@@ -939,7 +976,7 @@ else
 		function ventanaHistorial() 
 		{
 		//window.showModalDialog('HistorialProveedores.asp', '', 'status:1; resizable:1; dialogWidth:900px; dialogHeight:750px; dialogTop=50px; dialogLeft:100px')
-			window.open("HistorialProveedores.asp", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=50, left=50, width=1200, height=700");
+			window.open("ventanaHistorial.asp", "_blank", "toolbar=no, scrollbars=yes, resizable=yes, top=50, left=50, width=1200, height=700");
 		}
 	</script>
 	
@@ -988,6 +1025,48 @@ else
 
 
 <%
+Function MostrarAvisosIndividuales()
+    ' Se busca si existen avisos en la BD
+    Dim sqlAvisos, bandera
+    If lg = "es" Or idioma = "es" Then
+        bandera = "P"
+    ElseIf lg = "en" Or idioma = "en" Then
+        bandera = "PE"
+    End If
+    
+    sqlAvisos = "SELECT Titulo, Contenido, Destinatario, Emisor, ArchivoAdjunto FROM CATAVISOSPAGINAWEB WHERE BanderaMostrar='S' AND MostrarAvisoA='" & bandera & "'"
+    
+    Set rsAvisos = Server.CreateObject("ADODB.Recordset")
+    rsAvisos.Open sqlAvisos, cnn, 3, 1
+    
+    If rsAvisos.RecordCount > 0 Then
+        Do Until rsAvisos.EOF
+            Response.Write "<div class='aviso'>"
+            If Trim(rsAvisos("Titulo") & "") <> "" Then
+                Response.Write "<div class='titulo'><b>" & rsAvisos("Titulo") & "</b></div>"
+            End If
+            
+            If Trim(rsAvisos.Fields("Emisor") & "") <> "" Then
+                Response.Write "<div class='emisor'><b>De:</b> " & rsAvisos.Fields("Emisor") & "</div>"
+            End If
+            
+            If Trim(rsAvisos.Fields("Destinatario")) & "" <> "" Then
+                Response.Write "<div class='destinatario'><b>Para:</b> " & rsAvisos.Fields("Destinatario") & "</div>"
+            End If
+            
+            Response.Write "<div class='mensaje'>" & rsAvisos.Fields("Contenido") & "</div>"
+            Response.Write "</div>" 
+			
+            rsAvisos.MoveNext
+        Loop
+    Else
+        Response.Write "<div class='sin-avisos'>No hay avisos disponibles.</div>"
+    End If
+    
+    rsAvisos.Close
+    Set rsAvisos = Nothing
+End Function
+
 Function avisos222()
 'Se busca si existen avisos en la BD
 	dim sqlAvisos, bandera
@@ -1005,7 +1084,7 @@ Function avisos222()
 				response.write "<div class=''>"
 					Do Until rsDosAvisos.EOF
 						 response.write "<div class=''>"
-					'For each aviso in rsDosAvisos.fields
+					For each aviso in rsDosAvisos.fields
 						If Trim(rsDosAvisos("Titulo"))&"" <> "" Then
 									
 							response.write "	<div class=''>"
@@ -1029,13 +1108,15 @@ Function avisos222()
 						end if
 						rsDosAvisos.MoveNext
                         response.write "</div>" 
-					'Next
+					Next
 					Loop
 					response.write "</div>" 'content
 	end if
 			
 End Function
 %>
+
+
 <!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
     <div class="d-flex align-items-center">
@@ -1103,16 +1184,6 @@ End Function
 					    </div>
 				<%end if%>
 
-	
-
-				
-						<!-- <div class="dropdown me-2">
-							<img src="imagenes/mensajes.png" alt="mensajes" type="button" data-bs-toggle="dropdown"  aria-expanded="false"  />
-							<span  class="dropdown-menu dropdown-menu-end form-contol" style="max-width: 500px; max-height:500px;">
-								<span><span class="dropdown-item" style="background-color:transparent"><%=avisos()%></span></span>
-							</span>
-						</div>-->
-
 
 		               <div>
 							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
@@ -1124,7 +1195,7 @@ End Function
 					
 							<ul class="dropdown-menu dropdown-menu-end" style="max-width:500px; max-height:500px;">
 								<li>
-								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Mensajes" style="font-size:14px;">Leer mensajes</a>
+								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Mensajes" style="font-size:14px;"><%MostrarAvisosIndividuales()%></a>
 								</li>
 							</ul>
 					    </div>
@@ -1138,7 +1209,7 @@ End Function
 										</div>
 										<div class="modal-body ">											
 											<%
-												avisos222()
+												MostrarAvisosIndividuales()
 											%>									
 									</div>
 									<div class="modal-footer p-1">
@@ -1201,7 +1272,7 @@ End Function
 			
 
     
-    <!--Inicia Ménu Superior  Bootstrap-->
+    <!--Inicia Ménu Bootstrap-->
 	 <nav class="navbar navbar-expand navbar-light" style="background-color: #e3f2fd;" aria-label="Second navbar example">
     <div class="container-fluid">
 
@@ -1219,7 +1290,7 @@ End Function
 				<ul class="dropdown-menu">
 					<li><a class="dropdown-item"  href="RegistroUsuarios.asp?ln=<%=lg%>" style="font-size:14px;">Administrar usuarios </a></li>
 					<li><a class="dropdown-item" href="CambioPassword.asp?ln=<%=lg%>" style="font-size:14px;">Cambiar contraseña</a></li>
-					<li><a class="dropdown-item" id="modal"  onClick="ventanaHistorial();"  style="font-size:14px;">Historial de usuario</a></li>
+					<li><a class="dropdown-item" href="#" style="font-size:14px;">Historial de usuario</a></li>
 				</ul>
 			</li> 
 			<li class="nav-item dropdown">
@@ -1306,90 +1377,21 @@ End Function
 						<%
 							Call CargaTiendas(rtrim(user), rtrim(Nombre), "ADMIN", "loginPaebsa.asp?ln="&lg)		
 						%>
-					   </li>
+					</li>
 						<!--Termina carga de catálogo de tiendas-->
 					</ul>
 				</li> 
 
-	            <li class="nav-item dropdown">
-					<a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown" aria-expanded="false">Captura de Adendas</a>
-					<ul class="dropdown-menu">
-                      
-						<!-- Link de Facturas Walmart -->
-						<li class="nav-item dropdown">
-							<a class="nav-link dropdown-toggle"  href="#" data-bs-toggle="dropdown"   aria-expanded="false">Addendas de Wal-Mart</a>
-					           <ul class="dropdown-menu">
-								<li>
-								<%
-									Call AddendaWalmartEdi(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-								%>
-								</li>
-								<li>
-								<%
-									Call addendaWalmartResguardo(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-								%>
-								</li>
-							</ul>
-						</li>
-                            <!-- Link de facturas Walmart -->							
-							<!-- Link de envio de facturas con addenda de amazon-->
-							<li>
-							<%							
-								Call addendaAmazon(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-							%>	
-							</li>
-							<!-- Fin link -->
-							<!-- Link de envio de facturas con addenda de BB&B-->
-							<li>
-							<%							
-								Call  addendaEdiBBB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg) 
-							%>	
-							</li>							
-							<!-- Fin link -->
-							<!-- Link de envio de facturas con addenda de almacenes Garcia-->
-							<li>
-							<%							
-								Call addendaAlmacenesGarcia(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)
-							%>	
-							</li>							
-							<!-- Fin link -->
-							
-							<!-- Inicia Addenda de MERZA -->
-							<li>
-							<%
-								Call addendaMerza(pass,user,Nombre,"loginPaebsa.asp?ln="&lg)		
-							%>
-							</li>
-                                <!-- Termina Addenda de Merza -->
-                            <!-- Inicia Addenda de Corvi -->
-							<li>
-							<%
-								Call addendaCorvi(pass,user,"", "loginPaebsa.asp?ln="&lg)		
-							%>
-							</li>
-							<li>
-							<%
-								Call addendaChedraui(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
-							%>
-							</li>
-							<li>
-							<%
-								Call AddendaHEB(pass,user,Nombre,"loginPaebsa.asp?ln="&lg,"ADMIN")		
-							%>
-							</li>
-
-					</ul>
-				</li> 
 
 
-			
+
 
         </ul>
       </div>
     </div>
 	</div><!--fin del contenido menu superior-->
 	  </nav>
-    <!--Fin Ménu Superior  Bootstrap-->
+    <!--Termina Ménu  Bootstrap-->
 	<!--<div class="block" id="block"></div>-->
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
@@ -1665,7 +1667,22 @@ End Function
 						
 						<li class="has-sub">
 						
-					<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
+						<!--<a href="#" data-i18n="menu.administrarCuenta.titulo">&raquo;Administre su cuenta</a>
+							<ul>
+								<li><a href="RegistroUsuarios.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.usuarios">&raquo;Administre sus usuarios</a></li>
+								<!--Sistema viejo de contraseñas
+								<li><a href="CambioPassword.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
+								<!--Sistema nuevo de contraseñas>>>Quitar comentario y comentar línea de arriba
+								<!--<li><a href="AplicacionPaebsa/ReestablecerContrasena.aspx?tipoUsr=M&pagina=loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.administrarCuenta.contrasena"> &raquo;Cambiar contraseña</a></li>
+								<li><a href="#" id="modal"  onClick="ventanaHistorial();" data-i18n="menu.administrarCuenta.historial">&raquo;Historial de usuarios</a></li>
+							</ul>
+						</li>-->
+						
+						
+						
+						<!--<li><a href="loginPaebsa.asp?ln=<%=lg%>" data-i18n="menu.general">&raquo;Consulta general</a></li>-->
+	 
+						<!-- Captura de confirmación para los templates de Walmart(DESAV) -->	
 						<li id="link_desadv">
 							<a href="#" onClick="openTemplate('<%=trim(user)%>','ADMIN')" data-i18n="menu.template">&raquo;Captura de confirmaci&oacute;n para los templates de Walmart/Sahuayo (DESAV)</a>
 						</li>
@@ -1682,7 +1699,8 @@ End Function
 							 <!--</ul>
 						</li>-->
 						<!-- Menu Colgate -->
-					
+						<!-- Link de SemiEdiColgate-->
+						<!-- Link de Facturas express -->		
 						
 						<!-- Fin link -->
 						<!--<li><a href="InfoReceivedSupplier.asp?ln=<%=lg%>" data-i18n="menu.enviada">&raquo;Informaci&oacuten enviada a clientes </a></li>-->
@@ -1854,7 +1872,7 @@ End Function
 			
 			<div>
 			<input type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
-Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." class="btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
+Para el reproceso de archivos solo se tomaran los primeros 20 registros seleccionados ademas que deberan de estar en formato EDI." class="disabled btn btn-light border-primary " value="Reprocesar archivos" onclick="reprocesoarchivos(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)" style="background: url(../imagenes/reprocess.jpg) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reproceso"/>
 			</div>
@@ -1866,13 +1884,10 @@ Para la generación de PDF solo se tomaran los primeros 20 registros seleccionad
 									next%>)" style="background: url(../imagenes/imgPdf.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				
 			
-			
 			<div><input class="btn btn-light border-primary text-wrap create-user " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
 			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
-			<!--<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>-->
-
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Para el envio de email solo se adjuntaran los primeros 20 registros seleccionados."
@@ -2464,12 +2479,12 @@ Para la generación de PDF solo se tomaran los primeros 20 registros seleccionad
 									next%>)" style="background: url(../imagenes/imgPdf.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.reprocesoPDF" /></div>
 				
 			
-			
-			<div><input class="btn btn-light border-primary text-wrap create-user " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+			<div><input class="btn btn-light border-primary text-wrap create-user" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante 
 Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
-			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
+			id="btnDescargaM" value="Descarga masiva de archivos" onclick="validardescargamasiva(this,<%For i = 0 to ubound(matriz) 
+									Response.Write matriz(i) 
+									next%>)" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
-			<!--<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>-->
 
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
