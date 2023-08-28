@@ -803,7 +803,37 @@ else
 		 }
 	</script>
 
- 
+ <script>
+ function validardescargamasiva() {
+        try {
+            obj = arguments[0];
+            var urlArchivos = "";
+            var contadorarcl = 0;
+            var alMenosUnArchivoSeleccionado = false; // Variable para verificar si al menos un archivo está seleccionado
+            
+            for (i = 1; i < arguments.length; i++) {
+                marca = arguments[i].replace('fila', '');
+                marca = 'c' + marca;
+
+                if (obj.checked) {
+                    alert(obj.value);
+                } else {
+                    if (document.getElementById(marca).checked) {                      
+                            urlArchivos = urlArchivos + "" + (document.getElementById(marca).value) + "&";
+                            contadorarcl++;
+                            alMenosUnArchivoSeleccionado = true; // Marcar que al menos un archivo está seleccionado							
+                    }
+                }
+            }                       
+            if (!alMenosUnArchivoSeleccionado) {
+                alert("Por favor, selecciona al menos un archivo.");
+                return false;
+            }
+        } catch (e) {
+        } 
+    }
+</script>
+
  
 	<script type='text/javascript'>
         function validarMaximoArchivos() {
@@ -2467,7 +2497,9 @@ Para la generación de PDF solo se tomaran los primeros 20 registros seleccionad
 			
 			<div><input class="btn btn-light border-primary text-wrap create-user " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
-			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
+			id="btnDescargaM" value="Descarga masiva de archivos" onclick="validardescargamasiva(this,<%For i = 0 to ubound(matriz) 
+									Response.Write matriz(i) 
+									next%>)"style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
 			<!--<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>-->
 
