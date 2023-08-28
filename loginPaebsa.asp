@@ -802,7 +802,40 @@ else
 			 window.setTimeout("lessMinutes();",999)
 		 }
 	</script>
-<!--eta funcion valida que al seleccionar un archivo y dar click en descarga masiva de archivos muestre el dialog-->
+<script>
+
+function validarEmail() {
+        try {
+            obj = arguments[0];
+            var urlArchivos = "";
+            var contadorarcl = 0;
+            var alMenosUnArchivoSeleccionado = false; 			            
+            for (i = 1; i < arguments.length; i++) {
+                marca = arguments[i].replace('fila', '');
+                marca = 'c' + marca;
+
+                if (obj.checked) {
+                    alert(obj.value);
+                } else {
+                    if (document.getElementById(marca).checked) {                      
+                            urlArchivos = urlArchivos + "" + (document.getElementById(marca).value) + "&";
+                            contadorarcl++;
+                            alMenosUnArchivoSeleccionado = true; 	
+							marcarb('S')			
+						 																															
+                    }
+                }
+            }                       
+            if (!alMenosUnArchivoSeleccionado) {
+                alert("Por favor, selecciona al menos un archivo.");
+                return false;
+            }
+        } catch (e) {
+        } 
+    }
+
+</script>
+<!--esta funcion valida que al seleccionar un archivo y dar click en descarga masiva de archivos muestre el dialog-->
  <script>
  function validardescargamasiva() {
         try {
@@ -2508,7 +2541,9 @@ Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, 
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Para el envio de email solo se adjuntaran los primeros 20 registros seleccionados."
-			value="Enviar información por e-mail" onclick="marcarb('S')" id ="btnEmail" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
+			value="Enviar información por e-mail" onclick="validarEmail(this,<%For i = 0 to ubound(matriz) 
+									Response.Write matriz(i) 
+									next%>)" id ="btnEmail" style="background: url(../imagenes/adj.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" data-i18n="[value]funcionalidad.email"/></div>
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Se exporta todo el resultado de la consulta."
