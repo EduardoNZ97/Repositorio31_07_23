@@ -733,7 +733,7 @@ else
 			});
 		});
 	</script>	
-
+<!--esta funcion se utiliza para el tiempo de session -->
 	<script type="text/javascript" language="javascript">  
 		 var iStart = 0;
 		 var iMinute = <%=Session.Timeout%>; //Obtengo el tiempo de session permitida
@@ -802,7 +802,7 @@ else
 			 window.setTimeout("lessMinutes();",999)
 		 }
 	</script>
-
+<!--eta funcion valida que al seleccionar un archivo y dar click en descarga masiva de archivos muestre el dialog-->
  <script>
  function validardescargamasiva() {
         try {
@@ -821,7 +821,10 @@ else
                     if (document.getElementById(marca).checked) {                      
                             urlArchivos = urlArchivos + "" + (document.getElementById(marca).value) + "&";
                             contadorarcl++;
-                            alMenosUnArchivoSeleccionado = true; // Marcar que al menos un archivo está seleccionado							
+                            alMenosUnArchivoSeleccionado = true; 					
+						 	$(document).ready(function () {
+        					$('#dialog-form').modal('show');
+    				     	});																															
                     }
                 }
             }                       
@@ -834,7 +837,7 @@ else
     }
 </script>
 
- 
+ <!--Falta revisar esta funcion candidato para borrar-->
 	<script type='text/javascript'>
         function validarMaximoArchivos() {
                 var text = "";
@@ -1424,8 +1427,7 @@ End Function
 	<div class="content_loading"  id="content_loading"></div>
 	<iframe id="iframe" style="display:none;"></iframe>
 	<div class="contenidoGral">
-        <div class="links">
-		
+		<%response.write archivo%>
             <div class="session">
 		        <div id="msgSesion">
 			       
@@ -1897,7 +1899,7 @@ Para la generación de PDF solo se tomaran los primeros 20 registros seleccionad
 				
 			
 			
-			<div><input class="btn btn-light border-primary text-wrap create-user " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+			<div><input class="btn btn-light border-primary text-wrap " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
 			id="btnDescargaM" value="Descarga masiva de archivos" style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
@@ -2495,13 +2497,13 @@ Para la generación de PDF solo se tomaran los primeros 20 registros seleccionad
 				
 			
 			
-			<div><input class="btn btn-light border-primary text-wrap create-user " type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
+			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
 Descarga más de dos archivos, seleccionados en la presente tabla y finalmente, dando clic en este botón."
 			id="btnDescargaM" value="Descarga masiva de archivos" onclick="validardescargamasiva(this,<%For i = 0 to ubound(matriz) 
 									Response.Write matriz(i) 
 									next%>)"style="background: url(../imagenes/guardarDatos.png) left center no-repeat;padding-left: 2rem;font-size:0.9rem;" /></div>
 			
-			<!--<div class="input"><input  class="button_opt prtText" type="button" value="Enviar informaci&oacute;n por e-mail" onclick="marcarb('S')" id="btnEmail" data-i18n="[value]funcionalidad.email"/></div>-->
+			
 
 			
 			<div><input class="btn btn-light border-primary text-wrap" type="button" data-bs-toggle="tooltip" data-bs-placement="bottom" title="Importante
