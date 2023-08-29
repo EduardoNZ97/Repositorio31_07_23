@@ -349,6 +349,9 @@ else
 		tr.limite {
 			color: #F00;
 		}
+		.myTable02{
+			text-align: center;
+			}
 		.btn_download{
 			background: url(imagenes/guardar.png) no-repeat;
 			-webkit-appearance:none;
@@ -368,6 +371,11 @@ else
 		{ 
 			font-size: 80.5%; 
 		}
+		.message-container {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin-bottom: 10px;
+    }
 	</style>
 
 	<script type="text/javascript">
@@ -1052,56 +1060,6 @@ function validarEmail() {
   </div>
 </div>
 
-
-<%
-Function avisos222()
-'Se busca si existen avisos en la BD
-	dim sqlAvisos, bandera
-    if lg="es" or idioma="es" then
-        banderA="P"
-    end if
-    if lg="en" or idioma="en" then
-        banderA="PE"
-    end if
-	sqlAvisos = "select Titulo,Contenido,Destinatario,Emisor,ArchivoAdjunto from CATAVISOSPAGINAWEB where BanderaMostrar='S' and MostrarAvisoA='"&bandera&"'"
-	set rsDosAvisos=server.createobject("ADODB.Recordset") 		
-	rsDosAvisos.Open sqlAvisos,cnn,3,1	
-    'response.write sqlAvisos
-	if(rsDosAvisos.RecordCount>0)then								
-				response.write "<div class=''>"
-					Do Until rsDosAvisos.EOF
-						 response.write "<div class=''>"
-					'For each aviso in rsDosAvisos.fields
-						If Trim(rsDosAvisos("Titulo"))&"" <> "" Then
-									
-							response.write "	<div class=''>"
-							response.write "	<b>"
-							response.write ""&rsDosAvisos("Titulo")&""
-							response.write "	</b>"
-							response.write "	</div>"
-							
-						
-							response.write "<div class='text-wrap' style=""width:400px;max-width:auto;height:auto;max-height:500px;margin-top: 0;margin-right: 0;margin-left: 0;font-size:14px;color: #1E598E;padding: 5px;background-color: #ffffff;"">"
-
-							if(trim(rsDosAvisos.fields("Emisor")&"")<>"") then 
-								response.write "<b>De:</b>"&rsDosAvisos.fields("Emisor")&" <br />"
-							end if
-							if(trim(rsDosAvisos.fields("Destinatario"))&""<>"")then
-								response.write "<b>Para:</b>"&rsDosAvisos.fields("Destinatario")&"<br />"
-							end if
-
-							    response.write "<b>Mensaje:</b>"&rsDosAvisos.fields("Contenido")&"</div>"
-							
-						end if
-						rsDosAvisos.MoveNext
-                        response.write "</div>" 
-					'Next
-					Loop
-					response.write "</div>" 'content
-	end if
-			
-End Function
-%>
 <!--Encabezado-->
 <nav class="navbar" style="background-color: #3c8dbc;">
     <div class="d-flex align-items-center">
@@ -1118,6 +1076,7 @@ End Function
 				<script type="text/javascript" language="javascript">
                 	showTimer();
             	</script>            
+				
         	</span>
 			
 							
@@ -1169,28 +1128,49 @@ End Function
 					    </div>
 				<%end if%>
 
-	
-
-				
-						<!-- <div class="dropdown me-2">
-							<img src="imagenes/mensajes.png" alt="mensajes" type="button" data-bs-toggle="dropdown"  aria-expanded="false"  />
-							<span  class="dropdown-menu dropdown-menu-end form-contol" style="max-width: 500px; max-height:500px;">
-								<span><span class="dropdown-item" style="background-color:transparent"><%=avisos()%></span></span>
-							</span>
-						</div>-->
-
-
 		               <div>
-							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-danger">
+							<span class="position-absolute top-10  translate-middle badge rounded-pill bg-info">
 								1
 							<span class="visually-hidden"></span>
 							</span>
 						<div class="dropdown">
 							<a class="dropdown" data-bs-toggle="dropdown" aria-expanded="false"><img src="imagenes/mensajes.png" alt="Bootstrap"/></a>
 					
-							<ul class="dropdown-menu dropdown-menu-end" style="max-width:500px; max-height:500px;">
+							<ul class="dropdown-menu dropdown-menu-end" style="max-width:white; max-height:auto;background:auto">
 								<li>
-								<a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#Mensajes" style="font-size:14px;">Leer mensajes</a>
+								<a class="dropdown-item btn-group-vertical" data-bs-toggle="modal" data-bs-target="#Mensajes" style="font-size:14px;background:white;">
+								<%
+								 dim sqlAvisos, bandera, AvisoID
+    							if lg="es" or idioma="es" then
+        						banderA="P"
+    							end if
+    							if lg="en" or idioma="en" then
+        						banderA="PE"
+    							end if
+								sqlAvisos = "select Titulo,Contenido,Id_Aviso from CATAVISOSPAGINAWEB where BanderaMostrar='S' and MostrarAvisoA='"&bandera&"'"
+								set rsDosAvisos=server.createobject("ADODB.Recordset") 		
+								rsDosAvisos.Open sqlAvisos,cnn,3,1	
+    
+    						if(rsDosAvisos.RecordCount > 0) then
+        					Do Until rsDosAvisos.EOF
+            				response.write "<div class='btn btn-outline-primary' style='width:200px;max-width:450px;height:50px; max-height:500px;'>"
+            
+           					If Trim(rsDosAvisos("Titulo"))&"" <> "" Then									
+							response.write "	<div class='small'>"
+							response.write "	<b>"
+							response.write ""&left(rsDosAvisos("Titulo"),15)&""
+							response.write "	</b>"
+							response.write "	</div>"													
+							response.write "<div class='small'>"									
+							response.write ""&left(rsDosAvisos.fields("Contenido"),23)&"</div>"			
+							AvisoID = ""&rsDosAvisos.fields("Id_Aviso")&""
+							end if
+            
+           					response.write "</div>" ' Fin del contenedor del mensaje
+            				rsDosAvisos.MoveNext
+        					Loop
+    						end if%>
+									</a>
 								</li>
 							</ul>
 					    </div>
@@ -1199,13 +1179,31 @@ End Function
 								<div class="modal-dialog">
 									<div class="modal-content">
 										<div class="modal-header">
-											<h1 class="modal-title fs-6" id="MensajeModel">Notificaciones</h1>
+											<h1 class="modal-title fs-6" id="MensajeModel">Mensajes</h1>
 											<button type="button"  class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
 										</div>
-										<div class="modal-body ">											
-											<%
-												avisos222()
-											%>									
+										<div class="modal-body ">		
+										<%
+							sqlAvisos = "select Titulo,Contenido,Destinatario,Emisor,ArchivoAdjunto from CATAVISOSPAGINAWEB where Id_Aviso='"&AvisoID&"'"
+							set rsDosAvisos=server.createobject("ADODB.Recordset") 		
+							rsDosAvisos.Open sqlAvisos,cnn,3,1	
+            				response.write "<div class='small text-wrap container-messager' style='width:300px;max-width:500px; max-height:500px;'>"        
+    						If Trim(rsDosAvisos("Titulo"))&"" <> "" Then									
+							response.write "	<div>"
+							response.write "	<b>"
+							response.write ""&rsDosAvisos("Titulo")&""
+							response.write "	</b>"
+							response.write "	</div>"													
+							response.write "<div>"
+							if(trim(rsDosAvisos.fields("Emisor")&"")<>"") then 
+								response.write "<b>De:</b>"&rsDosAvisos.fields("Emisor")&" <br />"
+							end if
+							if(trim(rsDosAvisos.fields("Destinatario"))&""<>"")then
+								response.write "<b>Para:</b>"&rsDosAvisos.fields("Destinatario")&"<br />"
+							end if
+							    response.write "<b>Mensaje:</b>"&rsDosAvisos.fields("Contenido")&"</div>"							
+						    end if            
+            				response.write "</div>"%>
 									</div>
 									<div class="modal-footer p-1">
 										<button type="button" class="btn btn-primary btn-sm"  data-bs-dismiss="modal">Cerrar</button>
@@ -2708,13 +2706,13 @@ Se exporta todo el resultado de la consulta."
 						NombreArchivoXml=rtrim(rs.fields("Nombre_Archivo_XML"))
                         NombreArchivoLog=rtrim(rs.fields("Nombre_Archivo_Log"))
  
-						NombreArchivoPdf=iif(NombreArchivoPdf,NombreArchivoPdf,"N-PDF")
-						NombreArchivoExcel=iif(NombreArchivoExcel,NombreArchivoExcel,"N-XLS")
-						NombreArchivoCsv=iif(NombreArchivoCsv,NombreArchivoCsv,"N-CSV")
-						NombreArchivoTxt=iif(NombreArchivoTxt,NombreArchivoTxt,"N-TXT")
-						NombreArchivoEtq=iif(NombreArchivoEtq,NombreArchivoEtq,"N-Etq")
-						NombreArchivoXml=iif(NombreArchivoXml,NombreArchivoXml,"N-XML")
-                        NombreArchivoLog=iif(NombreArchivoLog,NombreArchivoLog,"N-LOG")
+						' NombreArchivoPdf=iif(NombreArchivoPdf,NombreArchivoPdf,"N-PDF")
+						' NombreArchivoExcel=iif(NombreArchivoExcel,NombreArchivoExcel,"N-XLS")
+						' NombreArchivoCsv=iif(NombreArchivoCsv,NombreArchivoCsv,"N-CSV")
+						' NombreArchivoTxt=iif(NombreArchivoTxt,NombreArchivoTxt,"N-TXT")
+						' NombreArchivoEtq=iif(NombreArchivoEtq,NombreArchivoEtq,"N-Etq")
+						' NombreArchivoXml=iif(NombreArchivoXml,NombreArchivoXml,"N-XML")
+                        ' NombreArchivoLog=iif(NombreArchivoLog,NombreArchivoLog,"N-LOG")
  
 					   Set dataFiles = Server.CreateObject("Scripting.Dictionary")
 						   if archivo <> "" or archivo <> null then
@@ -2733,11 +2731,17 @@ Se exporta todo el resultado de la consulta."
 						   dataFiles.Add "XML",NombreArchivoXml
 							end if
                         If transaccion="CONTRL" or transaccion="APERAK" or transaccion="APECOM" or transaccion="APEFIS" or transaccion="864" then
-                            dataFiles.Add "LOG",NombreArchivoLog
+                            if NombreArchivoLog <> "" or NombreArchivoLog <> null then
+						   dataFiles.Add "LOG",NombreArchivoLog
+							end if						    
                             Call dictionaryArchive(cliente,idHub,user,dataFiles,contador)
                         Else
-                            dataFiles.Add "CSV",NombreArchivoCsv
-                            dataFiles.Add "ETQ",NombreArchivoEtq
+						   if NombreArchivoCsv <> "" or NombreArchivoCsv <> null then
+						    dataFiles.Add "CSV",NombreArchivoCsv
+							end if	
+						   if NombreArchivoEtq <> "" or NombreArchivoEtq <> null then
+						    dataFiles.Add "ETQ",NombreArchivoEtq
+							end if	                          
                             Call dictionaryArchive(cliente,idHub,user,dataFiles,contador)
 						End If
 					End If 
